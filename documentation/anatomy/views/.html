@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/anatomy/views/.eslintrc by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:27:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>.eslintrc</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"anatomy.ejs","fullPathAndFileName":"anatomy/anatomy.ejs","realPath":"anatomy/","data":{"displayName":"Anatomy of a Sails app","isOverviewPage":"true","lastModified":1555526739000},"children":["anatomy/api/api.ejs","anatomy/assets/assets.ejs","anatomy/config/config.ejs","anatomy/tasks/tasks.ejs","anatomy/views/views.ejs","anatomy/.editorconfig.ejs","anatomy/.eslintignore.ejs","anatomy/.eslintrc.ejs","anatomy/gitignore.ejs","anatomy/.htmlhintrc.ejs","anatomy/sailsrc.ejs","anatomy/README.ejs","anatomy/app.js.ejs","anatomy/Gruntfile.js.ejs","anatomy/package.json.ejs","anatomy/README.md.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1555526739000,"path":"anatomy/anatomy.ejs","isTableOfContents":false,"isOverviewPage":true,"displayName":"Anatomy of a Sails app","slug":"anatomy","topSection":"anatomy/","id":"anatomy","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"api.ejs","fullPathAndFileName":"anatomy/api/api.ejs","realPath":"anatomy/api/","data":{"displayName":"api","lastModified":1525972782000},"parent":"","isChild":false,"children":["anatomy/api/controllers/controllers.ejs","anatomy/api/helpers/helpers.ejs","anatomy/api/models/models.ejs","anatomy/api/policies/policies.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1525972782000,"path":"anatomy/api/api.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"api","slug":"anatomy/api","topSection":"anatomy/","id":"anatomy-api","version":"","isMethod":false,"parentDisplayName":"api"},{"templateTitle":"assets.ejs","fullPathAndFileName":"anatomy/assets/assets.ejs","realPath":"anatomy/assets/","data":{"displayName":"assets","lastModified":1486599877000},"parent":"","isChild":false,"children":["anatomy/assets/dependencies/dependencies.ejs","anatomy/assets/images/images.ejs","anatomy/assets/js/js.ejs","anatomy/assets/styles/styles.ejs","anatomy/assets/templates/templates.ejs","anatomy/assets/.eslintrc.ejs","anatomy/assets/favicon.ico.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1486599877000,"path":"anatomy/assets/assets.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"assets","slug":"anatomy/assets","topSection":"anatomy/","id":"anatomy-assets","version":"","isMethod":false,"parentDisplayName":"assets"},{"templateTitle":"config.ejs","fullPathAndFileName":"anatomy/config/config.ejs","realPath":"anatomy/config/","data":{"displayName":"config","lastModified":1481138916000},"parent":"","isChild":false,"children":["anatomy/config/env/env.ejs","anatomy/config/locales/locales.ejs","anatomy/config/blueprints.js.ejs","anatomy/config/bootstrap.js.ejs","anatomy/config/custom.js.ejs","anatomy/config/datastores.js.ejs","anatomy/config/globals.js.ejs","anatomy/config/http.js.ejs","anatomy/config/i18n.js.ejs","anatomy/config/local.js.ejs","anatomy/config/log.js.ejs","anatomy/config/models.js.ejs","anatomy/config/policies.js.ejs","anatomy/config/routes.js.ejs","anatomy/config/security.js.ejs","anatomy/config/session.js.ejs","anatomy/config/sockets.js.ejs","anatomy/config/views.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1481138916000,"path":"anatomy/config/config.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"config","slug":"anatomy/config","topSection":"anatomy/","id":"anatomy-config","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"tasks.ejs","fullPathAndFileName":"anatomy/tasks/tasks.ejs","realPath":"anatomy/tasks/","data":{"displayName":"tasks","lastModified":1513802378000},"parent":"","isChild":false,"children":["anatomy/tasks/config/config.ejs","anatomy/tasks/register/register.ejs","anatomy/tasks/pipeline.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/tasks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"tasks","slug":"anatomy/tasks","topSection":"anatomy/","id":"anatomy-tasks","version":"","isMethod":false,"parentDisplayName":"tasks"},{"templateTitle":"views.ejs","fullPathAndFileName":"anatomy/views/views.ejs","realPath":"anatomy/views/","data":{"displayName":"views","lastModified":1486599877000},"parent":"","isChild":false,"children":["anatomy/views/layouts/layouts.ejs","anatomy/views/pages/pages.ejs","anatomy/views/.eslintrc.ejs","anatomy/views/404.ejs.ejs","anatomy/views/500.ejs.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1486599877000,"path":"anatomy/views/views.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"views","slug":"anatomy/views","topSection":"anatomy/","id":"anatomy-views","version":"","isMethod":false,"parentDisplayName":"views"},{"templateTitle":"config.ejs","fullPathAndFileName":"anatomy/tasks/config/config.ejs","realPath":"anatomy/tasks/config/","data":{"displayName":"config","lastModified":1513802378000},"parent":"anatomy/tasks/tasks.ejs","isChild":true,"children":["anatomy/tasks/config/babel.js.ejs","anatomy/tasks/config/clean.js.ejs","anatomy/tasks/config/coffee.js.ejs","anatomy/tasks/config/concat.js.ejs","anatomy/tasks/config/copy.js.ejs","anatomy/tasks/config/cssmin.js.ejs","anatomy/tasks/config/hash.js.ejs","anatomy/tasks/config/jst.js.ejs","anatomy/tasks/config/less.js.ejs","anatomy/tasks/config/sails-linker.js.ejs","anatomy/tasks/config/sync.js.ejs","anatomy/tasks/config/uglify.js.ejs","anatomy/tasks/config/watch.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/config/config.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"config","slug":"anatomy/tasks/config","topSection":"anatomy/","id":"anatomy-tasks-config","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"controllers.ejs","fullPathAndFileName":"anatomy/api/controllers/controllers.ejs","realPath":"anatomy/api/controllers/","data":{"displayName":"controllers","lastModified":1513802378000},"parent":"anatomy/api/api.ejs","isChild":true,"children":["anatomy/api/controllers/gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/api/controllers/controllers.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"controllers","slug":"anatomy/api/controllers","topSection":"anatomy/","id":"anatomy-api-controllers","version":"","isMethod":false,"parentDisplayName":"controllers"},{"templateTitle":"dependencies.ejs","fullPathAndFileName":"anatomy/assets/dependencies/dependencies.ejs","realPath":"anatomy/assets/dependencies/","data":{"displayName":"dependencies","lastModified":1522448015000},"parent":"anatomy/assets/assets.ejs","isChild":true,"children":["anatomy/assets/dependencies/sails.io.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1522448015000,"path":"anatomy/assets/dependencies/dependencies.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"dependencies","slug":"anatomy/assets/dependencies","topSection":"anatomy/","id":"anatomy-assets-dependencies","version":"","isMethod":false,"parentDisplayName":"dependencies"},{"templateTitle":"env.ejs","fullPathAndFileName":"anatomy/config/env/env.ejs","realPath":"anatomy/config/env/","data":{"displayName":"env","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"children":["anatomy/config/env/production.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/env/env.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"env","slug":"anatomy/config/env","topSection":"anatomy/","id":"anatomy-config-env","version":"","isMethod":false,"parentDisplayName":"env"},{"templateTitle":"helpers.ejs","fullPathAndFileName":"anatomy/api/helpers/helpers.ejs","realPath":"anatomy/api/helpers/","data":{"displayName":"helpers","lastModified":1512888281000},"parent":"anatomy/api/api.ejs","isChild":true,"children":["anatomy/api/helpers/.gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1512888281000,"path":"anatomy/api/helpers/helpers.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"helpers","slug":"anatomy/api/helpers","topSection":"anatomy/","id":"anatomy-api-helpers","version":"","isMethod":false,"parentDisplayName":"helpers"},{"templateTitle":"images.ejs","fullPathAndFileName":"anatomy/assets/images/images.ejs","realPath":"anatomy/assets/images/","data":{"displayName":"images","lastModified":1481139382000},"parent":"anatomy/assets/assets.ejs","isChild":true,"children":["anatomy/assets/images/gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/images/images.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"images","slug":"anatomy/assets/images","topSection":"anatomy/","id":"anatomy-assets-images","version":"","isMethod":false,"parentDisplayName":"images"},{"templateTitle":"js.ejs","fullPathAndFileName":"anatomy/assets/js/js.ejs","realPath":"anatomy/assets/js/","data":{"displayName":"js","lastModified":1489092827000},"parent":"anatomy/assets/assets.ejs","isChild":true,"children":["anatomy/assets/js/gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1489092827000,"path":"anatomy/assets/js/js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"js","slug":"anatomy/assets/js","topSection":"anatomy/","id":"anatomy-assets-js","version":"","isMethod":false,"parentDisplayName":"js"},{"templateTitle":"layouts.ejs","fullPathAndFileName":"anatomy/views/layouts/layouts.ejs","realPath":"anatomy/views/layouts/","data":{"displayName":"layouts","lastModified":1510272380000},"parent":"anatomy/views/views.ejs","isChild":true,"children":["anatomy/views/layouts/layout.ejs.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1510272380000,"path":"anatomy/views/layouts/layouts.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"layouts","slug":"anatomy/views/layouts","topSection":"anatomy/","id":"anatomy-views-layouts","version":"","isMethod":false,"parentDisplayName":"layouts"},{"templateTitle":"locales.ejs","fullPathAndFileName":"anatomy/config/locales/locales.ejs","realPath":"anatomy/config/locales/","data":{"displayName":"locales","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"children":["anatomy/config/locales/de.json.ejs","anatomy/config/locales/en.json.ejs","anatomy/config/locales/es.json.ejs","anatomy/config/locales/fr.json.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/locales/locales.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"locales","slug":"anatomy/config/locales","topSection":"anatomy/","id":"anatomy-config-locales","version":"","isMethod":false,"parentDisplayName":"locales"},{"templateTitle":"models.ejs","fullPathAndFileName":"anatomy/api/models/models.ejs","realPath":"anatomy/api/models/","data":{"displayName":"models","lastModified":1512537791000},"parent":"anatomy/api/api.ejs","isChild":true,"children":["anatomy/api/models/.gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1512537791000,"path":"anatomy/api/models/models.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"models","slug":"anatomy/api/models","topSection":"anatomy/","id":"anatomy-api-models","version":"","isMethod":false,"parentDisplayName":"models"},{"templateTitle":"pages.ejs","fullPathAndFileName":"anatomy/views/pages/pages.ejs","realPath":"anatomy/views/pages/","data":{"displayName":"pages","lastModified":1510272380000},"parent":"anatomy/views/views.ejs","isChild":true,"children":["anatomy/views/pages/homepage.ejs.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1510272380000,"path":"anatomy/views/pages/pages.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"pages","slug":"anatomy/views/pages","topSection":"anatomy/","id":"anatomy-views-pages","version":"","isMethod":false,"parentDisplayName":"pages"},{"templateTitle":"policies.ejs","fullPathAndFileName":"anatomy/api/policies/policies.ejs","realPath":"anatomy/api/policies/","data":{"displayName":"policies","lastModified":1513802378000},"parent":"anatomy/api/api.ejs","isChild":true,"children":["anatomy/api/policies/.gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/api/policies/policies.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"policies","slug":"anatomy/api/policies","topSection":"anatomy/","id":"anatomy-api-policies","version":"","isMethod":false,"parentDisplayName":"policies"},{"templateTitle":"register.ejs","fullPathAndFileName":"anatomy/tasks/register/register.ejs","realPath":"anatomy/tasks/register/","data":{"displayName":"register","lastModified":1513802378000},"parent":"anatomy/tasks/tasks.ejs","isChild":true,"children":["anatomy/tasks/register/build.js.ejs","anatomy/tasks/register/buildProd.js.ejs","anatomy/tasks/register/compileAssets.js.ejs","anatomy/tasks/register/default.js.ejs","anatomy/tasks/register/linkAssets.js.ejs","anatomy/tasks/register/linkAssetsBuild.js.ejs","anatomy/tasks/register/linkAssetsBuildProd.js.ejs","anatomy/tasks/register/polyfill.js.ejs","anatomy/tasks/register/prod.js.ejs","anatomy/tasks/register/syncAssets.js.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/register/register.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"register","slug":"anatomy/tasks/register","topSection":"anatomy/","id":"anatomy-tasks-register","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"styles.ejs","fullPathAndFileName":"anatomy/assets/styles/styles.ejs","realPath":"anatomy/assets/styles/","data":{"displayName":"styles","lastModified":1481139382000},"parent":"anatomy/assets/assets.ejs","isChild":true,"children":["anatomy/assets/styles/importer.less.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/styles/styles.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"styles","slug":"anatomy/assets/styles","topSection":"anatomy/","id":"anatomy-assets-styles","version":"","isMethod":false,"parentDisplayName":"styles"},{"templateTitle":"templates.ejs","fullPathAndFileName":"anatomy/assets/templates/templates.ejs","realPath":"anatomy/assets/templates/","data":{"displayName":"templates","lastModified":1513802378000},"parent":"anatomy/assets/assets.ejs","isChild":true,"children":["anatomy/assets/templates/gitkeep.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/assets/templates/templates.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"templates","slug":"anatomy/assets/templates","topSection":"anatomy/","id":"anatomy-assets-templates","version":"","isMethod":false,"parentDisplayName":"templates"},{"templateTitle":".editorconfig.ejs","fullPathAndFileName":"anatomy/.editorconfig.ejs","data":{"displayName":".editorconfig","lastModified":1512540197000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1512540197000,"path":"anatomy/.editorconfig.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".editorconfig","slug":"anatomy/.editorconfig","topSection":"anatomy/","id":"anatomy--editorconfig","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":".eslintignore.ejs","fullPathAndFileName":"anatomy/.eslintignore.ejs","data":{"displayName":".eslintignore","lastModified":1512540197000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1512540197000,"path":"anatomy/.eslintignore.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".eslintignore","slug":"anatomy/.eslintignore","topSection":"anatomy/","id":"anatomy--eslintignore","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":".eslintrc.ejs","fullPathAndFileName":"anatomy/views/.eslintrc.ejs","data":{"displayName":".eslintrc","lastModified":1512897542000},"parent":"anatomy/views/views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512897542000,"path":"anatomy/views/.eslintrc.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".eslintrc","slug":"anatomy/views/.eslintrc","topSection":"anatomy/","id":"anatomy-views--eslintrc","version":"","isMethod":false,"parentDisplayName":"views"},{"templateTitle":".eslintrc.ejs","fullPathAndFileName":"anatomy/.eslintrc.ejs","data":{"displayName":".eslintrc","lastModified":1512540197000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1512540197000,"path":"anatomy/.eslintrc.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".eslintrc","slug":"anatomy/.eslintrc","topSection":"anatomy/","id":"anatomy--eslintrc","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":".eslintrc.ejs","fullPathAndFileName":"anatomy/assets/.eslintrc.ejs","data":{"displayName":".eslintrc","lastModified":1512540197000},"parent":"anatomy/assets/assets.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512540197000,"path":"anatomy/assets/.eslintrc.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".eslintrc","slug":"anatomy/assets/.eslintrc","topSection":"anatomy/","id":"anatomy-assets--eslintrc","version":"","isMethod":false,"parentDisplayName":"assets"},{"templateTitle":"gitignore.ejs","fullPathAndFileName":"anatomy/gitignore.ejs","data":{"displayName":".gitignore","lastModified":1481137537000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/gitignore.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitignore","slug":"anatomy/.gitignore","topSection":"anatomy/","id":"anatomy--gitignore","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":".gitkeep.ejs","fullPathAndFileName":"anatomy/api/policies/.gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1512542089000},"parent":"anatomy/api/policies/policies.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512542089000,"path":"anatomy/api/policies/.gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/api/policies/.gitkeep","topSection":"anatomy/","id":"anatomy-api-policies--gitkeep","version":"","isMethod":false,"parentDisplayName":"policies"},{"templateTitle":".gitkeep.ejs","fullPathAndFileName":"anatomy/api/models/.gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1512542089000},"parent":"anatomy/api/models/models.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512542089000,"path":"anatomy/api/models/.gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/api/models/.gitkeep","topSection":"anatomy/","id":"anatomy-api-models--gitkeep","version":"","isMethod":false,"parentDisplayName":"models"},{"templateTitle":"gitkeep.ejs","fullPathAndFileName":"anatomy/assets/templates/gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1481139382000},"parent":"anatomy/assets/templates/templates.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/templates/gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/assets/templates/.gitkeep","topSection":"anatomy/","id":"anatomy-assets-templates--gitkeep","version":"","isMethod":false,"parentDisplayName":"templates"},{"templateTitle":"gitkeep.ejs","fullPathAndFileName":"anatomy/assets/images/gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1481139382000},"parent":"anatomy/assets/images/images.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/images/gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/assets/images/.gitkeep","topSection":"anatomy/","id":"anatomy-assets-images--gitkeep","version":"","isMethod":false,"parentDisplayName":"images"},{"templateTitle":".gitkeep.ejs","fullPathAndFileName":"anatomy/api/helpers/.gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1481139382000},"parent":"anatomy/api/helpers/helpers.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/api/helpers/.gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/api/helpers/.gitkeep","topSection":"anatomy/","id":"anatomy-api-helpers--gitkeep","version":"","isMethod":false,"parentDisplayName":"helpers"},{"templateTitle":"gitkeep.ejs","fullPathAndFileName":"anatomy/assets/js/gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1481139382000},"parent":"anatomy/assets/js/js.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/js/gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/assets/js/.gitkeep","topSection":"anatomy/","id":"anatomy-assets-js--gitkeep","version":"","isMethod":false,"parentDisplayName":"js"},{"templateTitle":"gitkeep.ejs","fullPathAndFileName":"anatomy/api/controllers/gitkeep.ejs","data":{"displayName":".gitkeep","lastModified":1481139382000},"parent":"anatomy/api/controllers/controllers.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/api/controllers/gitkeep.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".gitkeep","slug":"anatomy/api/controllers/.gitkeep","topSection":"anatomy/","id":"anatomy-api-controllers--gitkeep","version":"","isMethod":false,"parentDisplayName":"controllers"},{"templateTitle":".htmlhintrc.ejs","fullPathAndFileName":"anatomy/.htmlhintrc.ejs","data":{"displayName":".htmlhintrc","lastModified":1512540197000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1512540197000,"path":"anatomy/.htmlhintrc.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".htmlhintrc","slug":"anatomy/.htmlhintrc","topSection":"anatomy/","id":"anatomy--htmlhintrc","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"sailsrc.ejs","fullPathAndFileName":"anatomy/sailsrc.ejs","data":{"displayName":".sailsrc","lastModified":1513802378000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/sailsrc.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".sailsrc","slug":"anatomy/.sailsrc","topSection":"anatomy/","id":"anatomy--sailsrc","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"404.ejs.ejs","fullPathAndFileName":"anatomy/views/404.ejs.ejs","data":{"displayName":"404.ejs","lastModified":1481137537000},"parent":"anatomy/views/views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/views/404.ejs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"404.ejs","slug":"anatomy/views/404.ejs","topSection":"anatomy/","id":"anatomy-views-404-ejs","version":"","isMethod":false,"parentDisplayName":"views"},{"templateTitle":"500.ejs.ejs","fullPathAndFileName":"anatomy/views/500.ejs.ejs","data":{"displayName":"500.ejs","lastModified":1481137537000},"parent":"anatomy/views/views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/views/500.ejs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"500.ejs","slug":"anatomy/views/500.ejs","topSection":"anatomy/","id":"anatomy-views-500-ejs","version":"","isMethod":false,"parentDisplayName":"views"},{"templateTitle":"README.ejs","fullPathAndFileName":"anatomy/README.ejs","data":{"notShownOnWebsite":"true","lastModified":1513802378000},"parent":"","isChild":false,"notShownOnWebsite":true,"lastModified":1513802378000,"path":"anatomy/README.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Anatomy README Ejs","slug":"","id":"","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"app.js.ejs","fullPathAndFileName":"anatomy/app.js.ejs","data":{"displayName":"app.js","lastModified":1481137537000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/app.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"app.js","slug":"anatomy/app.js","topSection":"anatomy/","id":"anatomy-app-js","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"babel.js.ejs","fullPathAndFileName":"anatomy/tasks/config/babel.js.ejs","data":{"displayName":"babel.js","lastModified":1509041128000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1509041128000,"path":"anatomy/tasks/config/babel.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"babel.js","slug":"anatomy/tasks/config/babel.js","topSection":"anatomy/","id":"anatomy-tasks-config-babel-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"blueprints.js.ejs","fullPathAndFileName":"anatomy/config/blueprints.js.ejs","data":{"displayName":"blueprints.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/blueprints.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"blueprints.js","slug":"anatomy/config/blueprints.js","topSection":"anatomy/","id":"anatomy-config-blueprints-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"bootstrap.js.ejs","fullPathAndFileName":"anatomy/config/bootstrap.js.ejs","data":{"displayName":"bootstrap.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/bootstrap.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"bootstrap.js","slug":"anatomy/config/bootstrap.js","topSection":"anatomy/","id":"anatomy-config-bootstrap-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"build.js.ejs","fullPathAndFileName":"anatomy/tasks/register/build.js.ejs","data":{"displayName":"build.js","lastModified":1481250636000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481250636000,"path":"anatomy/tasks/register/build.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"build.js","slug":"anatomy/tasks/register/build.js","topSection":"anatomy/","id":"anatomy-tasks-register-build-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"buildProd.js.ejs","fullPathAndFileName":"anatomy/tasks/register/buildProd.js.ejs","data":{"displayName":"buildProd.js","lastModified":1481250590000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481250590000,"path":"anatomy/tasks/register/buildProd.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"buildProd.js","slug":"anatomy/tasks/register/buildprod.js","topSection":"anatomy/","id":"anatomy-tasks-register-buildprod-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"clean.js.ejs","fullPathAndFileName":"anatomy/tasks/config/clean.js.ejs","data":{"displayName":"clean.js","lastModified":1513802378000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/config/clean.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"clean.js","slug":"anatomy/tasks/config/clean.js","topSection":"anatomy/","id":"anatomy-tasks-config-clean-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"coffee.js.ejs","fullPathAndFileName":"anatomy/tasks/config/coffee.js.ejs","data":{"displayName":"coffee.js","lastModified":1513802378000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/config/coffee.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"coffee.js","slug":"anatomy/tasks/config/coffee.js","topSection":"anatomy/","id":"anatomy-tasks-config-coffee-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"compileAssets.js.ejs","fullPathAndFileName":"anatomy/tasks/register/compileAssets.js.ejs","data":{"displayName":"compileAssets.js","lastModified":1512882608000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512882608000,"path":"anatomy/tasks/register/compileAssets.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"compileAssets.js","slug":"anatomy/tasks/register/compileassets.js","topSection":"anatomy/","id":"anatomy-tasks-register-compileassets-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"concat.js.ejs","fullPathAndFileName":"anatomy/tasks/config/concat.js.ejs","data":{"displayName":"concat.js","lastModified":1481250846000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481250846000,"path":"anatomy/tasks/config/concat.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"concat.js","slug":"anatomy/tasks/config/concat.js","topSection":"anatomy/","id":"anatomy-tasks-config-concat-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"copy.js.ejs","fullPathAndFileName":"anatomy/tasks/config/copy.js.ejs","data":{"displayName":"copy.js","lastModified":1486701393000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1486701393000,"path":"anatomy/tasks/config/copy.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"copy.js","slug":"anatomy/tasks/config/copy.js","topSection":"anatomy/","id":"anatomy-tasks-config-copy-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"cssmin.js.ejs","fullPathAndFileName":"anatomy/tasks/config/cssmin.js.ejs","data":{"displayName":"cssmin.js","lastModified":1481250974000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481250974000,"path":"anatomy/tasks/config/cssmin.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"cssmin.js","slug":"anatomy/tasks/config/cssmin.js","topSection":"anatomy/","id":"anatomy-tasks-config-cssmin-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"custom.js.ejs","fullPathAndFileName":"anatomy/config/custom.js.ejs","data":{"displayName":"custom.js","lastModified":1512888281000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512888281000,"path":"anatomy/config/custom.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"custom.js","slug":"anatomy/config/custom.js","topSection":"anatomy/","id":"anatomy-config-custom-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"datastores.js.ejs","fullPathAndFileName":"anatomy/config/datastores.js.ejs","data":{"displayName":"datastores.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/datastores.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"datastores.js","slug":"anatomy/config/datastores.js","topSection":"anatomy/","id":"anatomy-config-datastores-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"de.json.ejs","fullPathAndFileName":"anatomy/config/locales/de.json.ejs","data":{"displayName":"de.json","lastModified":1481137537000},"parent":"anatomy/config/locales/locales.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/config/locales/de.json.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"de.json","slug":"anatomy/config/locales/de.json","topSection":"anatomy/","id":"anatomy-config-locales-de-json","version":"","isMethod":false,"parentDisplayName":"locales"},{"templateTitle":"default.js.ejs","fullPathAndFileName":"anatomy/tasks/register/default.js.ejs","data":{"displayName":"default.js","lastModified":1481247637000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481247637000,"path":"anatomy/tasks/register/default.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"default.js","slug":"anatomy/tasks/register/default.js","topSection":"anatomy/","id":"anatomy-tasks-register-default-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"en.json.ejs","fullPathAndFileName":"anatomy/config/locales/en.json.ejs","data":{"displayName":"en.json","lastModified":1481137537000},"parent":"anatomy/config/locales/locales.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/config/locales/en.json.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"en.json","slug":"anatomy/config/locales/en.json","topSection":"anatomy/","id":"anatomy-config-locales-en-json","version":"","isMethod":false,"parentDisplayName":"locales"},{"templateTitle":"es.json.ejs","fullPathAndFileName":"anatomy/config/locales/es.json.ejs","data":{"displayName":"es.json","lastModified":1481137537000},"parent":"anatomy/config/locales/locales.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/config/locales/es.json.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"es.json","slug":"anatomy/config/locales/es.json","topSection":"anatomy/","id":"anatomy-config-locales-es-json","version":"","isMethod":false,"parentDisplayName":"locales"},{"templateTitle":"favicon.ico.ejs","fullPathAndFileName":"anatomy/assets/favicon.ico.ejs","data":{"displayName":"favicon.ico","lastModified":1481139382000},"parent":"anatomy/assets/assets.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/assets/favicon.ico.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"favicon.ico","slug":"anatomy/assets/favicon.ico","topSection":"anatomy/","id":"anatomy-assets-favicon-ico","version":"","isMethod":false,"parentDisplayName":"assets"},{"templateTitle":"fr.json.ejs","fullPathAndFileName":"anatomy/config/locales/fr.json.ejs","data":{"displayName":"fr.json","lastModified":1481137537000},"parent":"anatomy/config/locales/locales.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/config/locales/fr.json.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"fr.json","slug":"anatomy/config/locales/fr.json","topSection":"anatomy/","id":"anatomy-config-locales-fr-json","version":"","isMethod":false,"parentDisplayName":"locales"},{"templateTitle":"globals.js.ejs","fullPathAndFileName":"anatomy/config/globals.js.ejs","data":{"displayName":"globals.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/globals.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"globals.js","slug":"anatomy/config/globals.js","topSection":"anatomy/","id":"anatomy-config-globals-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"Gruntfile.js.ejs","fullPathAndFileName":"anatomy/Gruntfile.js.ejs","data":{"displayName":"Gruntfile.js","lastModified":1513802378000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/Gruntfile.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Gruntfile.js","slug":"anatomy/gruntfile.js","topSection":"anatomy/","id":"anatomy-gruntfile-js","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"hash.js.ejs","fullPathAndFileName":"anatomy/tasks/config/hash.js.ejs","data":{"displayName":"hash.js","lastModified":1519415782000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1519415782000,"path":"anatomy/tasks/config/hash.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"hash.js","slug":"anatomy/tasks/config/hash.js","topSection":"anatomy/","id":"anatomy-tasks-config-hash-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"homepage.ejs.ejs","fullPathAndFileName":"anatomy/views/pages/homepage.ejs.ejs","data":{"displayName":"homepage.ejs","lastModified":1511145602000},"parent":"anatomy/views/pages/pages.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1511145602000,"path":"anatomy/views/pages/homepage.ejs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"homepage.ejs","slug":"anatomy/views/pages/homepage.ejs","topSection":"anatomy/","id":"anatomy-views-pages-homepage-ejs","version":"","isMethod":false,"parentDisplayName":"pages"},{"templateTitle":"http.js.ejs","fullPathAndFileName":"anatomy/config/http.js.ejs","data":{"displayName":"http.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/http.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"http.js","slug":"anatomy/config/http.js","topSection":"anatomy/","id":"anatomy-config-http-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"i18n.js.ejs","fullPathAndFileName":"anatomy/config/i18n.js.ejs","data":{"displayName":"i18n.js","lastModified":1552588247000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552588247000,"path":"anatomy/config/i18n.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"i18n.js","slug":"anatomy/config/i18n.js","topSection":"anatomy/","id":"anatomy-config-i18n-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"importer.less.ejs","fullPathAndFileName":"anatomy/assets/styles/importer.less.ejs","data":{"displayName":"importer.less","lastModified":1481137537000},"parent":"anatomy/assets/styles/styles.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/assets/styles/importer.less.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"importer.less","slug":"anatomy/assets/styles/importer.less","topSection":"anatomy/","id":"anatomy-assets-styles-importer-less","version":"","isMethod":false,"parentDisplayName":"styles"},{"templateTitle":"jst.js.ejs","fullPathAndFileName":"anatomy/tasks/config/jst.js.ejs","data":{"displayName":"jst.js","lastModified":1509041654000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1509041654000,"path":"anatomy/tasks/config/jst.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"jst.js","slug":"anatomy/tasks/config/jst.js","topSection":"anatomy/","id":"anatomy-tasks-config-jst-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"layout.ejs.ejs","fullPathAndFileName":"anatomy/views/layouts/layout.ejs.ejs","data":{"displayName":"layout.ejs","lastModified":1511145602000},"parent":"anatomy/views/layouts/layouts.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1511145602000,"path":"anatomy/views/layouts/layout.ejs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"layout.ejs","slug":"anatomy/views/layouts/layout.ejs","topSection":"anatomy/","id":"anatomy-views-layouts-layout-ejs","version":"","isMethod":false,"parentDisplayName":"layouts"},{"templateTitle":"less.js.ejs","fullPathAndFileName":"anatomy/tasks/config/less.js.ejs","data":{"displayName":"less.js","lastModified":1481137537000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/tasks/config/less.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"less.js","slug":"anatomy/tasks/config/less.js","topSection":"anatomy/","id":"anatomy-tasks-config-less-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"linkAssets.js.ejs","fullPathAndFileName":"anatomy/tasks/register/linkAssets.js.ejs","data":{"displayName":"linkAssets.js","lastModified":1512882608000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512882608000,"path":"anatomy/tasks/register/linkAssets.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"linkAssets.js","slug":"anatomy/tasks/register/linkassets.js","topSection":"anatomy/","id":"anatomy-tasks-register-linkassets-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"linkAssetsBuild.js.ejs","fullPathAndFileName":"anatomy/tasks/register/linkAssetsBuild.js.ejs","data":{"displayName":"linkAssetsBuild.js","lastModified":1512882608000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512882608000,"path":"anatomy/tasks/register/linkAssetsBuild.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"linkAssetsBuild.js","slug":"anatomy/tasks/register/linkassetsbuild.js","topSection":"anatomy/","id":"anatomy-tasks-register-linkassetsbuild-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"linkAssetsBuildProd.js.ejs","fullPathAndFileName":"anatomy/tasks/register/linkAssetsBuildProd.js.ejs","data":{"displayName":"linkAssetsBuildProd.js","lastModified":1512882608000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512882608000,"path":"anatomy/tasks/register/linkAssetsBuildProd.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"linkAssetsBuildProd.js","slug":"anatomy/tasks/register/linkassetsbuildprod.js","topSection":"anatomy/","id":"anatomy-tasks-register-linkassetsbuildprod-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"local.js.ejs","fullPathAndFileName":"anatomy/config/local.js.ejs","data":{"displayName":"local.js","lastModified":1512543228000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512543228000,"path":"anatomy/config/local.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"local.js","slug":"anatomy/config/local.js","topSection":"anatomy/","id":"anatomy-config-local-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"log.js.ejs","fullPathAndFileName":"anatomy/config/log.js.ejs","data":{"displayName":"log.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/log.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"log.js","slug":"anatomy/config/log.js","topSection":"anatomy/","id":"anatomy-config-log-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"models.js.ejs","fullPathAndFileName":"anatomy/config/models.js.ejs","data":{"displayName":"models.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/models.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"models.js","slug":"anatomy/config/models.js","topSection":"anatomy/","id":"anatomy-config-models-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"package.json.ejs","fullPathAndFileName":"anatomy/package.json.ejs","data":{"displayName":"package.json","lastModified":1525104947000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1525104947000,"path":"anatomy/package.json.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"package.json","slug":"anatomy/package.json","topSection":"anatomy/","id":"anatomy-package-json","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"pipeline.js.ejs","fullPathAndFileName":"anatomy/tasks/pipeline.js.ejs","data":{"displayName":"pipeline.js","lastModified":1513802378000},"parent":"anatomy/tasks/tasks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/pipeline.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"pipeline.js","slug":"anatomy/tasks/pipeline.js","topSection":"anatomy/","id":"anatomy-tasks-pipeline-js","version":"","isMethod":false,"parentDisplayName":"tasks"},{"templateTitle":"policies.js.ejs","fullPathAndFileName":"anatomy/config/policies.js.ejs","data":{"displayName":"policies.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/policies.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"policies.js","slug":"anatomy/config/policies.js","topSection":"anatomy/","id":"anatomy-config-policies-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"polyfill.js.ejs","fullPathAndFileName":"anatomy/tasks/register/polyfill.js.ejs","data":{"displayName":"polyfill.js","lastModified":1513802378000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/tasks/register/polyfill.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"polyfill.js","slug":"anatomy/tasks/register/polyfill.js","topSection":"anatomy/","id":"anatomy-tasks-register-polyfill-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"prod.js.ejs","fullPathAndFileName":"anatomy/tasks/register/prod.js.ejs","data":{"displayName":"prod.js","lastModified":1481137537000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/tasks/register/prod.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"prod.js","slug":"anatomy/tasks/register/prod.js","topSection":"anatomy/","id":"anatomy-tasks-register-prod-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"production.js.ejs","fullPathAndFileName":"anatomy/config/env/production.js.ejs","data":{"displayName":"production.js","lastModified":1481139382000},"parent":"anatomy/config/env/env.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481139382000,"path":"anatomy/config/env/production.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"production.js","slug":"anatomy/config/env/production.js","topSection":"anatomy/","id":"anatomy-config-env-production-js","version":"","isMethod":false,"parentDisplayName":"env"},{"templateTitle":"README.md.ejs","fullPathAndFileName":"anatomy/README.md.ejs","data":{"displayName":"README.md","lastModified":1486696310000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1486696310000,"path":"anatomy/README.md.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"README.md","slug":"anatomy/readme.md","topSection":"anatomy/","id":"anatomy-readme-md","version":"","isMethod":false,"parentDisplayName":"anatomy"},{"templateTitle":"routes.js.ejs","fullPathAndFileName":"anatomy/config/routes.js.ejs","data":{"displayName":"routes.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/routes.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"routes.js","slug":"anatomy/config/routes.js","topSection":"anatomy/","id":"anatomy-config-routes-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"sails-linker.js.ejs","fullPathAndFileName":"anatomy/tasks/config/sails-linker.js.ejs","data":{"displayName":"sails-linker.js","lastModified":1486701393000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1486701393000,"path":"anatomy/tasks/config/sails-linker.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"sails-linker.js","slug":"anatomy/tasks/config/sails-linker.js","topSection":"anatomy/","id":"anatomy-tasks-config-sails-linker-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"sails.io.js.ejs","fullPathAndFileName":"anatomy/assets/dependencies/sails.io.js.ejs","data":{"displayName":"sails.io.js","lastModified":1513802378000},"parent":"anatomy/assets/dependencies/dependencies.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/assets/dependencies/sails.io.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"sails.io.js","slug":"anatomy/assets/dependencies/sails.io.js","topSection":"anatomy/","id":"anatomy-assets-dependencies-sails-io-js","version":"","isMethod":false,"parentDisplayName":"dependencies"},{"templateTitle":"security.js.ejs","fullPathAndFileName":"anatomy/config/security.js.ejs","data":{"displayName":"security.js","lastModified":1555669013000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1555669013000,"path":"anatomy/config/security.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"security.js","slug":"anatomy/config/security.js","topSection":"anatomy/","id":"anatomy-config-security-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"session.js.ejs","fullPathAndFileName":"anatomy/config/session.js.ejs","data":{"displayName":"session.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/session.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"session.js","slug":"anatomy/config/session.js","topSection":"anatomy/","id":"anatomy-config-session-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"sockets.js.ejs","fullPathAndFileName":"anatomy/config/sockets.js.ejs","data":{"displayName":"sockets.js","lastModified":1513802378000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"anatomy/config/sockets.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"sockets.js","slug":"anatomy/config/sockets.js","topSection":"anatomy/","id":"anatomy-config-sockets-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"sync.js.ejs","fullPathAndFileName":"anatomy/tasks/config/sync.js.ejs","data":{"displayName":"sync.js","lastModified":1481251311000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481251311000,"path":"anatomy/tasks/config/sync.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"sync.js","slug":"anatomy/tasks/config/sync.js","topSection":"anatomy/","id":"anatomy-tasks-config-sync-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"syncAssets.js.ejs","fullPathAndFileName":"anatomy/tasks/register/syncAssets.js.ejs","data":{"displayName":"syncAssets.js","lastModified":1512882608000},"parent":"anatomy/tasks/register/register.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1512882608000,"path":"anatomy/tasks/register/syncAssets.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"syncAssets.js","slug":"anatomy/tasks/register/syncassets.js","topSection":"anatomy/","id":"anatomy-tasks-register-syncassets-js","version":"","isMethod":false,"parentDisplayName":"register"},{"templateTitle":"uglify.js.ejs","fullPathAndFileName":"anatomy/tasks/config/uglify.js.ejs","data":{"displayName":"uglify.js","lastModified":1524495640000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1524495640000,"path":"anatomy/tasks/config/uglify.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"uglify.js","slug":"anatomy/tasks/config/uglify.js","topSection":"anatomy/","id":"anatomy-tasks-config-uglify-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"views.js.ejs","fullPathAndFileName":"anatomy/config/views.js.ejs","data":{"displayName":"views.js","lastModified":1522060074000},"parent":"anatomy/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522060074000,"path":"anatomy/config/views.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"views.js","slug":"anatomy/config/views.js","topSection":"anatomy/","id":"anatomy-config-views-js","version":"","isMethod":false,"parentDisplayName":"config"},{"templateTitle":"watch.js.ejs","fullPathAndFileName":"anatomy/tasks/config/watch.js.ejs","data":{"displayName":"watch.js","lastModified":1481137537000},"parent":"anatomy/tasks/config/config.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481137537000,"path":"anatomy/tasks/config/watch.js.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"watch.js","slug":"anatomy/tasks/config/watch.js","topSection":"anatomy/","id":"anatomy-tasks-config-watch-js","version":"","isMethod":false,"parentDisplayName":"config"}];
+</script>
+
+<div id="sails-page_anatomy" is="doc-page">
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered>
+    <div  class="anatomy-section">
+      
+      <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/anatomy/views/.eslintrc.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+      
+      <h1 id="views-eslintrc">views/.eslintrc</h1>
+<p>This file overrides your Sails app&apos;s top-level <a href="https://eslint.org/" target="_blank">ESLint</a> configuration, specifically for the <code>views/</code> directory.  It simply extends <a href="../assets/.html"><code>assets/.eslintrc</code></a>, but omits the <code>eol-last</code> rule.</p>
+<p>Certain CI environments, build systems, IDEs, and syntax-highlighting plugins for text editors run ESLint checks on inline <code>&lt;script&gt;</code> tags in HTML files to help catch common mistakes.  Which is great-- except that not all of these tools are quite smart enough to understand that each <code>&lt;script&gt;</code> tag isn&apos;t a separate JavaScript file.  And unfortunately, that can cause some weird issues when <code>eol-last</code> is enabled.</p>
+<p>Luckily, all it takes to disable the <code>eol-last</code> rule for these inline <code>&lt;script&gt;</code> tags is to include this <code>.eslintrc</code> file in the <code>views/</code> directory (which Sails does by default).</p>
+<docmeta name="displayName" value=".eslintrc">
+</docmeta>
+    </div>
+
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    <h3>Want to see for yourself?</h3>
+    
+
+    
+
+    <p>An example of this file can be found in our sample app repo, <a href="https://github.com/balderdashy/seed/tree/master/views/.eslintrc" target="_blank">here</a>.</p>
+    
+  </div>
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../../../index.html">
+        <img class="logo" src="../../../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../../../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../../../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../../../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="../../reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="../../reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../../../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="../../reference.html">Reference</a>
+        <a data-section="concepts" href="../../concepts.html">Concepts</a>
+        <a data-section="anatomy" href="../../anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="../../upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="../../contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="../../tutorials.html">Tutorials</a>
+        <a href="../../../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>App Structure</h4>
+
+      <!-- If this template has a stabilityIndex docMeta tag, show it here -->
+      <div class="stabilityIndex" ng-if="docs.currentPage.data.stabilityIndex" ng-include src="%27/templates/Partials/stability%27%2bdocs.currentPage.data.stabilityIndex%2b%27.html"></div>
+      <br ng-if="docs.currentPage.data.stabilityIndex">
+
+      <ul class="main-sections">
+        
+        <li is="menu-item"
+          data-path="anatomy/api/api.ejs"
+          class="  folder ">
+          
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../api.html">
+    api
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/api/controllers/controllers.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../api/controllers.html">
+    controllers
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/api/controllers/gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../api/controllers/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/api/helpers/helpers.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../api/helpers.html">
+    helpers
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/api/helpers/.gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../api/helpers/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/api/models/models.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../api/models.html">
+    models
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/api/models/.gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../api/models/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/api/policies/policies.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../api/policies.html">
+    policies
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/api/policies/.gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../api/policies/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+</ul>
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/assets/assets.ejs"
+          class="  folder ">
+          
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets.html">
+    assets
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/dependencies/dependencies.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets/dependencies.html">
+    dependencies
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/dependencies/sails.io.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/dependencies/sails.io.html">
+    sails.io.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/images/images.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets/images.html">
+    images
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/images/gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/images/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/js/js.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets/js.html">
+    js
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/js/gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/js/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/styles/styles.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets/styles.html">
+    styles
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/styles/importer.less.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/styles/importer.html">
+    importer.less
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/templates/templates.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../assets/templates.html">
+    templates
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/assets/templates/gitkeep.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/templates/.html">
+    .gitkeep
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/.eslintrc.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/.html">
+    .eslintrc
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/assets/favicon.ico.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../assets/favicon.html">
+    favicon.ico
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/config/config.ejs"
+          class="  folder ">
+          
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../config.html">
+    config
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/config/env/env.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../config/env.html">
+    env
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/config/env/production.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/env/production.html">
+    production.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/locales/locales.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../config/locales.html">
+    locales
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/config/locales/de.json.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/locales/de.html">
+    de.json
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/locales/en.json.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/locales/en.html">
+    en.json
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/locales/es.json.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/locales/es.html">
+    es.json
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/locales/fr.json.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/locales/fr.html">
+    fr.json
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/blueprints.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/blueprints.html">
+    blueprints.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/bootstrap.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/bootstrap.html">
+    bootstrap.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/custom.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/custom.html">
+    custom.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/datastores.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/datastores.html">
+    datastores.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/globals.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/globals.html">
+    globals.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/http.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/http.html">
+    http.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/i18n.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/i18n.html">
+    i18n.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/local.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/local.html">
+    local.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/log.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/log.html">
+    log.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/models.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/models.html">
+    models.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/policies.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/policies.html">
+    policies.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/routes.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/routes.html">
+    routes.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/security.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/security.html">
+    security.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/session.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/session.html">
+    session.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/sockets.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/sockets.html">
+    sockets.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/config/views.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../config/views.html">
+    views.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/tasks/tasks.ejs"
+          class="  folder ">
+          
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../tasks.html">
+    tasks
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/config.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../tasks/config.html">
+    config
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/babel.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/babel.html">
+    babel.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/clean.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/clean.html">
+    clean.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/coffee.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/coffee.html">
+    coffee.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/concat.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/concat.html">
+    concat.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/copy.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/copy.html">
+    copy.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/cssmin.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/cssmin.html">
+    cssmin.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/hash.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/hash.html">
+    hash.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/jst.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/jst.html">
+    jst.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/less.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/less.html">
+    less.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/sails-linker.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/sails-linker.html">
+    sails-linker.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/sync.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/sync.html">
+    sync.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/uglify.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/uglify.html">
+    uglify.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/config/watch.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/config/watch.html">
+    watch.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/register.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../tasks/register.html">
+    register
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/build.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/build.html">
+    build.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/buildProd.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/buildprod.html">
+    buildProd.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/compileAssets.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/compileassets.html">
+    compileAssets.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/default.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/default.html">
+    default.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/linkAssets.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/linkassets.html">
+    linkAssets.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/linkAssetsBuild.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/linkassetsbuild.html">
+    linkAssetsBuild.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/linkAssetsBuildProd.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/linkassetsbuildprod.html">
+    linkAssetsBuildProd.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/polyfill.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/polyfill.html">
+    polyfill.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/prod.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/prod.html">
+    prod.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/register/syncAssets.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/register/syncassets.html">
+    syncAssets.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/tasks/pipeline.js.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="../tasks/pipeline.html">
+    pipeline.js
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/views/views.ejs"
+          class="  folder ">
+          
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="../views.html">
+    views
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/views/layouts/layouts.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="layouts.html">
+    layouts
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/views/layouts/layout.ejs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="layouts/layout.html">
+    layout.ejs
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/views/pages/pages.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  <i class="expand-arrow sails-icon icon-caret-right" is="expand-button" ></i>
+  
+
+  
+
+  <a href="pages.html">
+    pages
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="anatomy/views/pages/homepage.ejs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="pages/homepage.html">
+    homepage.ejs
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/views/.eslintrc.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href=".html">
+    .eslintrc
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/views/404.ejs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="404.html">
+    404.ejs
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="anatomy/views/500.ejs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+
+  <a href="500.html">
+    500.ejs
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/.editorconfig.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../.html">
+    .editorconfig
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/.eslintignore.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../-2.html">
+    .eslintignore
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/.eslintrc.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../-3.html">
+    .eslintrc
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/gitignore.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../-4.html">
+    .gitignore
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/.htmlhintrc.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../-5.html">
+    .htmlhintrc
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/sailsrc.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../-6.html">
+    .sailsrc
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/app.js.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../app.html">
+    app.js
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/Gruntfile.js.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../gruntfile.html">
+    Gruntfile.js
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/package.json.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../package.html">
+    package.json
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+        <li is="menu-item"
+          data-path="anatomy/README.md.ejs"
+          class="   ">
+          
+<span>
+  
+
+  
+
+  <a href="../readme.html">
+    README.md
+  </a>
+</span>
+
+
+
+
+        </li>
+        
+      </ul>
+      
+        <div class="ad">
+          <script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+        </div>
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../../../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../../../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../../../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../../../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../../../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../../../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../../../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="../../reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../../../images/logo_sails.png">
+        <p class="license-info"><a href="../../../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../../../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/anatomy/views/.eslintrc by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:27:20 GMT -->
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/whats-that by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:17:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>What is Sails? | Sails.js</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    <!-- Header -->
+<div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="index.html">
+        <img class="logo" src="images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="documentation/reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  " href="documentation/reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" ></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+
+<!-- White bar with github updates & social media -->
+<div id="news-banner">
+  <div class="banner-container">
+
+    
+    <p class="fallback">
+      Check out the latest developments in the <a target="_blank" href="https://github.com/balderdashy/sails">GitHub repo</a>.
+    </p>
+    
+
+    <!-- other news can go here.... -->
+
+    <!-- e.g.: -->
+    <!-- <p ng-hide="options.error">Latest update on Github <a target="_blank" href="{{options.latestCommit.url}}">{{options.latestCommit.date | date: 'short'}}</a></p> -->
+
+    <div class="sharing">
+      <div>
+        <iframe src="http://ghbtns.com/github-btn.html?user=balderdashy&amp;repo=sails&amp;type=watch&amp;count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+      </div>
+
+      <div>
+        <iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsailsjs&amp;width=75&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:86px; height:21px;" allowTransparency="true"></iframe>
+      </div>
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="#sailsjs, the realtime MVC framework for Node.js:" data-url="http://sailsjs.com" data-lang="en">Tweet</a>
+
+      <a href="https://twitter.com/sailsjs" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @sailsjs</a>
+    </div> <!-- sharing -->
+  </div>
+</div> <!-- white bar -->
+
+
+<div id="sails-page_what-is-sails">
+  <div class="page-header">
+    <div class="page-header-container">
+      <!-- <img src="http://placehold.it/175x175/f8f8f8?text=TBD"/> -->
+      <h1>What is Sails?</h1>
+      <h5>The inspiration and philosophies behind the framework.</h5>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <hr/>
+
+    <section>
+      <h2>What is Sails? And what <em>isn't</em> it?</h2>
+      <p>Sails is, of course, a web framework. But take a step back. What does that mean? Sometimes, when we refer to the "web", we mean the "front-end web." We think of concepts like web standards, or HTML 5, or CSS 3; and frameworks like React, or Vue.js, or jQuery. Sails is not "that kind" of a web framework. Sails works great with React and Vue, but you would never use Sails <em>instead</em> of those libraries.</p>
+
+      <p>On the other hand, sometimes when we talk about "web frameworks", we mean the "back-end web." This evokes concepts like REST, or HTTP, or WebSockets; and technologies like Java, or Ruby, or Node.js. A "back-end web" framework helps you do things like build APIs, serve HTML files, and handle hundreds of thousands of simultaneous users. Sails is "that kind" of web framework.</p>
+
+      <p><a href="documentation/concepts/routes.html" class="link-btn link-btn-secondary">Next up: Routes<i class="sails-icon icon-arrow-circle-right"></i></a></p>
+    </section>
+
+    <!-- <hr/> -->
+
+    <!-- <section>
+      <h2>Convention over Configuration</h2>
+
+      <p>Sails accomplishes many of the same goals as other MVC web application frameworks, using many of the same methodologies. This was done on purpose. A consistent approach makes developing apps more predictable and efficient for everybody involved.</p>
+
+      <p>Imagine starting a new job at a company building a Sails app (or imagine starting the company, if that's your thing.) If anyone on your team has worked with frameworks like Zend, Laravel, CodeIgniter, Cake, Grails, Django, ASP.NET MVC, or Rails, Sails will feel pretty familiar. Not only that, but they can look at a Sails project and know, generally, how to code up the basic patterns they've implemented over and over again in the past; whether their background is in PHP, Ruby, Java, C#, or Node.js. What about your second app, or your third? Each time you create a new Sails app, you start with a sane, familiar boilerplate that makes you more productive. In many cases, you'll even be able to recycle some of your backend code.</p>
+
+      <p>Sails didn't invent this concept-- it's been around for years. Even before the phrase "Convention over Configuration" (or CoC) was popularized by Ruby on Rails, it was a core tenet of the JavaBeans specification and in many ways, a natural lashback against the extremely verbose XML configuration common in traditional Java web frameworks of the late '90s and early 2000s.</p>
+
+    </section> -->
+    <!-- <hr/> -->
+    <!-- <section>
+
+      <h2>Loose Coupling</h2>
+
+      <p>The days of forcing a one-size-fits-all approach to development are over. We need tools that allow us to pick and choose the components that fit our requirements. In fact, it’s just plain lazy to create things any other way. Sails’s approach is to loosely couple components so that they can be added or subtracted from your app at will.</p>
+
+      <p>Node at its core has created a “can do” culture eager to experiment and make things work. Sails embraces this attitude and strives to deliver tools that work around you. The level of automation or magic you want in Sails is directly tied to the time you have for a project and your experience working with Node. Sails is flexible enough to allow you to explore and create when you have the time but also provides automation when you don’t.</p>
+
+      <p>Sails accomplishes this loose coupling using plain-old require. No magic, other than the time to craft components that can be part of the whole but don’t need to be present in order for the whole to work. For example, controllers, models, and configuration files are just Node modules. Sails uses some convention to help. Sails picks up on the name UserController.js in the Controllers folder to deduce that this is indeed a user controller. Another example involves policies. So policies allow you to have a bit of code that executes on controller or specific controller action. The cool part is that the configuration file that connects the policy with the controller/action are separate. That means you can write a bunch of different policies and they are completely portable between Sails apps. You can decide later which controller/actions you want to apply them to.</p>
+
+      <p>Sails core consists of twenty different hooks: modules that modify the server runtime, adding middleware, binding route listeners, or otherwise attaching additional capabilities to the framework. This gives you access to override or disable every component and configuration parameter in Sails. These hooks are loaded at run-time when Sails starts. You even have the ability to have one-time configuration for your hook itself. This is actually one of the key differentiators between hooks and services.</p>
+
+      <p>Another example of loose coupling is configuration files. Need some configuration to be available for your project? No problem. Create a file in the config folder that uses the common module.exports pattern and everything in that module is available for you from the sails global object.</p>
+
+      <p>Almost every component of Sails can either be omitted, overwritten, or extended. For example, Sails has a group of tools called blueprints. These blueprints make it really easy to get a project up and running with regard to routes and CRUD operations. But suppose you want to use the read, update, and delete operations but the create action needs some tender loving care. No problem, just build a create action and the other CRUD operations keep working. Your custom action subs in for the blueprint action. It’s just that simple.</p>
+      <p><a href="/documentation/concepts/routes" class="link-btn link-btn-secondary">Next up: Routes<i class="sails-icon icon-arrow-circle-right"></i></a></p>
+    </section> -->
+  </div>
+
+  <!-- 'Go build yer app' section-->
+  <div class="build-app">
+    <div class="container">
+      <h3>Using Sails at work?</h3>
+      <p>You may want to take a look at our <a href="support.html">support resources</a>, or consider <a href="about.html">partnering with us</a> to build your product.</p>
+      <div class="btns">
+        <a href="support.html">
+          <div class="btn left-btn">
+            <span>
+              Support
+            </span>
+          </div>
+        </a>
+        <a href="about.html">
+          <div class="btn right-btn">
+            <span>
+              About our team
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="about.html">Our company</a>
+            </li>
+            <li>
+              <a href="security.html">Security</a>
+            </li>
+            <li>
+              <a href="legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="documentation/reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="documentation/reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="documentation/contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="images/logo_sails.png">
+        <p class="license-info"><a href="about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'what-is-sails'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/whats-that by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:17:50 GMT -->
+</html>

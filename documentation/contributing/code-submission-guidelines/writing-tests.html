@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/contributing/code-submission-guidelines/writing-tests by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Writing tests</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"best-practices.ejs","fullPathAndFileName":"contributing/code-submission-guidelines/best-practices.ejs","data":{"displayName":"Best Practices","lastModified":1556560920000},"parent":"contributing/code-submission-guidelines/code-submission-guidelines.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1556560920000,"path":"contributing/code-submission-guidelines/best-practices.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Best Practices","slug":"contributing/code-submission-guidelines/best-practices","topSection":"contributing/","id":"contributing-code-submission-guidelines-best-practices","version":"","isMethod":false,"parentDisplayName":"code-submission-guidelines"},{"templateTitle":"code-of-conduct.ejs","fullPathAndFileName":"contributing/code-of-conduct.ejs","data":{"displayName":"Code of conduct","lastModified":1483241461000},"notShownOnWebsite":false,"lastModified":1483241461000,"path":"contributing/code-of-conduct.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Code of conduct","slug":"contributing/code-of-conduct","topSection":"contributing/","id":"contributing-code-of-conduct","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"code-submission-guidelines.ejs","fullPathAndFileName":"contributing/code-submission-guidelines/code-submission-guidelines.ejs","realPath":"contributing/code-submission-guidelines/","data":{"displayName":"Code submission guidelines","lastModified":1556829308000},"children":["contributing/code-submission-guidelines/best-practices.ejs","contributing/code-submission-guidelines/sending-pull-requests.ejs","contributing/code-submission-guidelines/writing-tests.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1556829308000,"path":"contributing/code-submission-guidelines/code-submission-guidelines.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Code submission guidelines","slug":"contributing/code-submission-guidelines","topSection":"contributing/","id":"contributing-code-submission-guidelines","version":"","isMethod":false,"parentDisplayName":"code-submission-guidelines"},{"templateTitle":"adapter-specification.ejs","fullPathAndFileName":"contributing/adapter-specification.ejs","data":{"notShownOnWebsite":"true","lastModified":1512899335000},"notShownOnWebsite":true,"lastModified":1512899335000,"path":"contributing/adapter-specification.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Contributing Adapter Specification Ejs","slug":"","id":"","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"intro-to-custom-adapters.ejs","fullPathAndFileName":"contributing/intro-to-custom-adapters.ejs","data":{"notShownOnWebsite":"true","lastModified":1486073431000},"notShownOnWebsite":true,"lastModified":1486073431000,"path":"contributing/intro-to-custom-adapters.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Contributing Intro To Custom Adapters Ejs","slug":"","id":"","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"stability-index.ejs","fullPathAndFileName":"contributing/stability-index.ejs","data":{"notShownOnWebsite":"true","lastModified":1482884348000},"notShownOnWebsite":true,"lastModified":1482884348000,"path":"contributing/stability-index.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Contributing Stability Index Ejs","slug":"","id":"","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"preface.ejs","fullPathAndFileName":"contributing/preface.ejs","data":{"displayName":"Contributing to Sails","isOverviewPage":"true","lastModified":1513802378000},"notShownOnWebsite":false,"lastModified":1513802378000,"path":"contributing/preface.ejs","isTableOfContents":false,"isOverviewPage":true,"displayName":"Contributing to Sails","slug":"contributing","topSection":"contributing/","id":"contributing","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"contributing-to-the-documentation.ejs","fullPathAndFileName":"contributing/contributing-to-the-documentation.ejs","data":{"displayName":"Contributing to the docs","lastModified":1556826630000},"notShownOnWebsite":false,"lastModified":1556826630000,"path":"contributing/contributing-to-the-documentation.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Contributing to the docs","slug":"contributing/contributing-to-the-docs","topSection":"contributing/","id":"contributing-contributing-to-the-docs","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"contributors-pledge.ejs","fullPathAndFileName":"contributing/contributors-pledge.ejs","data":{"displayName":"Contributor's pledge","lastModified":1482884348000},"notShownOnWebsite":false,"lastModified":1482884348000,"path":"contributing/contributors-pledge.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Contributor's pledge","slug":"contributing/contributor-s-pledge","topSection":"contributing/","id":"contributing-contributor-s-pledge","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"core-maintainers.ejs","fullPathAndFileName":"contributing/core-maintainers.ejs","data":{"displayName":"Core maintainers","lastModified":1556726211000},"notShownOnWebsite":false,"lastModified":1556726211000,"path":"contributing/core-maintainers.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Core maintainers","slug":"contributing/core-maintainers","topSection":"contributing/","id":"contributing-core-maintainers","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"issue-contributions.ejs","fullPathAndFileName":"contributing/issue-contributions.ejs","data":{"displayName":"Issue contributions","lastModified":1556730595000},"notShownOnWebsite":false,"lastModified":1556730595000,"path":"contributing/issue-contributions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Issue contributions","slug":"contributing/issue-contributions","topSection":"contributing/","id":"contributing-issue-contributions","version":"","isMethod":false,"parentDisplayName":"contributing"},{"templateTitle":"proposing-features.ejs","fullPathAndFileName":"contributing/proposing-features/proposing-features.ejs","realPath":"contributing/proposing-features/","data":{"displayName":"Proposing features/enhancements","lastModified":1513802378000},"children":["contributing/proposing-features/submitting-a-proposal.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"contributing/proposing-features/proposing-features.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Proposing features/enhancements","slug":"contributing/proposing-features-enhancements","topSection":"contributing/","id":"contributing-proposing-features-enhancements","version":"","isMethod":false,"parentDisplayName":"proposing-features"},{"templateTitle":"sending-pull-requests.ejs","fullPathAndFileName":"contributing/code-submission-guidelines/sending-pull-requests.ejs","data":{"displayName":"Sending pull requests","lastModified":1556719861000},"parent":"contributing/code-submission-guidelines/code-submission-guidelines.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1556719861000,"path":"contributing/code-submission-guidelines/sending-pull-requests.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Sending pull requests","slug":"contributing/code-submission-guidelines/sending-pull-requests","topSection":"contributing/","id":"contributing-code-submission-guidelines-sending-pull-requests","version":"","isMethod":false,"parentDisplayName":"code-submission-guidelines"},{"templateTitle":"submitting-a-proposal.ejs","fullPathAndFileName":"contributing/proposing-features/submitting-a-proposal.ejs","data":{"displayName":"Submitting a proposal","lastModified":1482884348000},"parent":"contributing/proposing-features/proposing-features.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1482884348000,"path":"contributing/proposing-features/submitting-a-proposal.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Submitting a proposal","slug":"contributing/proposing-features-enhancements/submitting-a-proposal","topSection":"contributing/","id":"contributing-proposing-features-enhancements-submitting-a-proposal","version":"","isMethod":false,"parentDisplayName":"proposing-features"},{"templateTitle":"writing-tests.ejs","fullPathAndFileName":"contributing/code-submission-guidelines/writing-tests.ejs","data":{"displayName":"Writing tests","lastModified":1556724317000},"parent":"contributing/code-submission-guidelines/code-submission-guidelines.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1556724317000,"path":"contributing/code-submission-guidelines/writing-tests.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Writing tests","slug":"contributing/code-submission-guidelines/writing-tests","topSection":"contributing/","id":"contributing-code-submission-guidelines-writing-tests","version":"","isMethod":false,"parentDisplayName":"code-submission-guidelines"}];
+</script>
+
+<div id="sails-page_reference-or-concepts" is="doc-page">
+  <!-- Main content -->
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered >
+    
+    
+    <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/contributing/code-submission-guidelines/writing-tests.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+    <h1 id="writing-tests">Writing tests</h1>
+<h3 id="what-to-test" permalink="what-to-test">What to test</h3>
+<p>In an ideal world, any possible action you could perform as a Sails user&#x2014;whether programatically or via the command-line tool&#x2014;would have a test. However, the number of configuration variations in Sails, along with the fact that userland code can override just about any key piece of core, means we&apos;ll never <em>quite</em> get to this point.  And that&apos;s okay.</p>
+<p>Instead, the Sails project&apos;s goal is for any <em>feature of Sails</em> you might use&#x2014;programatically or via the command-line tool&#x2014;to have a test.  In cases where these features are implemented within a dependency, the only tests for that feature exist within that dependency (e.g. <a href="https://github.com/balderdashy/waterline/tree/master/test" target="_blank">Waterline</a>, <a href="https://github.com/balderdashy/skipper/tree/master/test" target="_blank">Skipper</a>, and <a href="https://github.com/balderdashy/captains-log/tree/master/test" target="_blank">Captains Log</a>).  Even in these cases, though, tests in Sails inevitably end up retesting certain features that are already verified by Sails&apos; dependencies, and there&apos;s nothing wrong with that.</p>
+<h3 id="what-not-to-test" permalink="what-not-to-test">What <em>not</em> to test</h3>
+<p>We should strive to avoid tests which verify exclusivity: it cripples our ability to develop quickly.  In other words, tests should not fail with the introduction of additive features.</p>
+<p>For instance, if you&apos;re writing a test to check that the appropriate files have been created with <code>sails new</code>, it would make sense to check for those files, but it would <em>not</em> make sense to ensure that ONLY those files were created (i.e. adding a new file should not break the tests).</p>
+<p>Another example is a test which verifies the correctness of blueprint configuration, e.g. <code>sails.config.blueprints.rest</code>.  The test should check that blueprints behave properly with the <code>rest</code> config enabled and disabled.  We could change the configuration, add more controller-specific options, etc., and we&apos;d only need to write new tests.</p>
+<p>If, on the other hand, our strategy for testing the behavior of the blueprints involved evaluating the behavior and <em>then</em> making a judgement on what the config &quot;<em>should</em>&quot; look like, we&apos;d have to modify the tests when we added new options.  This may not sound like a big deal, but it can grow out of proportion quickly!</p>
+<!--
+### Structural Conventions
+
+Sails's tests are broken up into three distinct types- `unit`, `integration`, and `benchmark` tests.  See the README.md file in each directory for more information about the distinction and purpose of each type of test, as well as a shortlist of ways you can get involved.
+
+The following conventions are true for all three types of tests:
+
++ Instead of partitioning tests for various components into subdirectories, the test files are located in the top level of the directory for their test type (i.e. `/test/TEST_TYPE/*.test.js`).
++ All test filenames have the `*.test.js` suffix.
++ Each test file for a particular component is namespaced with a prefix describing the relevant component (e.g. `router.specifiedRoutes.test.js`, `router.APIScaffold.test.js`, etc.).
++ Tests for core hooks are namespaced according to the hook that they test, e.g. `hook.policies.test.js`.
++ If tests for a core hook need to span multiple files, maintain the namespacing, e.g. `hook.policies.load.test.js` and `hook.policies.teardown.test.js`.
+
+> **Reasoning**
+>
+> Filenames like these make it easy to differentiate tests from core files when performing a flat search on the repository (i.e. CMD/CTRL+P in Sublime).  Likewise, this makes the process easier to automate-- you can quickly grab all the test files with a simple recursive find on the command-line, for instance.
+
+#### `fixtures` directory
+Contains sample data/files/templates used for testing (e.g. a dummy Sails app or simple middleware functions)
+
+#### `helpers` directory
+Logic to help setup or teardown Sails, read fixtures, and otherwise simplify the logic in our tests.
+-->
+<docmeta name="displayName" value="Writing tests">
+</docmeta>
+    
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    
+    <h3>Using Sails at work?</h3>
+    <p>If your company has the budget, consider purchasing <a href="../../../flagship.html">Flagship support</a>.  It's a great way to support the ongoing development of the open source tools you use every day.  And it gives you an extra lifeline to the Sails core team.</p>
+    
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../../../index.html">
+        <img class="logo" src="../../../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../../../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../../../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../../../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="../../reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="../../reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../../../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="../../reference.html">Reference</a>
+        <a data-section="concepts" href="../../concepts.html">Concepts</a>
+        <a data-section="anatomy" href="../../anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="../../upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="../../contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="../../tutorials.html">Tutorials</a>
+        <a href="../../../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>Contribution guide</h4>
+      <ul class="main-sections">
+        
+
+          <li is="menu-item"
+            data-path="contributing/code-of-conduct.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../code-of-conduct.html">
+    Code of conduct
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/code-submission-guidelines/code-submission-guidelines.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../code-submission-guidelines.html">
+    Code submission guidelines
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="contributing/code-submission-guidelines/best-practices.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="best-practices.html">
+    Best Practices
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="contributing/code-submission-guidelines/sending-pull-requests.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="sending-pull-requests.html">
+    Sending pull requests
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="contributing/code-submission-guidelines/writing-tests.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="writing-tests.html">
+    Writing tests
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/contributing-to-the-documentation.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../contributing-to-the-docs.html">
+    Contributing to the docs
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/contributors-pledge.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../contributor-s-pledge.html">
+    Contributor&#39;s pledge
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/core-maintainers.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../core-maintainers.html">
+    Core maintainers
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/issue-contributions.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../issue-contributions.html">
+    Issue contributions
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="contributing/proposing-features/proposing-features.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../proposing-features-enhancements.html">
+    Proposing features/enhancements
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="contributing/proposing-features/submitting-a-proposal.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../proposing-features-enhancements/submitting-a-proposal.html">
+    Submitting a proposal
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+      </ul>
+      
+      <div class="ad">
+        <script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../../../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../../../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../../../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../../../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../../../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../../../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../../../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="../../reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../../../images/logo_sails.png">
+        <p class="license-info"><a href="../../../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../../../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/contributing/code-submission-guidelines/writing-tests by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:49 GMT -->
+</html>

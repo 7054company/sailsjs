@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/upgrading by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Upgrading</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"upgrading.ejs","fullPathAndFileName":"upgrading/upgrading.ejs","realPath":"upgrading/","data":{"displayName":"Upgrading","isOverviewPage":"true","lastModified":1558394142000},"children":["upgrading/To1.0.ejs","upgrading/To0.12.ejs","upgrading/To0.11.ejs","upgrading/To0.10.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1558394142000,"path":"upgrading/upgrading.ejs","isTableOfContents":false,"isOverviewPage":true,"displayName":"Upgrading","slug":"upgrading","topSection":"upgrading/","id":"upgrading","version":"","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To1.0.ejs","fullPathAndFileName":"upgrading/To1.0.ejs","data":{"displayName":"To v.1.0","version":"1.0.0","lastModified":1559257619000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1559257619000,"path":"upgrading/To1.0.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.1.0","slug":"upgrading/to-v-1-0","topSection":"upgrading/","id":"upgrading-to-v-1-0","version":"1.0.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.12.ejs","fullPathAndFileName":"upgrading/To0.12.ejs","data":{"displayName":"To v0.12","version":"0.12.0","lastModified":1558388814000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1558388814000,"path":"upgrading/To0.12.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.12","slug":"upgrading/to-v-0-12","topSection":"upgrading/","id":"upgrading-to-v-0-12","version":"0.12.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.11.ejs","fullPathAndFileName":"upgrading/To0.11.ejs","data":{"displayName":"To v0.11","version":"0.11.0","lastModified":1522061568000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"upgrading/To0.11.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.11","slug":"upgrading/to-v-0-11","topSection":"upgrading/","id":"upgrading-to-v-0-11","version":"0.11.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.10.ejs","fullPathAndFileName":"upgrading/To0.10.ejs","data":{"displayName":"To v.0.10","version":"0.10.0","lastModified":1482884348000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1482884348000,"path":"upgrading/To0.10.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.0.10","slug":"upgrading/to-v-0-10","topSection":"upgrading/","id":"upgrading-to-v-0-10","version":"0.10.0","isMethod":false,"parentDisplayName":"upgrading"}];
+</script>
+
+<div id="sails-page_reference-or-concepts" is="doc-page">
+  <!-- Main content -->
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered >
+    
+    
+    <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/upgrading/upgrading.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+    <h1 id="upgrading">Upgrading</h1>
+<p>Like most Node packages, Sails respects <a href="http://semver.org/" target="_blank">semantic versioning</a>.  For example, if you are using Sails v0.11.3, and then upgrade to Sails v0.11.4, you shouldn&apos;t need to change your application code.  This is called a <strong>patch release</strong>.  On the other hand, if you upgrade from Sails v0.11.3 to v1.0.0, you can expect some <em>breaking changes</em>, meaning that you will need to change your Sails app&apos;s code in order to use the new version.  With any framework or tool, <em>some</em> breaking changes are inevitable over time, but you can expect to see these kinds of changes less often as the APIs in Node and Sails continue to stabilize.  In the meantime, the core maintainers strive to minimize breaking changes and maintain backwards compatibility where possible.</p>
+<h3 id="version-notes" permalink="version-notes">Version notes</h3>
+<p>For details about changes between versions, as well as a migration guide to assist you in making an necessary changes to your app, please refer to the appropriate page:</p>
+<ul>
+<li><a href="upgrading/to-v-1-0.html">v1.x</a></li>
+<li><a href="upgrading.html">v0.12.x</a></li>
+<li><a href="upgrading.html">v0.11.x</a></li>
+<li><a href="upgrading.html">v0.10.x</a></li>
+</ul>
+<h3 id="notes" permalink="notes">Notes</h3>
+<blockquote>
+<ul>
+<li>Like Node.js, minor version bumps in Sails versions prior to v1.0 included breaking changes&#x2014;e.g. upgrading from v0.11.3 to v0.12.0 might force you to make some changes to your code.  But from v1.0.0 and on, minor version (the second number) releases should be fully backwards compatible.  For example, v1.1.0 to v1.2.0 should not force you to make changes to your code, whereas upgrading to v2.0.0 might.</li>
+<li>If you are more than one version behind the latest release and run into difficulties, consider updating your app one step at a time. The migration guides are written with a particular version diff in mind, and it&apos;s best to isolate as many variables as possible.  For instance, if you are running Sails v0.11 and trying to upgrade to Sails v1.5.18 but having trouble, try first upgrading to Sails v0.11, then v0.12, <em>then</em> v1.5.18.</li>
+</ul>
+</blockquote>
+<p><docmeta name="displayName" value="Upgrading"></docmeta></p>
+<docmeta name="isOverviewPage" value="true">
+</docmeta>
+    
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    
+    <h3>Need help upgrading?</h3>
+    <p>If your company has the budget, consider purchasing <a href="../flagship.html">Flagship support</a>.  It's a great way to support the ongoing development of the open source tools you use every day.  And it gives you an extra lifeline to the Sails core team.</p>
+    
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../index.html">
+        <img class="logo" src="../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="reference.html">Reference</a>
+        <a data-section="concepts" href="concepts.html">Concepts</a>
+        <a data-section="anatomy" href="anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="tutorials.html">Tutorials</a>
+        <a href="../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>Upgrading</h4>
+      <ul class="main-sections">
+        
+
+          <li is="menu-item"
+            data-path="upgrading/To1.0.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="upgrading/to-v-1-0.html">
+    To v.1.0
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.12.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="upgrading/to-v-0-12.html">
+    To v0.12
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.11.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="upgrading/to-v-0-11.html">
+    To v0.11
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.10.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="upgrading/to-v-0-10.html">
+    To v.0.10
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+      </ul>
+      
+      <div class="ad">
+        <script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../images/logo_sails.png">
+        <p class="license-info"><a href="../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/upgrading by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:15 GMT -->
+</html>

@@ -1,0 +1,3195 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/concepts/models-and-orm/validations by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Validations</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"configure.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/configure.ejs","data":{"displayName":".configure()","stabilityIndex":"3","lastModified":1551282167000},"parent":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551282167000,"path":"concepts/extending-sails/Hooks/hookspec/configure.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".configure()","slug":"concepts/extending-sails/hooks/hook-specification/configure","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification-configure","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"defaults.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/defaults.ejs","data":{"displayName":".defaults","stabilityIndex":"3","lastModified":1522060074000},"parent":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522060074000,"path":"concepts/extending-sails/Hooks/hookspec/defaults.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".defaults","slug":"concepts/extending-sails/hooks/hook-specification/defaults","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification-defaults","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"initialize.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/initialize.ejs","data":{"displayName":".initialize()","stabilityIndex":"3","lastModified":1551283725000},"parent":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551283725000,"path":"concepts/extending-sails/Hooks/hookspec/initialize.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".initialize()","slug":"concepts/extending-sails/hooks/hook-specification/initialize","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification-initialize","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"register-actions.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/register-actions.ejs","data":{"displayName":".registerActions()","stabilityIndex":"3","lastModified":1522060074000},"parent":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522060074000,"path":"concepts/extending-sails/Hooks/hookspec/register-actions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".registerActions()","slug":"concepts/extending-sails/hooks/hook-specification/register-actions","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification-register-actions","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"routes.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/routes.ejs","data":{"displayName":".routes","stabilityIndex":"3","lastModified":1522061568000},"parent":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"concepts/extending-sails/Hooks/hookspec/routes.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":".routes","slug":"concepts/extending-sails/hooks/hook-specification/routes","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification-routes","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"Permissions.ejs","fullPathAndFileName":"concepts/Policies/Permissions.ejs","data":{"displayName":"Access Control and Permissions","lastModified":1553524534000},"parent":"concepts/Policies/Policies.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553524534000,"path":"concepts/Policies/Permissions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Access Control and Permissions","slug":"concepts/policies/access-control-and-permissions","topSection":"concepts/","id":"concepts-policies-access-control-and-permissions","version":"","isMethod":false,"parentDisplayName":"Policies"},{"templateTitle":"ActionsAndControllers.ejs","fullPathAndFileName":"concepts/ActionsAndControllers/ActionsAndControllers.ejs","realPath":"concepts/ActionsAndControllers/","data":{"displayName":"Actions and controllers","nextUpLink":"/documentation/concepts/views","nextUpName":"Views","lastModified":1559254761000},"parent":"","isChild":false,"children":["concepts/ActionsAndControllers/GeneratingActions.ejs","concepts/ActionsAndControllers/RoutingToActions.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1559254761000,"path":"concepts/ActionsAndControllers/ActionsAndControllers.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Actions and controllers","slug":"concepts/actions-and-controllers","topSection":"concepts/","id":"concepts-actions-and-controllers","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/views","nextUpName":"Views","parentDisplayName":"ActionsAndControllers"},{"templateTitle":"Adapters.ejs","fullPathAndFileName":"concepts/extending-sails/Adapters/Adapters.ejs","realPath":"concepts/extending-sails/Adapters/","data":{"displayName":"Adapters","stabilityIndex":"3","lastModified":1513802378000},"parent":"concepts/extending-sails/extending-sails.ejs","isChild":true,"children":["concepts/extending-sails/Adapters/adapterList.ejs","concepts/extending-sails/Adapters/customAdapters.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/extending-sails/Adapters/Adapters.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Adapters","slug":"concepts/extending-sails/adapters","topSection":"concepts/","id":"concepts-extending-sails-adapters","version":"","isMethod":false,"parentDisplayName":"Adapters"},{"templateTitle":"AddingCustomResponse.ejs","fullPathAndFileName":"concepts/extending-sails/Custom Responses/AddingCustomResponse.ejs","data":{"displayName":"Adding a custom response","lastModified":1487379955000},"parent":"concepts/extending-sails/Custom Responses/Custom Responses.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1487379955000,"path":"concepts/extending-sails/Custom Responses/AddingCustomResponse.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Adding a custom response","slug":"concepts/extending-sails/custom-responses/adding-a-custom-response","topSection":"concepts/","id":"concepts-extending-sails-custom-responses-adding-a-custom-response","version":"","isMethod":false,"parentDisplayName":"Custom Responses"},{"templateTitle":"Assets.ejs","fullPathAndFileName":"concepts/Assets/Assets.ejs","realPath":"concepts/Assets/","data":{"displayName":"Assets","nextUpLink":"/documentation/concepts/shell-scripts","nextUpName":"Shell Scripts","lastModified":1549297304000},"parent":"","isChild":false,"children":["concepts/Assets/DefaultTasks.ejs","concepts/Assets/DisablingGrunt.ejs","concepts/Assets/TaskAutomation.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1549297304000,"path":"concepts/Assets/Assets.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Assets","slug":"concepts/assets","topSection":"concepts/","id":"concepts-assets","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/shell-scripts","nextUpName":"Shell Scripts","parentDisplayName":"Assets"},{"templateTitle":"Associations.ejs","fullPathAndFileName":"concepts/ORM/Associations/Associations.ejs","realPath":"concepts/ORM/Associations/","data":{"displayName":"Associations","lastModified":1552318470000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"children":["concepts/ORM/Associations/ManytoMany.ejs","concepts/ORM/Associations/OneWayAssociation.ejs","concepts/ORM/Associations/OnetoMany.ejs","concepts/ORM/Associations/OnetoOne.ejs","concepts/ORM/Associations/Reflexive.ejs","concepts/ORM/Associations/ThroughAssociations.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1552318470000,"path":"concepts/ORM/Associations/Associations.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Associations","slug":"concepts/models-and-orm/associations","topSection":"concepts/","id":"concepts-models-and-orm-associations","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"Attributes.ejs","fullPathAndFileName":"concepts/ORM/Attributes.ejs","data":{"displayName":"Attributes","lastModified":1553018891000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553018891000,"path":"concepts/ORM/Attributes.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Attributes","slug":"concepts/models-and-orm/attributes","topSection":"concepts/","id":"concepts-models-and-orm-attributes","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"adapterList.ejs","fullPathAndFileName":"concepts/extending-sails/Adapters/adapterList.ejs","data":{"displayName":"Available adapters","lastModified":1551108949000},"parent":"concepts/extending-sails/Adapters/Adapters.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551108949000,"path":"concepts/extending-sails/Adapters/adapterList.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Available adapters","slug":"concepts/extending-sails/adapters/available-adapters","topSection":"concepts/","id":"concepts-extending-sails-adapters-available-adapters","version":"","isMethod":false,"parentDisplayName":"Adapters"},{"templateTitle":"generatorList.ejs","fullPathAndFileName":"concepts/extending-sails/Generators/generatorList.ejs","data":{"displayName":"Available generators","lastModified":1551111170000},"parent":"concepts/extending-sails/Generators/Generators.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551111170000,"path":"concepts/extending-sails/Generators/generatorList.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Available generators","slug":"concepts/extending-sails/generators/available-generators","topSection":"concepts/","id":"concepts-extending-sails-generators-available-generators","version":"","isMethod":false,"parentDisplayName":"Generators"},{"templateTitle":"available-hooks.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/available-hooks.ejs","data":{"displayName":"Available hooks","lastModified":1551281511000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551281511000,"path":"concepts/extending-sails/Hooks/available-hooks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Available hooks","slug":"concepts/extending-sails/hooks/available-hooks","topSection":"concepts/","id":"concepts-extending-sails-hooks-available-hooks","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"Blueprint Actions.ejs","fullPathAndFileName":"concepts/Blueprints/Blueprint Actions.ejs","data":{"displayName":"Blueprint actions","lastModified":1513802378000},"parent":"concepts/Blueprints/Blueprints.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/Blueprints/Blueprint Actions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Blueprint actions","slug":"concepts/blueprints/blueprint-actions","topSection":"concepts/","id":"concepts-blueprints-blueprint-actions","version":"","isMethod":false,"parentDisplayName":"Blueprints"},{"templateTitle":"Blueprint Routes.ejs","fullPathAndFileName":"concepts/Blueprints/Blueprint Routes.ejs","data":{"displayName":"Blueprint routes","lastModified":1555342494000},"parent":"concepts/Blueprints/Blueprints.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1555342494000,"path":"concepts/Blueprints/Blueprint Routes.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Blueprint routes","slug":"concepts/blueprints/blueprint-routes","topSection":"concepts/","id":"concepts-blueprints-blueprint-routes","version":"","isMethod":false,"parentDisplayName":"Blueprints"},{"templateTitle":"Blueprints.ejs","fullPathAndFileName":"concepts/Blueprints/Blueprints.ejs","realPath":"concepts/Blueprints/","data":{"displayName":"Blueprints","lastModified":1513802378000},"parent":"","isChild":false,"children":["concepts/Blueprints/Blueprint Actions.ejs","concepts/Blueprints/Blueprint Routes.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/Blueprints/Blueprints.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Blueprints","slug":"concepts/blueprints","topSection":"concepts/","id":"concepts-blueprints","version":"","isMethod":false,"parentDisplayName":"Blueprints"},{"templateTitle":"Clickjacking.ejs","fullPathAndFileName":"concepts/Security/Clickjacking.ejs","data":{"displayName":"Clickjacking","tags":"clickjacking,ui redress attack","lastModified":1554302106000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554302106000,"path":"concepts/Security/Clickjacking.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Clickjacking","slug":"concepts/security/clickjacking","topSection":"concepts/","id":"concepts-security-clickjacking","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"README.ejs","fullPathAndFileName":"concepts/README.ejs","data":{"notShownOnWebsite":"true","lastModified":1513802378000},"parent":"","isChild":false,"notShownOnWebsite":true,"lastModified":1513802378000,"path":"concepts/README.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Concepts README Ejs","slug":"","id":"","version":"","isMethod":false,"parentDisplayName":"concepts"},{"templateTitle":"Configuration.ejs","fullPathAndFileName":"concepts/Configuration/Configuration.ejs","realPath":"concepts/Configuration/","data":{"displayName":"Configuration","nextUpLink":"/documentation/concepts/policies","nextUpName":"Policies","lastModified":1560853673000},"parent":"","isChild":false,"children":["concepts/Configuration/localjsfile.ejs","concepts/Configuration/usingsailsrcfiles.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1560853673000,"path":"concepts/Configuration/Configuration.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Configuration","slug":"concepts/configuration","topSection":"concepts/","id":"concepts-configuration","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/policies","nextUpName":"Policies","parentDisplayName":"Configuration"},{"templateTitle":"ContentSecurityPolicy.ejs","fullPathAndFileName":"concepts/Security/ContentSecurityPolicy.ejs","data":{"displayName":"Content security policy","tags":"csp,content security policy","lastModified":1554303646000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554303646000,"path":"concepts/Security/ContentSecurityPolicy.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Content security policy","slug":"concepts/security/content-security-policy","topSection":"concepts/","id":"concepts-security-content-security-policy","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"ConventionalDefaults.ejs","fullPathAndFileName":"concepts/Middleware/ConventionalDefaults.ejs","data":{"displayName":"Conventional defaults","lastModified":1552316020000},"parent":"concepts/Middleware/Middleware.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552316020000,"path":"concepts/Middleware/ConventionalDefaults.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Conventional defaults","slug":"concepts/middleware/conventional-defaults","topSection":"concepts/","id":"concepts-middleware-conventional-defaults","version":"","isMethod":false,"parentDisplayName":"Middleware"},{"templateTitle":"concepts.ejs","fullPathAndFileName":"concepts/concepts.ejs","realPath":"concepts/","data":{"displayName":"Core Concepts: Table of Contents","isTableOfContents":"true","lastModified":1479159881000},"children":["concepts/ActionsAndControllers/ActionsAndControllers.ejs","concepts/Assets/Assets.ejs","concepts/Blueprints/Blueprints.ejs","concepts/README.ejs","concepts/Configuration/Configuration.ejs","concepts/Deployment/Deployment.ejs","concepts/E-commerce/E-commerce.ejs","concepts/extending-sails/extending-sails.ejs","concepts/File Uploads/File Uploads.ejs","concepts/Globals/Globals.ejs","concepts/Helpers/Helpers.ejs","concepts/Internationalization/Internationalization.ejs","concepts/Logging/Logging.ejs","concepts/Middleware/Middleware.ejs","concepts/ORM/ORM.ejs","concepts/Policies/Policies.ejs","concepts/Programmatic Usage/Programmatic Usage.ejs","concepts/Realtime/Realtime.ejs","concepts/Routes/Routes.ejs","concepts/Security/Security.ejs","concepts/Services/Services.ejs","concepts/shell-scripts/shell-scripts.ejs","concepts/Testing/Testing.ejs","concepts/Views/Views.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1479159881000,"path":"concepts/concepts.ejs","isTableOfContents":true,"isOverviewPage":false,"displayName":"Core Concepts: Table of Contents","slug":"concepts","topSection":"concepts/","id":"concepts","version":"","isMethod":false,"parentDisplayName":"concepts"},{"templateTitle":"CORS.ejs","fullPathAndFileName":"concepts/Security/CORS.ejs","data":{"displayName":"CORS","lastModified":1554304515000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554304515000,"path":"concepts/Security/CORS.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"CORS","slug":"concepts/security/cors","topSection":"concepts/","id":"concepts-security-cors","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"CSRF.ejs","fullPathAndFileName":"concepts/Security/CSRF.ejs","data":{"displayName":"CSRF","lastModified":1549291319000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1549291319000,"path":"concepts/Security/CSRF.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"CSRF","slug":"concepts/security/csrf","topSection":"concepts/","id":"concepts-security-csrf","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"customAdapters.ejs","fullPathAndFileName":"concepts/extending-sails/Adapters/customAdapters.ejs","data":{"displayName":"Custom adapters","lastModified":1553696161000},"parent":"concepts/extending-sails/Adapters/Adapters.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553696161000,"path":"concepts/extending-sails/Adapters/customAdapters.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Custom adapters","slug":"concepts/extending-sails/adapters/custom-adapters","topSection":"concepts/","id":"concepts-extending-sails-adapters-custom-adapters","version":"","isMethod":false,"parentDisplayName":"Adapters"},{"templateTitle":"customGenerators.ejs","fullPathAndFileName":"concepts/extending-sails/Generators/customGenerators.ejs","data":{"displayName":"Custom generators","lastModified":1551112459000},"parent":"concepts/extending-sails/Generators/Generators.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551112459000,"path":"concepts/extending-sails/Generators/customGenerators.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Custom generators","slug":"concepts/extending-sails/generators/custom-generators","topSection":"concepts/","id":"concepts-extending-sails-generators-custom-generators","version":"","isMethod":false,"parentDisplayName":"Generators"},{"templateTitle":"Custom log messages.ejs","fullPathAndFileName":"concepts/Logging/Custom log messages.ejs","data":{"displayName":"Custom log messages","lastModified":1513802378000},"parent":"concepts/Logging/Logging.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/Logging/Custom log messages.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Custom log messages","slug":"concepts/logging/custom-log-messages","topSection":"concepts/","id":"concepts-logging-custom-log-messages","version":"","isMethod":false,"parentDisplayName":"Logging"},{"templateTitle":"Custom Responses.ejs","fullPathAndFileName":"concepts/extending-sails/Custom Responses/Custom Responses.ejs","realPath":"concepts/extending-sails/Custom Responses/","data":{"displayName":"Custom responses","lastModified":1551110752000},"parent":"concepts/extending-sails/extending-sails.ejs","isChild":true,"children":["concepts/extending-sails/Custom Responses/AddingCustomResponse.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551110752000,"path":"concepts/extending-sails/Custom Responses/Custom Responses.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Custom responses","slug":"concepts/extending-sails/custom-responses","topSection":"concepts/","id":"concepts-extending-sails-custom-responses","version":"","isMethod":false,"parentDisplayName":"Custom Responses"},{"templateTitle":"RouteTargetSyntax.ejs","fullPathAndFileName":"concepts/Routes/RouteTargetSyntax.ejs","data":{"displayName":"Custom routes","lastModified":1554300408000},"parent":"concepts/Routes/Routes.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554300408000,"path":"concepts/Routes/RouteTargetSyntax.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Custom routes","slug":"concepts/routes/custom-routes","topSection":"concepts/","id":"concepts-routes-custom-routes","version":"","isMethod":false,"parentDisplayName":"Routes"},{"templateTitle":"DDOS.ejs","fullPathAndFileName":"concepts/Security/DDOS.ejs","data":{"displayName":"DDOS","lastModified":1554732857000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554732857000,"path":"concepts/Security/DDOS.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"DDOS","slug":"concepts/security/ddos","topSection":"concepts/","id":"concepts-security-ddos","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"DefaultTasks.ejs","fullPathAndFileName":"concepts/Assets/DefaultTasks.ejs","data":{"displayName":"Default tasks","lastModified":1558544193000},"parent":"concepts/Assets/Assets.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1558544193000,"path":"concepts/Assets/DefaultTasks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Default tasks","slug":"concepts/assets/default-tasks","topSection":"concepts/","id":"concepts-assets-default-tasks","version":"","isMethod":false,"parentDisplayName":"Assets"},{"templateTitle":"Deployment.ejs","fullPathAndFileName":"concepts/Deployment/Deployment.ejs","realPath":"concepts/Deployment/","data":{"displayName":"Deployment","lastModified":1559255332000},"parent":"","isChild":false,"children":["concepts/Deployment/FAQ.ejs","concepts/Deployment/Hosting.ejs","concepts/Deployment/Scaling.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1559255332000,"path":"concepts/Deployment/Deployment.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Deployment","slug":"concepts/deployment","topSection":"concepts/","id":"concepts-deployment","version":"","isMethod":false,"parentDisplayName":"Deployment"},{"templateTitle":"DisablingGlobals.ejs","fullPathAndFileName":"concepts/Globals/DisablingGlobals.ejs","data":{"displayName":"Disabling globals","lastModified":1522013763000},"parent":"concepts/Globals/Globals.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522013763000,"path":"concepts/Globals/DisablingGlobals.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Disabling globals","slug":"concepts/globals/disabling-globals","topSection":"concepts/","id":"concepts-globals-disabling-globals","version":"","isMethod":false,"parentDisplayName":"Globals"},{"templateTitle":"DisablingGrunt.ejs","fullPathAndFileName":"concepts/Assets/DisablingGrunt.ejs","data":{"displayName":"Disabling Grunt","lastModified":1550075443000},"parent":"concepts/Assets/Assets.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1550075443000,"path":"concepts/Assets/DisablingGrunt.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Disabling Grunt","slug":"concepts/assets/disabling-grunt","topSection":"concepts/","id":"concepts-assets-disabling-grunt","version":"","isMethod":false,"parentDisplayName":"Assets"},{"templateTitle":"E-commerce.ejs","fullPathAndFileName":"concepts/E-commerce/E-commerce.ejs","realPath":"concepts/E-commerce/","data":{"displayName":"E-commerce","lastModified":1551106063000},"parent":"","isChild":false,"children":[],"isParent":true,"notShownOnWebsite":false,"lastModified":1551106063000,"path":"concepts/E-commerce/E-commerce.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"E-commerce","slug":"concepts/e-commerce","topSection":"concepts/","id":"concepts-e-commerce","version":"","isMethod":false,"parentDisplayName":"E-commerce"},{"templateTitle":"errors.ejs","fullPathAndFileName":"concepts/ORM/errors.ejs","data":{"displayName":"Errors","lastModified":1552915675000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552915675000,"path":"concepts/ORM/errors.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Errors","slug":"concepts/models-and-orm/errors","topSection":"concepts/","id":"concepts-models-and-orm-errors","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"events.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/events.ejs","data":{"displayName":"Events","lastModified":1513802378000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/extending-sails/Hooks/events.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Events","slug":"concepts/extending-sails/hooks/events","topSection":"concepts/","id":"concepts-extending-sails-hooks-events","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"ExampleHelper.ejs","fullPathAndFileName":"concepts/Helpers/ExampleHelper.ejs","data":{"displayName":"Example helper","lastModified":1553030196000},"parent":"concepts/Helpers/Helpers.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553030196000,"path":"concepts/Helpers/ExampleHelper.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Example helper","slug":"concepts/helpers/example-helper","topSection":"concepts/","id":"concepts-helpers-example-helper","version":"","isMethod":false,"parentDisplayName":"Helpers"},{"templateTitle":"extending-sails.ejs","fullPathAndFileName":"concepts/extending-sails/extending-sails.ejs","realPath":"concepts/extending-sails/","data":{"displayName":"Extending Sails","lastModified":1553095348000},"parent":"","isChild":false,"children":["concepts/extending-sails/Adapters/Adapters.ejs","concepts/extending-sails/Custom Responses/Custom Responses.ejs","concepts/extending-sails/Generators/Generators.ejs","concepts/extending-sails/Hooks/Hooks.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553095348000,"path":"concepts/extending-sails/extending-sails.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Extending Sails","slug":"concepts/extending-sails","topSection":"concepts/","id":"concepts-extending-sails","version":"","isMethod":false,"parentDisplayName":"extending-sails"},{"templateTitle":"FAQ.ejs","fullPathAndFileName":"concepts/Deployment/FAQ.ejs","data":{"displayName":"FAQ","lastModified":1549903176000},"parent":"concepts/Deployment/Deployment.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1549903176000,"path":"concepts/Deployment/FAQ.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"FAQ","slug":"concepts/deployment/faq","topSection":"concepts/","id":"concepts-deployment-faq","version":"","isMethod":false,"parentDisplayName":"Deployment"},{"templateTitle":"File Uploads.ejs","fullPathAndFileName":"concepts/File Uploads/File Uploads.ejs","realPath":"concepts/File Uploads/","data":{"displayName":"File uploads","lastModified":1553037646000},"parent":"","isChild":false,"children":["concepts/File Uploads/uploading-to-mongo-gridfs.ejs","concepts/File Uploads/uploading-to-amazon-s3.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553037646000,"path":"concepts/File Uploads/File Uploads.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"File uploads","slug":"concepts/file-uploads","topSection":"concepts/","id":"concepts-file-uploads","version":"","isMethod":false,"parentDisplayName":"File Uploads"},{"templateTitle":"GeneratingActions.ejs","fullPathAndFileName":"concepts/ActionsAndControllers/GeneratingActions.ejs","data":{"displayName":"Generating actions and controllers","lastModified":1529694738000},"parent":"concepts/ActionsAndControllers/ActionsAndControllers.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1529694738000,"path":"concepts/ActionsAndControllers/GeneratingActions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Generating actions and controllers","slug":"concepts/actions-and-controllers/generating-actions-and-controllers","topSection":"concepts/","id":"concepts-actions-and-controllers-generating-actions-and-controllers","version":"","isMethod":false,"parentDisplayName":"ActionsAndControllers"},{"templateTitle":"Generators.ejs","fullPathAndFileName":"concepts/extending-sails/Generators/Generators.ejs","realPath":"concepts/extending-sails/Generators/","data":{"displayName":"Generators","lastModified":1551111041000},"parent":"concepts/extending-sails/extending-sails.ejs","isChild":true,"children":["concepts/extending-sails/Generators/generatorList.ejs","concepts/extending-sails/Generators/customGenerators.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551111041000,"path":"concepts/extending-sails/Generators/Generators.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Generators","slug":"concepts/extending-sails/generators","topSection":"concepts/","id":"concepts-extending-sails-generators","version":"","isMethod":false,"parentDisplayName":"Generators"},{"templateTitle":"Globals.ejs","fullPathAndFileName":"concepts/Globals/Globals.ejs","realPath":"concepts/Globals/","data":{"displayName":"Globals","lastModified":1551714909000},"parent":"","isChild":false,"children":["concepts/Globals/DisablingGlobals.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551714909000,"path":"concepts/Globals/Globals.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Globals","slug":"concepts/globals","topSection":"concepts/","id":"concepts-globals","version":"","isMethod":false,"parentDisplayName":"Globals"},{"templateTitle":"Helpers.ejs","fullPathAndFileName":"concepts/Helpers/Helpers.ejs","realPath":"concepts/Helpers/","data":{"displayName":"Helpers","nextUpLink":"/documentation/concepts/deployment","nextUpName":"Deployment","lastModified":1549902680000},"parent":"","isChild":false,"children":["concepts/Helpers/ExampleHelper.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1549902680000,"path":"concepts/Helpers/Helpers.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Helpers","slug":"concepts/helpers","topSection":"concepts/","id":"concepts-helpers","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/deployment","nextUpName":"Deployment","parentDisplayName":"Helpers"},{"templateTitle":"hookspec.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","realPath":"concepts/extending-sails/Hooks/hookspec/","data":{"displayName":"Hook specification","stabilityIndex":"3","lastModified":1551281950000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"children":["concepts/extending-sails/Hooks/hookspec/configure.ejs","concepts/extending-sails/Hooks/hookspec/defaults.ejs","concepts/extending-sails/Hooks/hookspec/initialize.ejs","concepts/extending-sails/Hooks/hookspec/register-actions.ejs","concepts/extending-sails/Hooks/hookspec/routes.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551281950000,"path":"concepts/extending-sails/Hooks/hookspec/hookspec.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Hook specification","slug":"concepts/extending-sails/hooks/hook-specification","topSection":"concepts/","id":"concepts-extending-sails-hooks-hook-specification","version":"","isMethod":false,"parentDisplayName":"hookspec"},{"templateTitle":"Hooks.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/Hooks.ejs","realPath":"concepts/extending-sails/Hooks/","data":{"displayName":"Hooks","stabilityIndex":"3","lastModified":1553695736000},"parent":"concepts/extending-sails/extending-sails.ejs","isChild":true,"children":["concepts/extending-sails/Hooks/available-hooks.ejs","concepts/extending-sails/Hooks/events.ejs","concepts/extending-sails/Hooks/hookspec/hookspec.ejs","concepts/extending-sails/Hooks/installablehooks.ejs","concepts/extending-sails/Hooks/projecthooks.ejs","concepts/extending-sails/Hooks/usinghooks.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553695736000,"path":"concepts/extending-sails/Hooks/Hooks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Hooks","slug":"concepts/extending-sails/hooks","topSection":"concepts/","id":"concepts-extending-sails-hooks","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"Hosting.ejs","fullPathAndFileName":"concepts/Deployment/Hosting.ejs","data":{"displayName":"Hosting","lastModified":1563216073000},"parent":"concepts/Deployment/Deployment.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1563216073000,"path":"concepts/Deployment/Hosting.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Hosting","slug":"concepts/deployment/hosting","topSection":"concepts/","id":"concepts-deployment-hosting","version":"","isMethod":false,"parentDisplayName":"Deployment"},{"templateTitle":"installablehooks.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/installablehooks.ejs","data":{"displayName":"Installable hooks","stabilityIndex":"3","lastModified":1551284325000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551284325000,"path":"concepts/extending-sails/Hooks/installablehooks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Installable hooks","slug":"concepts/extending-sails/hooks/installable-hooks","topSection":"concepts/","id":"concepts-extending-sails-hooks-installable-hooks","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"Internationalization.ejs","fullPathAndFileName":"concepts/Internationalization/Internationalization.ejs","realPath":"concepts/Internationalization/","data":{"displayName":"Internationalization","lastModified":1551885693000},"parent":"","isChild":false,"children":["concepts/Internationalization/Locales.ejs","concepts/Internationalization/TranslatingDynamicContent.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551885693000,"path":"concepts/Internationalization/Internationalization.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Internationalization","slug":"concepts/internationalization","topSection":"concepts/","id":"concepts-internationalization","version":"","isMethod":false,"parentDisplayName":"Internationalization"},{"templateTitle":"Layouts.ejs","fullPathAndFileName":"concepts/Views/Layouts.ejs","data":{"displayName":"Layouts","lastModified":1555342711000},"parent":"concepts/Views/Views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1555342711000,"path":"concepts/Views/Layouts.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Layouts","slug":"concepts/views/layouts","topSection":"concepts/","id":"concepts-views-layouts","version":"","isMethod":false,"parentDisplayName":"Views"},{"templateTitle":"Lifecyclecallbacks.ejs","fullPathAndFileName":"concepts/ORM/Lifecyclecallbacks.ejs","data":{"displayName":"Lifecycle callbacks","lastModified":1555023512000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1555023512000,"path":"concepts/ORM/Lifecyclecallbacks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Lifecycle callbacks","slug":"concepts/models-and-orm/lifecycle-callbacks","topSection":"concepts/","id":"concepts-models-and-orm-lifecycle-callbacks","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"Locales.ejs","fullPathAndFileName":"concepts/Internationalization/Locales.ejs","data":{"displayName":"Locales","lastModified":1551887370000},"parent":"concepts/Internationalization/Internationalization.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551887370000,"path":"concepts/Internationalization/Locales.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Locales","slug":"concepts/internationalization/locales","topSection":"concepts/","id":"concepts-internationalization-locales","version":"","isMethod":false,"parentDisplayName":"Internationalization"},{"templateTitle":"Locals.ejs","fullPathAndFileName":"concepts/Views/Locals.ejs","data":{"displayName":"Locals","lastModified":1556835679000},"parent":"concepts/Views/Views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1556835679000,"path":"concepts/Views/Locals.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Locals","slug":"concepts/views/locals","topSection":"concepts/","id":"concepts-views-locals","version":"","isMethod":false,"parentDisplayName":"Views"},{"templateTitle":"Logging.ejs","fullPathAndFileName":"concepts/Logging/Logging.ejs","realPath":"concepts/Logging/","data":{"displayName":"Logging","lastModified":1551888609000},"parent":"","isChild":false,"children":["concepts/Logging/Custom log messages.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551888609000,"path":"concepts/Logging/Logging.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Logging","slug":"concepts/logging","topSection":"concepts/","id":"concepts-logging","version":"","isMethod":false,"parentDisplayName":"Logging"},{"templateTitle":"ManytoMany.ejs","fullPathAndFileName":"concepts/ORM/Associations/ManytoMany.ejs","data":{"displayName":"Many-to-many","lastModified":1552486791000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552486791000,"path":"concepts/ORM/Associations/ManytoMany.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Many-to-many","slug":"concepts/models-and-orm/associations/many-to-many","topSection":"concepts/","id":"concepts-models-and-orm-associations-many-to-many","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"Middleware.ejs","fullPathAndFileName":"concepts/Middleware/Middleware.ejs","realPath":"concepts/Middleware/","data":{"displayName":"Middleware","lastModified":1551890818000},"parent":"","isChild":false,"children":["concepts/Middleware/ConventionalDefaults.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551890818000,"path":"concepts/Middleware/Middleware.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Middleware","slug":"concepts/middleware","topSection":"concepts/","id":"concepts-middleware","version":"","isMethod":false,"parentDisplayName":"Middleware"},{"templateTitle":"model-settings.ejs","fullPathAndFileName":"concepts/ORM/model-settings.ejs","data":{"displayName":"Model settings","lastModified":1558717216000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1558717216000,"path":"concepts/ORM/model-settings.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Model settings","slug":"concepts/models-and-orm/model-settings","topSection":"concepts/","id":"concepts-models-and-orm-model-settings","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"Models.ejs","fullPathAndFileName":"concepts/ORM/Models.ejs","data":{"displayName":"Models","nextUpLink":"/documentation/concepts/configuration","nextUpName":"Configuration","lastModified":1559248870000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1559248870000,"path":"concepts/ORM/Models.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Models","slug":"concepts/models-and-orm/models","topSection":"concepts/","id":"concepts-models-and-orm-models","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/configuration","nextUpName":"Configuration","parentDisplayName":"ORM"},{"templateTitle":"ORM.ejs","fullPathAndFileName":"concepts/ORM/ORM.ejs","realPath":"concepts/ORM/","data":{"displayName":"Models and ORM","nextUpLink":"/documentation/concepts/models-and-orm/models","nextUpName":"Models","lastModified":1559253389000},"parent":"","isChild":false,"children":["concepts/ORM/Associations/Associations.ejs","concepts/ORM/Attributes.ejs","concepts/ORM/errors.ejs","concepts/ORM/Lifecyclecallbacks.ejs","concepts/ORM/model-settings.ejs","concepts/ORM/Models.ejs","concepts/ORM/Querylanguage.ejs","concepts/ORM/Records.ejs","concepts/ORM/standalone-usage.ejs","concepts/ORM/Validations.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1559253389000,"path":"concepts/ORM/ORM.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Models and ORM","slug":"concepts/models-and-orm","topSection":"concepts/","id":"concepts-models-and-orm","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/models-and-orm/models","nextUpName":"Models","parentDisplayName":"ORM"},{"templateTitle":"Multi-server environments.ejs","fullPathAndFileName":"concepts/Realtime/Multi-server environments.ejs","data":{"displayName":"Multi-server environments","lastModified":1522052116000},"parent":"concepts/Realtime/Realtime.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522052116000,"path":"concepts/Realtime/Multi-server environments.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Multi-server environments","slug":"concepts/realtime/multi-server-environments","topSection":"concepts/","id":"concepts-realtime-multi-server-environments","version":"","isMethod":false,"parentDisplayName":"Realtime"},{"templateTitle":"On the client.ejs","fullPathAndFileName":"concepts/Realtime/On the client.ejs","data":{"displayName":"On the client","lastModified":1553697950000},"parent":"concepts/Realtime/Realtime.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553697950000,"path":"concepts/Realtime/On the client.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"On the client","slug":"concepts/realtime/on-the-client","topSection":"concepts/","id":"concepts-realtime-on-the-client","version":"","isMethod":false,"parentDisplayName":"Realtime"},{"templateTitle":"On the server.ejs","fullPathAndFileName":"concepts/Realtime/On the server.ejs","data":{"displayName":"On the server","lastModified":1513802378000},"parent":"concepts/Realtime/Realtime.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1513802378000,"path":"concepts/Realtime/On the server.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"On the server","slug":"concepts/realtime/on-the-server","topSection":"concepts/","id":"concepts-realtime-on-the-server","version":"","isMethod":false,"parentDisplayName":"Realtime"},{"templateTitle":"OneWayAssociation.ejs","fullPathAndFileName":"concepts/ORM/Associations/OneWayAssociation.ejs","data":{"displayName":"One way association","lastModified":1534814673000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1534814673000,"path":"concepts/ORM/Associations/OneWayAssociation.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"One way association","slug":"concepts/models-and-orm/associations/one-way-association","topSection":"concepts/","id":"concepts-models-and-orm-associations-one-way-association","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"OnetoMany.ejs","fullPathAndFileName":"concepts/ORM/Associations/OnetoMany.ejs","data":{"displayName":"One-to-many","lastModified":1560957778000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1560957778000,"path":"concepts/ORM/Associations/OnetoMany.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"One-to-many","slug":"concepts/models-and-orm/associations/one-to-many","topSection":"concepts/","id":"concepts-models-and-orm-associations-one-to-many","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"OnetoOne.ejs","fullPathAndFileName":"concepts/ORM/Associations/OnetoOne.ejs","data":{"displayName":"One-to-one","lastModified":1552487698000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552487698000,"path":"concepts/ORM/Associations/OnetoOne.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"One-to-one","slug":"concepts/models-and-orm/associations/one-to-one","topSection":"concepts/","id":"concepts-models-and-orm-associations-one-to-one","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"P3P.ejs","fullPathAndFileName":"concepts/Security/P3P.ejs","data":{"displayName":"P3P","lastModified":1554734084000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554734084000,"path":"concepts/Security/P3P.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"P3P","slug":"concepts/security/p-3-p","topSection":"concepts/","id":"concepts-security-p-3-p","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"Partials.ejs","fullPathAndFileName":"concepts/Views/Partials.ejs","data":{"displayName":"Partials","lastModified":1559255554000},"parent":"concepts/Views/Views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1559255554000,"path":"concepts/Views/Partials.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Partials","slug":"concepts/views/partials","topSection":"concepts/","id":"concepts-views-partials","version":"","isMethod":false,"parentDisplayName":"Views"},{"templateTitle":"Policies.ejs","fullPathAndFileName":"concepts/Policies/Policies.ejs","realPath":"concepts/Policies/","data":{"displayName":"Policies","nextUpLink":"/documentation/concepts/helpers","nextUpName":"Helpers","lastModified":1553523202000},"parent":"","isChild":false,"children":["concepts/Policies/Permissions.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553523202000,"path":"concepts/Policies/Policies.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Policies","slug":"concepts/policies","topSection":"concepts/","id":"concepts-policies","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/helpers","nextUpName":"Helpers","parentDisplayName":"Policies"},{"templateTitle":"Programmatic Usage.ejs","fullPathAndFileName":"concepts/Programmatic Usage/Programmatic Usage.ejs","realPath":"concepts/Programmatic Usage/","data":{"displayName":"Programmatic usage","lastModified":1553525819000},"parent":"","isChild":false,"children":["concepts/Programmatic Usage/Tips and Tricks.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553525819000,"path":"concepts/Programmatic Usage/Programmatic Usage.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Programmatic usage","slug":"concepts/programmatic-usage","topSection":"concepts/","id":"concepts-programmatic-usage","version":"","isMethod":false,"parentDisplayName":"Programmatic Usage"},{"templateTitle":"projecthooks.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/projecthooks.ejs","data":{"displayName":"Project hooks","stabilityIndex":"3","lastModified":1551284707000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551284707000,"path":"concepts/extending-sails/Hooks/projecthooks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Project hooks","slug":"concepts/extending-sails/hooks/project-hooks","topSection":"concepts/","id":"concepts-extending-sails-hooks-project-hooks","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"Querylanguage.ejs","fullPathAndFileName":"concepts/ORM/Querylanguage.ejs","data":{"displayName":"Query language","lastModified":1559254872000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1559254872000,"path":"concepts/ORM/Querylanguage.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Query language","slug":"concepts/models-and-orm/query-language","topSection":"concepts/","id":"concepts-models-and-orm-query-language","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"Realtime.ejs","fullPathAndFileName":"concepts/Realtime/Realtime.ejs","realPath":"concepts/Realtime/","data":{"displayName":"Realtime","lastModified":1553696880000},"parent":"","isChild":false,"children":["concepts/Realtime/Multi-server environments.ejs","concepts/Realtime/On the client.ejs","concepts/Realtime/On the server.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553696880000,"path":"concepts/Realtime/Realtime.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Realtime","slug":"concepts/realtime","topSection":"concepts/","id":"concepts-realtime","version":"","isMethod":false,"parentDisplayName":"Realtime"},{"templateTitle":"Records.ejs","fullPathAndFileName":"concepts/ORM/Records.ejs","data":{"displayName":"Records","lastModified":1552923010000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552923010000,"path":"concepts/ORM/Records.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Records","slug":"concepts/models-and-orm/records","topSection":"concepts/","id":"concepts-models-and-orm-records","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"Reflexive.ejs","fullPathAndFileName":"concepts/ORM/Associations/Reflexive.ejs","data":{"displayName":"Reflexive associations","lastModified":1552488256000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552488256000,"path":"concepts/ORM/Associations/Reflexive.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Reflexive associations","slug":"concepts/models-and-orm/associations/reflexive-associations","topSection":"concepts/","id":"concepts-models-and-orm-associations-reflexive-associations","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"Routes.ejs","fullPathAndFileName":"concepts/Routes/Routes.ejs","realPath":"concepts/Routes/","data":{"displayName":"Routes","nextUpLink":"/documentation/concepts/actions-and-controllers","nextUpName":"Actions","lastModified":1553700048000},"parent":"","isChild":false,"children":["concepts/Routes/RouteTargetSyntax.ejs","concepts/Routes/URLSlugs.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1553700048000,"path":"concepts/Routes/Routes.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Routes","slug":"concepts/routes","topSection":"concepts/","id":"concepts-routes","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/actions-and-controllers","nextUpName":"Actions","parentDisplayName":"Routes"},{"templateTitle":"RoutingToActions.ejs","fullPathAndFileName":"concepts/ActionsAndControllers/RoutingToActions.ejs","data":{"displayName":"Routing to actions","lastModified":1524019775000},"parent":"concepts/ActionsAndControllers/ActionsAndControllers.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1524019775000,"path":"concepts/ActionsAndControllers/RoutingToActions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Routing to actions","slug":"concepts/actions-and-controllers/routing-to-actions","topSection":"concepts/","id":"concepts-actions-and-controllers-routing-to-actions","version":"","isMethod":false,"parentDisplayName":"ActionsAndControllers"},{"templateTitle":"Scaling.ejs","fullPathAndFileName":"concepts/Deployment/Scaling.ejs","data":{"displayName":"Scaling","lastModified":1559252967000},"parent":"concepts/Deployment/Deployment.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1559252967000,"path":"concepts/Deployment/Scaling.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Scaling","slug":"concepts/deployment/scaling","topSection":"concepts/","id":"concepts-deployment-scaling","version":"","isMethod":false,"parentDisplayName":"Deployment"},{"templateTitle":"Security.ejs","fullPathAndFileName":"concepts/Security/Security.ejs","realPath":"concepts/Security/","data":{"displayName":"Security","lastModified":1551105986000},"parent":"","isChild":false,"children":["concepts/Security/Clickjacking.ejs","concepts/Security/ContentSecurityPolicy.ejs","concepts/Security/CORS.ejs","concepts/Security/CSRF.ejs","concepts/Security/DDOS.ejs","concepts/Security/P3P.ejs","concepts/Security/SocketHijacking.ejs","concepts/Security/StrictTransportSecurity.ejs","concepts/Security/XSS.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1551105986000,"path":"concepts/Security/Security.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Security","slug":"concepts/security","topSection":"concepts/","id":"concepts-security","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"Services.ejs","fullPathAndFileName":"concepts/Services/Services.ejs","realPath":"concepts/Services/","data":{"displayName":"Services","lastModified":1554734889000},"parent":"","isChild":false,"children":[],"isParent":true,"notShownOnWebsite":false,"lastModified":1554734889000,"path":"concepts/Services/Services.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Services","slug":"concepts/services","topSection":"concepts/","id":"concepts-services","version":"","isMethod":false,"parentDisplayName":"Services"},{"templateTitle":"sessions.ejs","fullPathAndFileName":"concepts/Sessions/sessions.ejs","data":{"displayName":"Sessions","lastModified":1555339331000},"notShownOnWebsite":false,"lastModified":1555339331000,"path":"concepts/Sessions/sessions.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Sessions","slug":"concepts/sessions","topSection":"concepts/","id":"concepts-sessions","version":"","isMethod":false,"parentDisplayName":"Sessions"},{"templateTitle":"shell-scripts.ejs","fullPathAndFileName":"concepts/shell-scripts/shell-scripts.ejs","realPath":"concepts/shell-scripts/","data":{"displayName":"Shell scripts","nextUpLink":"/documentation/concepts/models-and-orm","nextUpName":"Models and ORM","lastModified":1549297550000},"parent":"","isChild":false,"children":[],"isParent":true,"notShownOnWebsite":false,"lastModified":1549297550000,"path":"concepts/shell-scripts/shell-scripts.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Shell scripts","slug":"concepts/shell-scripts","topSection":"concepts/","id":"concepts-shell-scripts","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/models-and-orm","nextUpName":"Models and ORM","parentDisplayName":"shell-scripts"},{"templateTitle":"SocketHijacking.ejs","fullPathAndFileName":"concepts/Security/SocketHijacking.ejs","data":{"displayName":"Socket hijacking","lastModified":1522061568000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"concepts/Security/SocketHijacking.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Socket hijacking","slug":"concepts/security/socket-hijacking","topSection":"concepts/","id":"concepts-security-socket-hijacking","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"standalone-usage.ejs","fullPathAndFileName":"concepts/ORM/standalone-usage.ejs","data":{"displayName":"Standalone Waterline usage","lastModified":1553095146000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553095146000,"path":"concepts/ORM/standalone-usage.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Standalone Waterline usage","slug":"concepts/models-and-orm/standalone-waterline-usage","topSection":"concepts/","id":"concepts-models-and-orm-standalone-waterline-usage","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"StrictTransportSecurity.ejs","fullPathAndFileName":"concepts/Security/StrictTransportSecurity.ejs","data":{"displayName":"Strict Transport Security","lastModified":1554734537000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554734537000,"path":"concepts/Security/StrictTransportSecurity.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Strict Transport Security","slug":"concepts/security/strict-transport-security","topSection":"concepts/","id":"concepts-security-strict-transport-security","version":"","isMethod":false,"parentDisplayName":"Security"},{"templateTitle":"TaskAutomation.ejs","fullPathAndFileName":"concepts/Assets/TaskAutomation.ejs","data":{"displayName":"Task automation","lastModified":1550076194000},"parent":"concepts/Assets/Assets.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1550076194000,"path":"concepts/Assets/TaskAutomation.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Task automation","slug":"concepts/assets/task-automation","topSection":"concepts/","id":"concepts-assets-task-automation","version":"","isMethod":false,"parentDisplayName":"Assets"},{"templateTitle":"Testing.ejs","fullPathAndFileName":"concepts/Testing/Testing.ejs","realPath":"concepts/Testing/","data":{"displayName":"Testing","lastModified":1555339171000},"parent":"","isChild":false,"children":[],"isParent":true,"notShownOnWebsite":false,"lastModified":1555339171000,"path":"concepts/Testing/Testing.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Testing","slug":"concepts/testing","topSection":"concepts/","id":"concepts-testing","version":"","isMethod":false,"parentDisplayName":"Testing"},{"templateTitle":"localjsfile.ejs","fullPathAndFileName":"concepts/Configuration/localjsfile.ejs","data":{"displayName":"The local.js file","lastModified":1481842971000},"parent":"concepts/Configuration/Configuration.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481842971000,"path":"concepts/Configuration/localjsfile.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"The local.js file","slug":"concepts/configuration/the-local-js-file","topSection":"concepts/","id":"concepts-configuration-the-local-js-file","version":"","isMethod":false,"parentDisplayName":"Configuration"},{"templateTitle":"ThroughAssociations.ejs","fullPathAndFileName":"concepts/ORM/Associations/ThroughAssociations.ejs","data":{"displayName":"Through associations","lastModified":1552488623000},"parent":"concepts/ORM/Associations/Associations.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1552488623000,"path":"concepts/ORM/Associations/ThroughAssociations.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Through associations","slug":"concepts/models-and-orm/associations/through-associations","topSection":"concepts/","id":"concepts-models-and-orm-associations-through-associations","version":"","isMethod":false,"parentDisplayName":"Associations"},{"templateTitle":"Tips and Tricks.ejs","fullPathAndFileName":"concepts/Programmatic Usage/Tips and Tricks.ejs","data":{"displayName":"Tips and tricks","lastModified":1553702591000},"parent":"concepts/Programmatic Usage/Programmatic Usage.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553702591000,"path":"concepts/Programmatic Usage/Tips and Tricks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Tips and tricks","slug":"concepts/programmatic-usage/tips-and-tricks","topSection":"concepts/","id":"concepts-programmatic-usage-tips-and-tricks","version":"","isMethod":false,"parentDisplayName":"Programmatic Usage"},{"templateTitle":"TranslatingDynamicContent.ejs","fullPathAndFileName":"concepts/Internationalization/TranslatingDynamicContent.ejs","data":{"displayName":"Translating dynamic content","lastModified":1551888000000},"parent":"concepts/Internationalization/Internationalization.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1551888000000,"path":"concepts/Internationalization/TranslatingDynamicContent.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Translating dynamic content","slug":"concepts/internationalization/translating-dynamic-content","topSection":"concepts/","id":"concepts-internationalization-translating-dynamic-content","version":"","isMethod":false,"parentDisplayName":"Internationalization"},{"templateTitle":"uploading-to-mongo-gridfs.ejs","fullPathAndFileName":"concepts/File Uploads/uploading-to-mongo-gridfs.ejs","data":{"displayName":"Uploading to GridFS","lastModified":1481846361000},"parent":"concepts/File Uploads/File Uploads.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1481846361000,"path":"concepts/File Uploads/uploading-to-mongo-gridfs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Uploading to GridFS","slug":"concepts/file-uploads/uploading-to-grid-fs","topSection":"concepts/","id":"concepts-file-uploads-uploading-to-grid-fs","version":"","isMethod":false,"parentDisplayName":"File Uploads"},{"templateTitle":"uploading-to-amazon-s3.ejs","fullPathAndFileName":"concepts/File Uploads/uploading-to-amazon-s3.ejs","data":{"displayName":"Uploading to S3","lastModified":1516403158000},"parent":"concepts/File Uploads/File Uploads.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1516403158000,"path":"concepts/File Uploads/uploading-to-amazon-s3.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Uploading to S3","slug":"concepts/file-uploads/uploading-to-s-3","topSection":"concepts/","id":"concepts-file-uploads-uploading-to-s-3","version":"","isMethod":false,"parentDisplayName":"File Uploads"},{"templateTitle":"URLSlugs.ejs","fullPathAndFileName":"concepts/Routes/URLSlugs.ejs","data":{"displayName":"URL slugs","lastModified":1522061568000},"parent":"concepts/Routes/Routes.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"concepts/Routes/URLSlugs.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"URL slugs","slug":"concepts/routes/url-slugs","topSection":"concepts/","id":"concepts-routes-url-slugs","version":"","isMethod":false,"parentDisplayName":"Routes"},{"templateTitle":"usingsailsrcfiles.ejs","fullPathAndFileName":"concepts/Configuration/usingsailsrcfiles.ejs","data":{"displayName":"Using `.sailsrc` files","lastModified":1482882912000},"parent":"concepts/Configuration/Configuration.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1482882912000,"path":"concepts/Configuration/usingsailsrcfiles.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Using `.sailsrc` files","slug":"concepts/configuration/using-sailsrc-files","topSection":"concepts/","id":"concepts-configuration-using-sailsrc-files","version":"","isMethod":false,"parentDisplayName":"Configuration"},{"templateTitle":"usinghooks.ejs","fullPathAndFileName":"concepts/extending-sails/Hooks/usinghooks.ejs","data":{"displayName":"Using hooks","stabilityIndex":"3","lastModified":1522061568000},"parent":"concepts/extending-sails/Hooks/Hooks.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"concepts/extending-sails/Hooks/usinghooks.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Using hooks","slug":"concepts/extending-sails/hooks/using-hooks","topSection":"concepts/","id":"concepts-extending-sails-hooks-using-hooks","version":"","isMethod":false,"parentDisplayName":"Hooks"},{"templateTitle":"Validations.ejs","fullPathAndFileName":"concepts/ORM/Validations.ejs","data":{"displayName":"Validations","lastModified":1553638217000},"parent":"concepts/ORM/ORM.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1553638217000,"path":"concepts/ORM/Validations.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Validations","slug":"concepts/models-and-orm/validations","topSection":"concepts/","id":"concepts-models-and-orm-validations","version":"","isMethod":false,"parentDisplayName":"ORM"},{"templateTitle":"ViewEngines.ejs","fullPathAndFileName":"concepts/Views/ViewEngines.ejs","data":{"displayName":"View engines","lastModified":1556550290000},"parent":"concepts/Views/Views.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1556550290000,"path":"concepts/Views/ViewEngines.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"View engines","slug":"concepts/views/view-engines","topSection":"concepts/","id":"concepts-views-view-engines","version":"","isMethod":false,"parentDisplayName":"Views"},{"templateTitle":"Views.ejs","fullPathAndFileName":"concepts/Views/Views.ejs","realPath":"concepts/Views/","data":{"displayName":"Views","nextUpLink":"/documentation/concepts/assets","nextUpName":"Assets","lastModified":1549900656000},"parent":"","isChild":false,"children":["concepts/Views/Layouts.ejs","concepts/Views/Locals.ejs","concepts/Views/Partials.ejs","concepts/Views/ViewEngines.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1549900656000,"path":"concepts/Views/Views.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"Views","slug":"concepts/views","topSection":"concepts/","id":"concepts-views","version":"","isMethod":false,"nextUpLink":"/documentation/concepts/assets","nextUpName":"Assets","parentDisplayName":"Views"},{"templateTitle":"XSS.ejs","fullPathAndFileName":"concepts/Security/XSS.ejs","data":{"displayName":"XSS","lastModified":1554734728000},"parent":"concepts/Security/Security.ejs","isChild":true,"notShownOnWebsite":false,"lastModified":1554734728000,"path":"concepts/Security/XSS.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"XSS","slug":"concepts/security/xss","topSection":"concepts/","id":"concepts-security-xss","version":"","isMethod":false,"parentDisplayName":"Security"}];
+</script>
+
+<div id="sails-page_reference-or-concepts" is="doc-page">
+  <!-- Main content -->
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered >
+    
+    
+    <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/concepts/ORM/Validations.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+    <h1 id="validations">Validations</h1>
+<p>Sails bundles support for automatic validations of your models&apos; attributes. Any time a record is updated, or a new record is created, the data for each attribute will be checked against all of your predefined validation rules. This provides a convenient failsafe to ensure that invalid entries don&apos;t make their way into your app&apos;s database(s).</p>
+<p>Except for <code>unique</code> (which is implemented as a database-level constraint; <a href="validations.html#?unique">see &quot;Unique&quot;</a>), all validations below are implemented in JavaScript and run in the same Node.js server process as Sails.  Also keep in mind that, no matter what validations are used, an attribute must <em>always</em> specify one of the built-in data types (<code>string</code>, <code>number</code>, <code>json</code>, etc).</p>
+<pre><code class="javascript">// User
+module.exports = {
+  attributes: {
+    emailAddress: {
+      type: &apos;string&apos;,
+      unique: true,
+      required: true
+    }
+  }
+};
+</code></pre><!-- __LANG=%%__ -->
+<h3 id="built-in-data-types" permalink="builtin-data-types">Built-in data types</h3>
+<p>In Sails/Waterline, model attributes always have some kind of data type guarantee.  This is above and beyond any physical-layer constraints which might exist in your underlying database&#x2014;it&apos;s more about providing a way for developers to maintain reasonable assumptions about the data that goes in or comes out of a particular model.</p>
+<p>This data type guarantee is used for logical validation and coercion of results and criteria.  Here is a list of the data types supported by Sails and Waterline:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data Type</th>
+<th style="text-align:left">Usage</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+<td style="text-align:left"><code>type: &apos;string&apos;</code></td>
+<td style="text-align:left">Any string.</td>
+</tr>
+<tr>
+<td style="text-align:center"><bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+<td style="text-align:left"><code>type: &apos;number&apos;</code></td>
+<td style="text-align:left">Any number.</td>
+</tr>
+<tr>
+<td style="text-align:center"><bubble type="boolean" class="colors"><span is="bubble-heart"></span></bubble></td>
+<td style="text-align:left"><code>type: &apos;boolean&apos;</code></td>
+<td style="text-align:left"><code>true</code> or <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align:center"><bubble type="json" class="colors"><span is="bubble-heart"></span></bubble></td>
+<td style="text-align:left"><code>type: &apos;json&apos;</code></td>
+<td style="text-align:left">Any JSON-serializable value, including numbers, booleans, strings, arrays, dictionaries (plain JavaScript objects), and <code>null</code>.</td>
+</tr>
+<tr>
+<td style="text-align:center"><bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble></td>
+<td style="text-align:left"><code>type: &apos;ref&apos;</code></td>
+<td style="text-align:left">Any JavaScript value except <code>undefined</code>. (Should only be used when taking advantage of adapter-specific behavior.)</td>
+</tr>
+</tbody>
+</table>
+<p>Sails&apos; ORM (Waterline) and its adapters perform loose validation to ensure that the values provided in criteria dictionaries and as values to <code>.create()</code> or <code>.update()</code> match the expected data type.</p>
+<p><strong>NOTE:</strong> In adapters that don&apos;t support the <bubble type="json" class="colors"><span is="bubble-heart"></span></bubble> type natively, the adapter must support it in other ways. For example, in MySQL the data being written to a <bubble type="json" class="colors"><span is="bubble-heart"></span></bubble> attribute gets <code>JSON.stringify()</code> called on it and then is stored in a column with a type set to <code>text</code>. Each time the record is returned, the data has <code>JSON.parse()</code> called on it. This is something to be aware of when considering performance and compatibility with other applications or existing data in the database. The official PostgreSQL and mongoDB adapters can read and write <bubble type="json" class="colors"><span is="bubble-heart"></span></bubble> data natively.</p>
+<h5 id="null-and-empty-string" permalink="null-and-empty-string">Null and empty string</h5>
+<p>The <code>string</code>, <code>number</code> and <code>boolean</code> data types do <em>not</em> accept <code>null</code> as a value when creating or updating records.  In order to allow a <code>null</code> value to be set, toggle the <code>allowNull</code> flag on the attribute. The <code>allowNull</code> flag is only valid on the above data types; it is <em>not</em> valid on attributes with types <code>json</code> or <code>ref</code>, any associations, or any primary key attributes.</p>
+<p>Since empty string (&quot;&quot;) is a string, it is normally supported by <code>type: &apos;string&apos;</code> attributes; but there are a couple of exceptions:  primary keys (because primary keys never support empty string) and any attribute which has <code>required: true</code>.</p>
+<h5 id="required" permalink="required">Required</h5>
+<p>If an attribute is <code>required: true</code>, then a value must always be specified for it when calling <code>.create()</code>.  This also prevents a value from being set to <code>null</code> or empty string (&quot;&quot;) when created or updated.</p>
+<h3 id="validation-rules" permalink="validation-rules">Validation rules</h3>
+<p><em>None</em> of the following validation rules impose any additional restrictions against <code>null</code>.  That is, if <code>null</code> would be allowed normally, then enabling the <code>isEmail</code> validation rule will not cause <code>null</code> to be rejected as invalid.</p>
+<p>Similarly, <em>most</em> of the following validation rules don&apos;t impose any additional restrictions against empty string (&quot;&quot;).  There are a few exceptions (<code>isNotEmptyString</code> and non-string-related rules like <code>isBoolean</code>, <code>isNumber</code>, <code>max</code>, and <code>min</code>), but otherwise, for any attribute where empty string (&quot;&quot;) would normally be allowed, adding a validation rule will not cause it to be rejected.</p>
+<p>In the table below, the &quot;Compatible Attribute Type(s)&quot; column shows what data type(s) (i.e. for the attribute definition&apos;s <code>type</code> property) are appropriate for each validation rule.  In many cases, a validation rule can be used with more than one type.  Note that the table below takes a shortcut:  if compatible with <bubble type="string" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="number" class="colors"><span is="bubble-heart"></span></bubble>, or <bubble type="boolean" class="colors"><span is="bubble-heart"></span></bubble>, then the validation rule is also compatible with <bubble type="json" class="colors"><span is="bubble-heart"></span></bubble> and <bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble>, even if it doesn&apos;t explicitly say so.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name of Rule</th>
+<th style="text-align:left">What It Checks For</th>
+<th style="text-align:left">Notes On Usage</th>
+<th style="text-align:center">Compatible Attribute Type(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">custom</td>
+<td style="text-align:left">A value such that when it is provided as the first argument to the custom function, the function returns <code>true</code>.</td>
+<td style="text-align:left"><a href="validations.html#?custom-validation-rules">Example</a></td>
+<td style="text-align:center"><em>Any</em></td>
+</tr>
+<tr>
+<td style="text-align:left">isAfter</td>
+<td style="text-align:left">A value that, when parsed as a date, refers to a moment <em>after</em> the configured JavaScript <code>Date</code> instance.</td>
+<td style="text-align:left"><code>isAfter: new Date(&apos;Sat Nov 05 1605 00:00:00 GMT-0000&apos;)</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isBefore</td>
+<td style="text-align:left">A value that, when parsed as a date, refers to a moment <em>before</em> the configured JavaScript <code>Date</code> instance.</td>
+<td style="text-align:left"><code>isBefore: new Date(&apos;Sat Nov 05 1605 00:00:00 GMT-0000&apos;)</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isBoolean</td>
+<td style="text-align:left">A value that is <code>true</code> or <code>false</code></td>
+<td style="text-align:left">isBoolean: true</td>
+<td style="text-align:center"><bubble type="json" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isCreditCard</td>
+<td style="text-align:left">A value that is a credit card number.</td>
+<td style="text-align:left"><strong>Do not store credit card numbers in your database unless your app is PCI compliant!</strong>  If you want to allow users to store credit card information, a safe alternative is to use a payment API like <a href="https://stripe.com/" target="_blank">Stripe</a>.</td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isEmail</td>
+<td style="text-align:left">A value that looks like an email address.</td>
+<td style="text-align:left"><code>isEmail: true</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isHexColor</td>
+<td style="text-align:left">A string that is a hexadecimal color.</td>
+<td style="text-align:left"><code>isHexColor: true</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isIn</td>
+<td style="text-align:left">A value that is in the specified array of allowed strings.</td>
+<td style="text-align:left"><code>isIn: [&apos;paid&apos;, &apos;delinquent&apos;]</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isInteger</td>
+<td style="text-align:left">A number that is an integer (a whole number)</td>
+<td style="text-align:left"><code>isInteger: true</code></td>
+<td style="text-align:center"><bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isIP</td>
+<td style="text-align:left">A value that is a valid IP address (v4 or v6)</td>
+<td style="text-align:left"><code>isIP: true</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isNotEmptyString</td>
+<td style="text-align:left">A value that is <em>not</em> an empty string</td>
+<td style="text-align:left"><code>isNotEmptyString: true</code></td>
+<td style="text-align:center"><bubble type="json" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isNotIn</td>
+<td style="text-align:left">A value that <strong>is not in</strong> the configured array.</td>
+<td style="text-align:left"><code>isNotIn: [&apos;profanity1&apos;, &apos;profanity2&apos;]</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isNumber</td>
+<td style="text-align:left">A value that is a Javascript number</td>
+<td style="text-align:left"><code>isNumber: true</code></td>
+<td style="text-align:center"><bubble type="json" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isString</td>
+<td style="text-align:left">A value that is a string (i.e. <code>typeof(value) === &apos;string&apos;</code>)</td>
+<td style="text-align:left"><code>isString: true</code></td>
+<td style="text-align:center"><bubble type="json" class="colors"><span is="bubble-heart"></span></bubble>, <bubble type="ref" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isURL</td>
+<td style="text-align:left">A value that looks like a URL.</td>
+<td style="text-align:left"><code>isURL: true</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">isUUID</td>
+<td style="text-align:left">A value that looks like a UUID (v3, v4 or v5)</td>
+<td style="text-align:left"><code>isUUID: true</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">max</td>
+<td style="text-align:left">A number that is less than or equal to the configured number.</td>
+<td style="text-align:left"><code>max: 10000</code></td>
+<td style="text-align:center"><bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">min</td>
+<td style="text-align:left">A number that is greater than or equal to the configured number.</td>
+<td style="text-align:left"><code>min: 0</code></td>
+<td style="text-align:center"><bubble type="number" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">maxLength</td>
+<td style="text-align:left">A string that has no more than the configured number of characters.</td>
+<td style="text-align:left"><code>maxLength: 144</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">minLength</td>
+<td style="text-align:left">A string that has at least the configured number of characters.</td>
+<td style="text-align:left"><code>minLength: 8</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+<tr>
+<td style="text-align:left">regex</td>
+<td style="text-align:left">A string that matches the configured regular expression.</td>
+<td style="text-align:left"><code>regex: /^[a-z0-9]$/i</code></td>
+<td style="text-align:center"><bubble type="string" class="colors"><span is="bubble-heart"></span></bubble></td>
+</tr>
+</tbody>
+</table>
+<h5 id="example-optional-email-address" permalink="example-optional-email-address">Example: optional email address</h5>
+<p>Imagine that you have an attribute defined as follows:</p>
+<pre><code class="javascript">workEmail: {
+  type: &apos;string&apos;,
+  isEmail: true,
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>When you call <code>.create()</code> _or_ <code>.update()</code>, this value can be set to any valid email address (like &quot;<a href="../../../cdn-cgi/l/email-protection.html#1063717e647150737c716563753e737f7d"><span class="__cf_email__" data-cfemail="4437252a3025042728253137216a272b29">[email&#160;protected]</span></a>&quot;) OR to an empty string (&quot;&quot;).  You would <em>not</em> be able to set it to <code>null</code>, though, because that would violate the type safety restriction imposed by <code>type: &apos;string&apos;</code>.</p>
+<blockquote>
+<p>To make this attribute accept <code>null</code> (e.g. if you are working with a pre-existing database), change it to <code>type: &apos;json&apos;</code>.  You&apos;d normally also want to add <code>isString: true</code>, but since we already enforce <code>isEmail: true</code> in this example, there&apos;s no need to do so.</p>
+<p>A more advanced feature to keep in mind is that, depending on your database, you can choose to take advantage of <a href="attributes.html#?columntype"><code>columnType</code></a> to inform Sails / Waterline which column type to define during auto-migrations (if relevant).</p>
+</blockquote>
+<h5 id="example-required-star-rating" permalink="example-required-star-rating">Example: required star rating</h5>
+<p>If we want to indicate that an attribute supports certain numbers, like a star rating, we might do something like this:</p>
+<pre><code class="javascript">starRating: {
+  type: &apos;number&apos;,
+  min: 1,
+  max: 5,
+  required: true,
+}
+</code></pre><!-- __LANG=%%__ -->
+<h5 id="example-optional-star-rating" permalink="example-optional-star-rating">Example: optional star rating</h5>
+<p>If we want to make our star rating optional, it&apos;s easiest to just remove the <code>required: true</code> flag.  If omitted, the starRating will default to zero.</p>
+<h5 id="example-optional-star-rating-with-null-" permalink="example-optional-star-rating-(with-null)">Example: optional star rating (with <code>null</code>)</h5>
+<p>But what if the star rating can&apos;t <em>always</em> be a number? Imagine we need to integrate with a legacy database in which star ratings could be either a number or the special null literal. In this scenario, we would like to define the <code>starRating</code> attribute to support both certain numbers and <code>null</code>.</p>
+<p>To accomplish this, just use <code>allowNull</code>:</p>
+<pre><code class="javascript">starRating: {
+  type: &apos;number&apos;,
+  allowNull: true,
+  min: 1,
+  max: 5,
+}
+</code></pre><!-- __LANG=%%__ -->
+<blockquote>
+<p>Sails and Waterline attributes support <code>allowNull</code> for convenience, but another viable solution is to change <code>starRating</code> from <code>type: &apos;number&apos;</code> to <code>type: &apos;json&apos;</code>.  Remember, though, that the <code>json</code> type allows other data, like booleans, arrays, etc. If we want to explicitly protect against those data types being supported by <code>starRating</code>, we could add the <code>isNumber: true</code> validation rule:</p>
+<pre><code class="javascript">starRating: {
+  type: &apos;json&apos;,
+  isNumber: true,
+  min: 1,
+  max: 5,
+}
+</code></pre><!-- __LANG=%%__ -->
+</blockquote>
+<h3 id="unique" permalink="unique">Unique</h3>
+<p><code>unique</code> is different from all of the validation rules listed above.  In fact, it isn&apos;t really a validation rule at all: it is a <strong>database-level constraint</strong>.  More on that in a second.</p>
+<p>If an attribute declares itself <code>unique: true</code>, then Sails ensures that no two records will be allowed with the same value.  The canonical example is an <code>emailAddress</code> attribute on a <code>User</code> model:</p>
+<pre><code class="javascript">// api/models/User.js
+module.exports = {
+
+  attributes: {
+    emailAddress: {
+      type: &apos;string&apos;,
+      unique: true,
+      required: true
+    }
+  }
+
+};
+</code></pre><!-- __LANG=%%__ -->
+<h5 id="why-is-unique-different-from-other-validations-" permalink="why-is-unique-different-from-other-validations">Why is <code>unique</code> different from other validations?</h5>
+<p>Imagine you have 1,000,000 user records in your database.  If <code>unique</code> was implemented like other validations, every time a new user signed up for your app, Sails would need to search through <em>one million</em> existing records to ensure that no one else was already using the email address provided by the new user.  That would be so slow that by the time we finished searching through all those records, someone else could have signed up!</p>
+<p>Fortunately, this type of uniqueness check is perhaps the most universal feature of <em>any</em> database.  To take advantage of that, Sails relies on the <a href="../models-and-orm.html#?adapters">database adapter</a> to implement support for <code>unique</code>&#x2014;specifically, it adds a <strong>uniqueness constraint</strong> to the relevant field/column/attribute in the database itself during <a href="model-settings.html#?migrate">auto-migration</a>.  That is, while your app is set to <code>migrate:&apos;alter&apos;</code>, Sails will automatically generate tables/collections in the underlying database with uniqueness constraints built right in.  Once you switch to <code>migrate:&apos;safe&apos;</code>, updating your database constraints is up to you.</p>
+<h5 id="what-about-indexes-" permalink="what-about-indexes">What about indexes?</h5>
+<p>When you start using your production database, it is always a good idea to set up indexes to boost your database&apos;s performance.  The exact process and best practices for setting up indexes varies between databases and is beyond the scope of this documentation.  That said, if you&apos;ve never done this before, don&apos;t worry: it&apos;s <a href="https://stackoverflow.com/a/1130/486547" target="_blank">easier than you think</a>.</p>
+<p>Just like everything else related to your production schema, once you set your app to use <code>migrate: &apos;safe&apos;</code>, Sails leaves database indexes entirely up to you.</p>
+<blockquote>
+<p>Note that this means you should be sure to update your indexes alongside your uniqueness constraints when performing <a href="https://github.com/BlueHotDog/sails-migrations" target="_blank">manual migrations</a>.</p>
+</blockquote>
+<h3 id="when-to-use-validations" permalink="when-to-use-validations">When to use validations</h3>
+<p>Validations can save you from writing many hundreds of lines of repetitive code,  but keep in mind that model validations are run for <em>every create or update</em> in your application.  Before using a validation rule in one of your attribute definitions, make sure you are okay with it being applied <em>every time</em> your application calls <code>.create()</code> or <code>.update()</code> to specify a new value for that attribute.  If that is <em>not</em> the case, write code that validates the incoming values inline in your controller, or call a custom function in one of your <a href="../services.html">services</a> or a <a href="models.html#?model-methods-aka-static-or-class-methods">model class method</a>.</p>
+<p>Suppose that your Sails app allows users to sign up for an account by either (A) entering an email address and password and then confirming that email address or (B) signing up with LinkedIn.  Your <code>User</code> model might have one attribute called <code>manuallyEnteredEmail</code> and another called <code>linkedInEmail</code>.  While one of those email address attributes is required, <em>which</em> one that is depends on how a user signs up.  In this case, your <code>User</code> model cannot use the <code>required: true</code> validation. In order to confirm that one of the two emails has been provided&#x2014;and that the provided email is valid&#x2014;you&apos;ll instead have to manually check these values before the relevant <code>.create()</code> and <code>.update()</code> calls in your code:</p>
+<pre><code class="javascript">if ( !_.isString( req.param(&apos;email&apos;) ) ) {
+  return res.badRequest();
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>Taking this one step further, let&apos;s say your application accepts payments.  During the sign-up flow, if the user signs up with a paid plan, they must provide an email address for billing purposes (<code>billingEmail</code>), while if the user signs up with a free account, they skip that step.  On the account settings page, users on the paid plan see a &quot;Billing Email&quot; form field where they can customize their billing email. Users with the free plan, on the other hand, see a call to action which links to the &quot;Upgrade Plan&quot; page.</p>
+<p>While these requirements seem specific, there are still unanswered questions:</p>
+<ul>
+<li>Do we update the billing email automatically when the other email address from which it was defaulted changes?</li>
+<li>What if the billing email had been changed at least once?</li>
+<li>What happens to the billing email after a user downgrades to the free plan? If that user upgrades to a paid plan again, do we request their billing email address anew or use the old one?</li>
+<li>What happens to the billing email when an existing user connects their LinkedIn account and a new <code>linkedInEmail</code> is saved?</li>
+<li>What happens to the billing email if a monthly invoice email cannot be delivered?</li>
+<li>What happens to the billing email if a member of your support team logs into the admin interface and changes it manually?</li>
+<li>What happens to the billing email if a POST request is received on the callback URL we provided to the LinkedIn API to notify our app that the user changed their email address on <a href="http://linkedin.com/" target="_blank">http://linkedin.com</a>, saving a new <code>linkedInEmail</code>?</li>
+<li>What happens to the billing email when an existing user disconnects their LinkedIn account?</li>
+<li>Are two user accounts in the database allowed to have the same billing email?  What about the email from LinkedIn?  Or the one they entered manually?</li>
+</ul>
+<p>Depending on the answers to questions like these, we might end up keeping the <code>required</code> validation on <code>billingEmail</code>, adding new attributes (like <code>hasBillingEmailBeenChangedManually</code>), or even rethinking whether we use a <code>unique</code> constraint.</p>
+<h3 id="best-practices" permalink="best-practices">Best practices</h3>
+<p>Finally, here are a few tips:</p>
+<ul>
+<li>Your initial decision about whether or not to use validations for a particular attribute should depend on your app&apos;s requirements and how you are calling <code>.update()</code> and <code>.create()</code>. Don&apos;t be afraid to forgo built-in validation support in favor of checking values by hand in your controllers or in a helper function.  Oftentimes this is the cleanest and most maintainable approach.</li>
+<li>There&apos;s nothing wrong with adding or removing validations from your models as your app evolves, but once in production, there is one <strong>very important exception</strong>: <code>unique</code>.  During development, when your app is configured to use <a href="model-settings.html#?migrate"><code>migrate: &apos;alter&apos;</code></a>, you can add or remove <code>unique</code> validations at will.  However, if you are using <code>migrate: safe</code> (e.g. with your production database), you will want to update constraints/indices in your database, as well as <a href="https://github.com/BlueHotDog/sails-migrations" target="_blank">migrate your data by hand</a>.</li>
+<li>It is a very good idea to take the time to fully understand your application&apos;s user interface <em>first</em>, before setting up complex validations on your model attributes.</li>
+</ul>
+<blockquote>
+<p>As much as possible, it is best to obtain or flesh out your own wireframes of your app&apos;s user interface <em>before</em> you spend any serious amount of time implementing <em>any</em> backend code.  Of course, this isn&apos;t always possible, and that&apos;s what the <a href="../blueprints.html">blueprint API</a> is for.  Applications built with a UI-centric, or &quot;front-end first&quot;, philosophy are easier to maintain, tend to have fewer bugs, and&#x2014;since mindfulness of the user experience is at their core&#x2014;often have more elegant APIs.</p>
+</blockquote>
+<h3 id="custom-validation-rules" permalink="custom-validation-rules">Custom validation rules</h3>
+<p>You can define your own custom validation rules by specifying a <code>custom</code> function in your attributes.</p>
+<pre><code class="javascript">// api/models/User.js
+module.exports = {
+
+  // Values passed for creates or updates of the User model must obey the following rules:
+  attributes: {
+
+    firstName: {
+      // Note that a base type (in this case &quot;string&quot;) still has to be defined, even though validation rules are in use.
+      type: &apos;string&apos;,
+      required: true,
+      minLength: 5,
+      maxLength: 15
+    },
+
+    location: {
+      type: &apos;json&apos;,
+      custom: function(value) {
+        return _.isObject(value) &amp;&amp;
+        _.isNumber(value.x) &amp;&amp; _.isNumber(value.y) &amp;&amp;
+        value.x !== Infinity &amp;&amp; value.x !== -Infinity &amp;&amp;
+        value.y !== Infinity &amp;&amp; value.y !== -Infinity;
+      }
+    },
+
+    password: {
+      type: &apos;string&apos;,
+      custom: function(value) {
+        // &#x2022; be a string
+        // &#x2022; be at least 6 characters long
+        // &#x2022; contain at least one number
+        // &#x2022; contain at least one letter
+        return _.isString(value) &amp;&amp; value.length &gt;= 6 &amp;&amp; value.match(/[a-z]/i) &amp;&amp; value.match(/[0-9]/);
+      }
+    }
+
+  }
+
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>Custom validation functions receive the incoming value to be validated as their first argument. They are expected to return <code>true</code> if valid and <code>false</code> otherwise.</p>
+<h5 id="custom-validation-messages" permalink="custom-validation-messages">Custom validation messages</h5>
+<p>Out of the box, Sails.js does not support custom validation messages.  Instead, your code should <a href="errors.html#?usage-errors">look at (or &quot;negotiate&quot;) validation errors</a> thrown by <code>.create()</code> or <code>.update()</code> calls and take the appropriate action, whether that&apos;s sending a particular error code in your JSON response or rendering the appropriate message in an HTML error page.</p>
+<docmeta name="displayName" value="Validations">
+</docmeta>
+    
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    
+    <h3>Is something missing?</h3>
+    <p>If you notice something we've missed or could be improved on, please follow <a href="https://github.com/balderdashy/sails-docs/blob/master/concepts/ORM/Validations.md" target="_blank">this link</a> and submit a pull request to the sails-docs repo.  Once we merge it, the changes will be reflected on the website the next time it is deployed.</p>
+    
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../../../index.html">
+        <img class="logo" src="../../../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../../../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../../../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../../../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="../../reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="../../reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../../../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="../../reference.html">Reference</a>
+        <a data-section="concepts" href="../../concepts.html">Concepts</a>
+        <a data-section="anatomy" href="../../anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="../../upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="../../contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="../../tutorials.html">Tutorials</a>
+        <a href="../../../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>Concepts</h4>
+      <ul class="main-sections">
+        
+
+          <li is="menu-item"
+            data-path="concepts/ActionsAndControllers/ActionsAndControllers.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../actions-and-controllers.html">
+    Actions and controllers
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/ActionsAndControllers/GeneratingActions.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../actions-and-controllers/generating-actions-and-controllers.html">
+    Generating actions and controllers
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ActionsAndControllers/RoutingToActions.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../actions-and-controllers/routing-to-actions.html">
+    Routing to actions
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Assets/Assets.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../assets.html">
+    Assets
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Assets/DefaultTasks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../assets/default-tasks.html">
+    Default tasks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Assets/DisablingGrunt.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../assets/disabling-grunt.html">
+    Disabling Grunt
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Assets/TaskAutomation.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../assets/task-automation.html">
+    Task automation
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Blueprints/Blueprints.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../blueprints.html">
+    Blueprints
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Blueprints/Blueprint Actions.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../blueprints/blueprint-actions.html">
+    Blueprint actions
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Blueprints/Blueprint Routes.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../blueprints/blueprint-routes.html">
+    Blueprint routes
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Configuration/Configuration.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../configuration.html">
+    Configuration
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Configuration/localjsfile.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../configuration/the-local-js-file.html">
+    The local.js file
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Configuration/usingsailsrcfiles.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../configuration/using-sailsrc-files.html">
+    Using `.sailsrc` files
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Deployment/Deployment.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../deployment.html">
+    Deployment
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Deployment/FAQ.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../deployment/faq.html">
+    FAQ
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Deployment/Hosting.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../deployment/hosting.html">
+    Hosting
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Deployment/Scaling.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../deployment/scaling.html">
+    Scaling
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/E-commerce/E-commerce.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../e-commerce.html">
+    E-commerce
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/extending-sails/extending-sails.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails.html">
+    Extending Sails
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Adapters/Adapters.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/adapters.html">
+    Adapters
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Adapters/adapterList.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/adapters/available-adapters.html">
+    Available adapters
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Adapters/customAdapters.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/adapters/custom-adapters.html">
+    Custom adapters
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Custom Responses/Custom Responses.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/custom-responses.html">
+    Custom responses
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Custom Responses/AddingCustomResponse.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/custom-responses/adding-a-custom-response.html">
+    Adding a custom response
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Generators/Generators.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/generators.html">
+    Generators
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Generators/generatorList.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/generators/available-generators.html">
+    Available generators
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Generators/customGenerators.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/generators/custom-generators.html">
+    Custom generators
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/Hooks.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks.html">
+    Hooks
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/available-hooks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/available-hooks.html">
+    Available hooks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/events.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/events.html">
+    Events
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/hookspec.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification.html">
+    Hook specification
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/configure.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification/configure.html">
+    .configure()
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/defaults.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification/defaults.html">
+    .defaults
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/initialize.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification/initialize.html">
+    .initialize()
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/register-actions.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification/register-actions.html">
+    .registerActions()
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/hookspec/routes.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/hook-specification/routes.html">
+    .routes
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/installablehooks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/installable-hooks.html">
+    Installable hooks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/projecthooks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/project-hooks.html">
+    Project hooks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/extending-sails/Hooks/usinghooks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../extending-sails/hooks/using-hooks.html">
+    Using hooks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/File Uploads/File Uploads.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../file-uploads.html">
+    File uploads
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/File Uploads/uploading-to-mongo-gridfs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../file-uploads/uploading-to-grid-fs.html">
+    Uploading to GridFS
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/File Uploads/uploading-to-amazon-s3.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../file-uploads/uploading-to-s-3.html">
+    Uploading to S3
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Globals/Globals.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../globals.html">
+    Globals
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Globals/DisablingGlobals.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../globals/disabling-globals.html">
+    Disabling globals
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Helpers/Helpers.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../helpers.html">
+    Helpers
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Helpers/ExampleHelper.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../helpers/example-helper.html">
+    Example helper
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Internationalization/Internationalization.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../internationalization.html">
+    Internationalization
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Internationalization/Locales.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../internationalization/locales.html">
+    Locales
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Internationalization/TranslatingDynamicContent.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../internationalization/translating-dynamic-content.html">
+    Translating dynamic content
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Logging/Logging.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../logging.html">
+    Logging
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Logging/Custom log messages.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../logging/custom-log-messages.html">
+    Custom log messages
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Middleware/Middleware.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../middleware.html">
+    Middleware
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Middleware/ConventionalDefaults.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../middleware/conventional-defaults.html">
+    Conventional defaults
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/ORM/ORM.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../models-and-orm.html">
+    Models and ORM
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/Associations.ejs"
+          class="  folder  ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations.html">
+    Associations
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/ManytoMany.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/many-to-many.html">
+    Many-to-many
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/OneWayAssociation.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/one-way-association.html">
+    One way association
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/OnetoMany.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/one-to-many.html">
+    One-to-many
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/OnetoOne.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/one-to-one.html">
+    One-to-one
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/Reflexive.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/reflexive-associations.html">
+    Reflexive associations
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Associations/ThroughAssociations.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="associations/through-associations.html">
+    Through associations
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Attributes.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="attributes.html">
+    Attributes
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/errors.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="errors.html">
+    Errors
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Lifecyclecallbacks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="lifecycle-callbacks.html">
+    Lifecycle callbacks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/model-settings.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="model-settings.html">
+    Model settings
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Models.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="models.html">
+    Models
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Querylanguage.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="query-language.html">
+    Query language
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Records.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="records.html">
+    Records
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/standalone-usage.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="standalone-waterline-usage.html">
+    Standalone Waterline usage
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/ORM/Validations.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="validations.html">
+    Validations
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Policies/Policies.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../policies.html">
+    Policies
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Policies/Permissions.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../policies/access-control-and-permissions.html">
+    Access Control and Permissions
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Programmatic Usage/Programmatic Usage.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../programmatic-usage.html">
+    Programmatic usage
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Programmatic Usage/Tips and Tricks.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../programmatic-usage/tips-and-tricks.html">
+    Tips and tricks
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Realtime/Realtime.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../realtime.html">
+    Realtime
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Realtime/Multi-server environments.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../realtime/multi-server-environments.html">
+    Multi-server environments
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Realtime/On the client.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../realtime/on-the-client.html">
+    On the client
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Realtime/On the server.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../realtime/on-the-server.html">
+    On the server
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Routes/Routes.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../routes.html">
+    Routes
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Routes/RouteTargetSyntax.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../routes/custom-routes.html">
+    Custom routes
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Routes/URLSlugs.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../routes/url-slugs.html">
+    URL slugs
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Security/Security.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security.html">
+    Security
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Security/Clickjacking.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/clickjacking.html">
+    Clickjacking
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/ContentSecurityPolicy.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/content-security-policy.html">
+    Content security policy
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/CORS.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/cors.html">
+    CORS
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/CSRF.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/csrf.html">
+    CSRF
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/DDOS.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/ddos.html">
+    DDOS
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/P3P.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/p-3-p.html">
+    P3P
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/SocketHijacking.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/socket-hijacking.html">
+    Socket hijacking
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/StrictTransportSecurity.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/strict-transport-security.html">
+    Strict Transport Security
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Security/XSS.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../security/xss.html">
+    XSS
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Services/Services.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../services.html">
+    Services
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Sessions/sessions.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../sessions.html">
+    Sessions
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/shell-scripts/shell-scripts.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../shell-scripts.html">
+    Shell scripts
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Testing/Testing.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../testing.html">
+    Testing
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="concepts/Views/Views.ejs"
+            class="  folder  ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../views.html">
+    Views
+  </a>
+</span>
+
+
+
+<ul>
+  
+
+      <li is="menu-item"
+          data-path="concepts/Views/Layouts.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../views/layouts.html">
+    Layouts
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Views/Locals.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../views/locals.html">
+    Locals
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Views/Partials.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../views/partials.html">
+    Partials
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+
+      <li is="menu-item"
+          data-path="concepts/Views/ViewEngines.ejs"
+          class="    ">
+      
+      
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="../views/view-engines.html">
+    View engines
+  </a>
+</span>
+
+
+
+
+      </li>
+
+    
+</ul>
+
+
+          </li>
+          
+      </ul>
+      
+      <div class="ad">
+        <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../../../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../../../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../../../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../../../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../../../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../../../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../../../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="../../reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../../contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../../../images/logo_sails.png">
+        <p class="license-info"><a href="../../../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../../../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/concepts/models-and-orm/validations by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:25:24 GMT -->
+</html>

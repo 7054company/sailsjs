@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/upgrading/to-v-0-12#?socket-methods by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:27:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>To v0.12</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"upgrading.ejs","fullPathAndFileName":"upgrading/upgrading.ejs","realPath":"upgrading/","data":{"displayName":"Upgrading","isOverviewPage":"true","lastModified":1558394142000},"children":["upgrading/To1.0.ejs","upgrading/To0.12.ejs","upgrading/To0.11.ejs","upgrading/To0.10.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1558394142000,"path":"upgrading/upgrading.ejs","isTableOfContents":false,"isOverviewPage":true,"displayName":"Upgrading","slug":"upgrading","topSection":"upgrading/","id":"upgrading","version":"","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To1.0.ejs","fullPathAndFileName":"upgrading/To1.0.ejs","data":{"displayName":"To v.1.0","version":"1.0.0","lastModified":1559257619000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1559257619000,"path":"upgrading/To1.0.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.1.0","slug":"upgrading/to-v-1-0","topSection":"upgrading/","id":"upgrading-to-v-1-0","version":"1.0.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.12.ejs","fullPathAndFileName":"upgrading/To0.12.ejs","data":{"displayName":"To v0.12","version":"0.12.0","lastModified":1558388814000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1558388814000,"path":"upgrading/To0.12.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.12","slug":"upgrading/to-v-0-12","topSection":"upgrading/","id":"upgrading-to-v-0-12","version":"0.12.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.11.ejs","fullPathAndFileName":"upgrading/To0.11.ejs","data":{"displayName":"To v0.11","version":"0.11.0","lastModified":1522061568000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"upgrading/To0.11.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.11","slug":"upgrading/to-v-0-11","topSection":"upgrading/","id":"upgrading-to-v-0-11","version":"0.11.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.10.ejs","fullPathAndFileName":"upgrading/To0.10.ejs","data":{"displayName":"To v.0.10","version":"0.10.0","lastModified":1482884348000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1482884348000,"path":"upgrading/To0.10.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.0.10","slug":"upgrading/to-v-0-10","topSection":"upgrading/","id":"upgrading-to-v-0-10","version":"0.10.0","isMethod":false,"parentDisplayName":"upgrading"}];
+</script>
+
+<div id="sails-page_reference-or-concepts" is="doc-page">
+  <!-- Main content -->
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered >
+    
+    
+    <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/upgrading/To0.12.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+    <h1 id="upgrading-to-sails-v0-12">Upgrading to Sails v0.12</h1>
+<p>Sails v0.12 comes with an upgrade to Socket.io and Express, as well as many bug fixes and performance enhancements. While you should find that this version is mostly backwards compatible with Sails v0.11, there are some major changes to <code>sails.sockets.*</code> methods which may affect your app. Those changes are addressed in the migration guide below, so if you are upgrading an existing app from v0.11 and are using <code>sails.sockets</code> methods, please be sure and carefully read the information below. Aside from those changes, running <code>sails lift</code> in an existing project should just work.</p>
+<p>The sections below provide a high-level overview of what&apos;s changed, major bug fixes, enhancements and new features, as well as a basic tutorial on how to upgrade your v0.11.x Sails app to v0.12.</p>
+<h2 id="installing-the-update" permalink="installing-the-update">Installing the update</h2>
+<p>Run the following command from the root of your Sails app:</p>
+<pre><code class="bash">npm install <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0b786a6267784b">[email&#160;protected]</a>~0.12.0 --force --save
+</code></pre><!-- __LANG=%%__ -->
+<p>The <code>--force</code> flag will override the existing Sails dependency installed in your <code>node_modules/</code> folder with the latest patch release of Sails v0.12, and the <code>--save</code> flag will update your package.json file so that future npm installs will also use the new version.</p>
+<h2 id="things-to-do-immediately-after-upgrading" permalink="things-to-do-immediately-after-upgrading">Things to do immediately after upgrading</h2>
+<ul>
+<li>If your app uses the <code>socket.io-redis</code> adapter, upgrade to at least version 1.0.0 (<code>npm install --save <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="3e4d515d555b4a105751134c5b5a574d7e">[email&#160;protected]</a>^1.0.0</code>).</li>
+<li>If your app is using the Sails socket client (e.g. <code>assets/js/dependencies/sails.io.js</code>) on the front end, also install the newest version (<code>sails generate sails.io.js --force</code>).</li>
+</ul>
+<h2 id="overview-of-changes-in-v0-12" permalink="overview-of-changes-in-v012">Overview of changes in v0.12</h2>
+<blockquote>
+<p>For a full list of changes, see the changelog file for <a href="https://github.com/balderdashy/sails/blob/master/CHANGELOG.md" target="_blank">Sails</a>, as well as those for <a href="https://github.com/balderdashy/waterline/blob/master/CHANGELOG.md" target="_blank">Waterline</a>, <a href="https://github.com/balderdashy/sails-hook-sockets/blob/master/CHANGELOG.md" target="_blank">sails-hook-sockets</a> and <a href="https://github.com/balderdashy/sails.io.js/blob/master/CHANGELOG.md" target="_blank">sails.io.js</a>.</p>
+</blockquote>
+<ul>
+<li>Security enhancements: updated several dependencies with potential vulnerabilities.</li>
+<li>Reverse routing functionality is now built into Sails core via the new <a href="../reference/application/advanced-usage/sails-get-route-for.html"><code>sails.getRouteFor()</code></a> and <a href="../reference/application/sails-get-url-for.html"><code>sails.getUrlFor()</code></a> methods.</li>
+<li>Generally improved multi-node support (and therefore scalability) of low-level <code>sails.socket.*</code> methods, and made additional adjustments and improvements related to the latest socket.io upgrade.  Added a much tighter Redis integration that sits on top of <code>socket.io-redis</code>, using a Redis client to implement cross-server communication rather than an additional socket client.</li>
+<li>Cleaned up the API for <code>sails.socket.*</code> methods, normalizing overloaded functions and deprecating methods which cause problems in multiserver deployments (more on that below).</li>
+<li>Added a few brand new sails.sockets methods: <code>.leaveAll()</code>, <code>.addRoomMembersToRooms()</code>, and <code>.removeRoomMembersFromRooms()</code>.</li>
+<li><code>sails.sockets.id()</code> is now <code>sails.sockets.getId()</code> (backwards compatible with deprecation message).</li>
+<li>New Sails apps are now generated with the updated version of <code>sails.io.js</code> (the JavaScript Sails socket client).  This upgrade bundles the latest version of <code>socket.io-client</code>, as well as some more advanced functionality (including the ability to specify common headers for all virtual socket requests).</li>
+<li>Upgraded to latest trusted versions of <code>grunt-contrib-*</code> dependencies (eliminates many NPM deprecation warnings and provides better error messages from NPM).</li>
+<li>If you are using NPM v3, running <code>sails new</code> will now run <code>npm install</code> instead of symlinking your new app&apos;s initial dependencies.  This is slower than you may be used to, but it is a necessary change due to changes in the way NPM handles nested dependencies.  The core maintainers are <a href="https://github.com/npm/npm/issues/10013#issuecomment-178238596" target="_blank">working on</a> a better long-term solution, but in the meantime if you frequently run <code>sails new</code> and the slowdown is bugging you, consider temporarily downgrading to an earlier version of NPM (v2.x).  If the installed version of NPM is prior to version 3, Sails will continue to take advantage of the classic symlinking strategy.</li>
+</ul>
+<h2 id="socket-methods" permalink="socket-methods">Socket Methods</h2>
+<p>Without question, the biggest change in Sails v0.12 is to the API of the low-level <code>sails.sockets</code> methods exposed by the <code>sockets</code> hook.  In order to ensure that Sails apps perform flawlessly in a <a href="../concepts/realtime/multi-server-environments.html">multi-server (aka &quot;multi-node&quot; or &quot;clustered&quot;) environment</a>, several <a href="../reference/web-sockets/sails-sockets.html">low-level methods</a> have been deprecated and some new ones have been added.</p>
+<p>The following <code>sails.sockets</code> methods have been deprecated:</p>
+<ul>
+<li><a href="https://0.12.sailsjs.com/documentation/reference/web-sockets/sails-sockets/sails-sockets-emit"><code>.emit()</code></a></li>
+<li><a href="https://0.12.sailsjs.com/documentation/reference/web-sockets/sails-sockets/sails-sockets-id"><code>.id()</code></a> (renamed to <a href="../reference/web-sockets/sails-sockets/get-id.html"><code>.getId()</code></a>)</li>
+<li><a href="https://0.12.sailsjs.com/documentation/reference/web-sockets/sails-sockets/sails-sockets-socket-rooms"><code>.socketRooms()</code></a></li>
+<li><a href="https://0.12.sailsjs.com/documentation/reference/web-sockets/sails-sockets/sails-sockets-rooms"><code>.rooms()</code></a></li>
+<li><a href="https://0.12.sailsjs.com/documentation/reference/web-sockets/sails-sockets/sails-sockets-subscribers"><code>.subscribers()</code></a></li>
+</ul>
+<p>If you are using any of those methods in your app, they will still work in v0.12 but <em>you should replace them as soon as possible</em> as they may be removed from Sails in the next version.  See the individual doc pages for each method for more information.</p>
+<h2 id="resourceful-pubsub-methods" permalink="resourceful-pubsub-methods">Resourceful PubSub Methods</h2>
+<p>The <a href="../reference/web-sockets/resourceful-pub-sub/subscribers.html"><code>.subscribers()</code></a> resourceful PubSub method has been deprecated for the same reasons as <a href="to-v-0-12%236390.html"><code>sails.sockets.subscribers()</code></a>.  Follow the guidelines in the docs for replacing this method if you are using it in your code.</p>
+<h2 id="waterline-orm-updates" permalink="waterline-(orm)-updates">Waterline (ORM) Updates</h2>
+<p>Sails v0.12 comes with the latest version of the Waterline ORM (v0.11.0).  There are two API changes to be aware of:</p>
+<h5 id="-save-no-longer-provides-a-second-argument-to-its-callback" permalink="save()-no-longer-provides-a-second-argument-to-its-callback"><code>.save()</code> no longer provides a second argument to its callback</h5>
+<p>The callback to the <code>.save()</code> instance method no longer receives a second argument.  While requiring the second argument was convenient, it made <code>.save()</code> less performant, especially for apps working with millions of records.  This change resolves those issues by eliminating the need to build redundant queries, and preventing your database from having to process them.</p>
+<p>If there are places in your app where you have code like this:</p>
+<pre><code class="javascript">sierra.save(function (err, modifiedSierra){
+  if (err) { /* ... */  return; }
+
+  // ...
+});
+</code></pre><!-- __LANG=%%__ -->
+<p>You should replace it with:</p>
+<pre><code class="javascript">sierra.save(function (err){
+  if (err) { /* ... */  return; }
+
+  // ...
+});
+</code></pre><!-- __LANG=%%__ -->
+<h5 id="custom-column-field-names-for-built-in-timestamps" permalink="custom-column/field-names-for-builtin-timestamps">Custom column/field names for built-in timestamps</h5>
+<p>You can now configure a custom column name (i.e. field name, for Mongo/Redis folks) for the built-in <code>createdAt</code> and <code>updatedAt</code> attributes.  In the past, the top-level <code>autoCreatedAt</code> and <code>autoUpdatedAt</code> model settings could be specified as <code>false</code> to disable the automatic injection of <code>createdAt</code> and <code>updatedAt</code> altogether.  That <em>still works as it always has</em>, but now you can also specify string values for one or both of these settings instead.  If a string is specified, it will be understood as the custom column (/field) name to use for the automatic timestamp.</p>
+<pre><code class="javascript">{
+  attributes: {},
+  autoCreatedAt: &apos;my_cool_created_when_timestamp&apos;,
+  autoUpdatedAt: &apos;my_cool_updated_at_timestamp&apos;
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>If you were using the <a href="https://stackoverflow.com/a/24562385/486547" target="_blank">workaround suggested by @sgress454 here</a>, you may want to take advantage of this simpler approach instead.</p>
+<h2 id="sql-adapter-performance" permalink="sql-adapter-performance">SQL Adapter Performance</h2>
+<p><a href="https://github.com/balderdashy/sails-postgresql" target="_blank">Sails-PostgreSQL</a> and <a href="https://github.com/balderdashy/sails-mysql" target="_blank">Sails-MySQL</a> recieved patch updates that significantly improved performance when populating associations. Thanks to <a href="https://github.com/jianpingw" target="_blank">@jianpingw</a> for digging into the source and finding a bug that was processing database records too many times. If you are using either of these adapters, upgrading to <a href="../../cdn-cgi/l/email-protection.html#70100311191c035d001f030417021503011c30405e41415e41">`<span class="__cf_email__" data-cfemail="c5b6a4aca9b6e8b5aab6b1a2b7a0b6b4a985f5ebf4f4ebf4">[email&#160;protected]</span></a><code>or</code><a href="../../cdn-cgi/l/email-protection.html#f08391999c83dd9d8983819cb0c0dec1c1dec3"><span class="__cf_email__" data-cfemail="9deefcf4f1eeb0f0e4eeecf1ddadb3acacb3ae">[email&#160;protected]</span></a>` will give you a significant performance boost.</p>
+<h2 id="contributing" permalink="contributing">Contributing</h2>
+<p>While not technically part of the release, Sails v0.12 is accompanied by some major improvements to the tools and resources available to contributors.  More core hooks are now fully documented (<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/controllers" target="_blank">controllers</a>|<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/grunt" target="_blank">grunt</a>|<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/logger" target="_blank">logger</a>|<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/cors" target="_blank">cors</a>|<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/responses" target="_blank">responses</a>|<a href="https://github.com/balderdashy/sails/tree/master/lib/hooks/orm" target="_blank">orm</a>), and the team has put together a <a href="https://github.com/balderdashy/sails/blob/master/CODE-OF-CONDUCT.md" target="_blank">Code of Conduct</a> for contributing to the Sails project.</p>
+<p>The biggest change for contributors is the <a href="https://github.com/balderdashy/sails/blob/master/CONTRIBUTING.md" target="_blank">updated contribution guide</a>, which contains the new, streamlined process for feature/enhancement proposals and for merging features, enhancements, and patches into core.  As the Sails framework has grown (both the code base and the user base), it&apos;s become necessary to establish clearer processes for how issue contributions, code contributions, and contributions to the documentation are reviewed and merged.</p>
+<h2 id="documentation" permalink="documentation">Documentation</h2>
+<p>This release also comes with a deep clean of the official reference documentation, and some minor usability improvements to the online docs at <a href="../reference.html">https://sailsjs.com/documentation</a>. The entire Sails website is now available in <a href="http://sailsjs.jp/" target="_blank">Japanese</a>, and four other <a href="https://github.com/balderdashy/sails-docs#in-other-languages" target="_blank">translation projects</a> are underway for Korean, Brazillian Portugese, Taiwanese Mandarin, and Spanish.</p>
+<p>In addition, the Sails.js project (finally) has an <a href="http://blog.sailsjs.com/">official blog</a>.  The Sails.js blog is the new source for all longform updates and announcements about Sails, as well as for our related projects like Waterline, Skipper, and the machine specification.</p>
+<h2 id="need-help-" permalink="need-help">Need Help?</h2>
+<p>If you run into an unexpected issue upgrading your Sails app to v0.12.0, please review our contribution guide and <a href="https://github.com/balderdashy/sails/blob/master/CONTRIBUTING.md" target="_blank">submit an issue in the Sails GitHub repo</a>.</p>
+<p><docmeta name="displayName" value="To v0.12"></docmeta></p>
+<docmeta name="version" value="0.12.0">
+</docmeta>
+    
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    
+    <h3>Need help upgrading?</h3>
+    <p>If your company has the budget, consider purchasing <a href="../../flagship.html">Flagship support</a>.  It's a great way to support the ongoing development of the open source tools you use every day.  And it gives you an extra lifeline to the Sails core team.</p>
+    
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../../index.html">
+        <img class="logo" src="../../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="../reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="../reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="../reference.html">Reference</a>
+        <a data-section="concepts" href="../concepts.html">Concepts</a>
+        <a data-section="anatomy" href="../anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="../upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="../contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="../tutorials.html">Tutorials</a>
+        <a href="../../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>Upgrading</h4>
+      <ul class="main-sections">
+        
+
+          <li is="menu-item"
+            data-path="upgrading/To1.0.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-1-0.html">
+    To v.1.0
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.12.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-12.html">
+    To v0.12
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.11.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-11.html">
+    To v0.11
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.10.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-10.html">
+    To v.0.10
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+      </ul>
+      
+      <div class="ad">
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="../reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../../images/logo_sails.png">
+        <p class="license-info"><a href="../../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/upgrading/to-v-0-12#?socket-methods by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:27:23 GMT -->
+</html>

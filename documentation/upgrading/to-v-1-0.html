@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from sailsjs.com/documentation/upgrading/to-v-1-0 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:17:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>To v.1.0</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/efp4ekk.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <meta name="google-site-verification" content="6HnJJqAkInT-Kv8bSMvtGDpaaCgKLmukQqrzJUqPAZg" />
+
+    
+    <meta name="author" content="The Sails Company" />
+
+
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64534106-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../dist/production.min.1c9361b0.css">
+    <!--STYLES END-->
+
+    <!-- IE8 style overrides -->
+    <!--[if lt IE 9]>
+    <style>
+    #header .version-nav { display: none!important; }
+    #header .docs-nav i { display: none!important; }
+    #header .nav-container .nav .docs-nav #docs-menu { display: none!important; }
+    #header #unsupported-browser-banner { display: block; }
+    </style>
+    <![endif]-->
+
+    <!-- setup for FB like buttons -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = 'http://connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '600838656713699']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=600838656713699&amp;ev=PixelInitialized" /></noscript>
+    <!-- /FB Buttons -->
+
+    <!-- for Twitter buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- /Twitter buttons -->
+  </head>
+
+  <body ng-app="page" ng-controller="afterRender">
+    
+<script>
+window.MENU_DATA = [{"templateTitle":"upgrading.ejs","fullPathAndFileName":"upgrading/upgrading.ejs","realPath":"upgrading/","data":{"displayName":"Upgrading","isOverviewPage":"true","lastModified":1558394142000},"children":["upgrading/To1.0.ejs","upgrading/To0.12.ejs","upgrading/To0.11.ejs","upgrading/To0.10.ejs"],"isParent":true,"notShownOnWebsite":false,"lastModified":1558394142000,"path":"upgrading/upgrading.ejs","isTableOfContents":false,"isOverviewPage":true,"displayName":"Upgrading","slug":"upgrading","topSection":"upgrading/","id":"upgrading","version":"","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To1.0.ejs","fullPathAndFileName":"upgrading/To1.0.ejs","data":{"displayName":"To v.1.0","version":"1.0.0","lastModified":1559257619000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1559257619000,"path":"upgrading/To1.0.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.1.0","slug":"upgrading/to-v-1-0","topSection":"upgrading/","id":"upgrading-to-v-1-0","version":"1.0.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.12.ejs","fullPathAndFileName":"upgrading/To0.12.ejs","data":{"displayName":"To v0.12","version":"0.12.0","lastModified":1558388814000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1558388814000,"path":"upgrading/To0.12.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.12","slug":"upgrading/to-v-0-12","topSection":"upgrading/","id":"upgrading-to-v-0-12","version":"0.12.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.11.ejs","fullPathAndFileName":"upgrading/To0.11.ejs","data":{"displayName":"To v0.11","version":"0.11.0","lastModified":1522061568000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1522061568000,"path":"upgrading/To0.11.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v0.11","slug":"upgrading/to-v-0-11","topSection":"upgrading/","id":"upgrading-to-v-0-11","version":"0.11.0","isMethod":false,"parentDisplayName":"upgrading"},{"templateTitle":"To0.10.ejs","fullPathAndFileName":"upgrading/To0.10.ejs","data":{"displayName":"To v.0.10","version":"0.10.0","lastModified":1482884348000},"parent":"","isChild":false,"notShownOnWebsite":false,"lastModified":1482884348000,"path":"upgrading/To0.10.ejs","isTableOfContents":false,"isOverviewPage":false,"displayName":"To v.0.10","slug":"upgrading/to-v-0-10","topSection":"upgrading/","id":"upgrading-to-v-0-10","version":"0.10.0","isMethod":false,"parentDisplayName":"upgrading"}];
+</script>
+
+<div id="sails-page_reference-or-concepts" is="doc-page">
+  <!-- Main content -->
+  <div is="doc-template-contents" class="docs-section invisible fade-in" data-hide-until-rendered >
+    
+    
+    <a class="pencil" href="https://github.com/balderdashy/sails-docs/edit/master/upgrading/To1.0.md" target="_blank">Edit Page <i class="sails-icon icon-pencil"></i></a>
+
+    <h1 id="upgrading-to-sails-v1-0">Upgrading to Sails v1.0</h1>
+<p>Sails v1.0 is here!  Keep reading for a high-level overview of what&apos;s changed in this release, and to learn about some new features you might want to take advantage of in your app.</p>
+<h3 id="a-note-about-breaking-changes" permalink="a-note-about-breaking-changes">A note about breaking changes</h3>
+<p>While working on this version of Sails, a lot of the decisions we made favored a better developer experience over backwards compatibility. Because of this, the upgrade to Sails 1.0 will involve dealing with more breaking changes than previous versions. But when you&apos;re finished, there&apos;ll be a much better chance that the features you&apos;re using in Sails are things that its author and maintainers understand thoroughly and use almost every day.</p>
+<p>For more about the philosophy behind many of the breaking changes in 1.0, you can read Mike McNeil&apos;s in-depth explanation <a href="https://gitter.im/balderdashy/sails?at=5a1d8fcd3a80a84b5b907099" target="_blank">here</a>.</p>
+<h3 id="upgrading-an-existing-app-using-the-automated-tool" permalink="upgrading-an-existing-app-using-the-automated-tool">Upgrading an existing app using the automated tool</h3>
+<p>Ready to upgrade your existing v0.12.x Sails app to version 1.0?  To get started, we recommend using the Sails 1.0 upgrade tool, which will help with some of the most common migration tasks.  To use the tool, first install Sails 1.0 globally with <code>npm install -g <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="2e5d4f47425d6e">[email&#160;protected]</a>^1.0.0</code> and then run <code>sails upgrade</code>.  After the tool runs, it will create a report for you with a list of remaining items that need to be manually upgraded.</p>
+<h3 id="upgrading-an-existing-app-manually" permalink="upgrading-an-existing-app-manually">Upgrading an existing app manually</h3>
+<p>The checklist below covers the changes most likely to affect the majority of apps.</p>
+<p>If your app still has errors or warnings on startup after following this checklist, or if you&apos;re seeing something unexpected, head back to this document and take a look further down the page.  (One of the guides for covering various app components will probably be applicable.)</p>
+<blockquote>
+<p>We&apos;ve done a lot of work to make the upgrade process as seamless as possible, particularly when it comes to the errors and warnings you&apos;ll see on the console.  But if you&apos;re stumped or have lingering questions about any of the changes below, feel free to <a href="../../support.html">drop by the Sails community Gitter channel</a>.  (If your company is using Sails Flagship, you can also chat directly with the Sails core team <a href="https://flagship.sailsjs.com/ask">here</a>.)</p>
+</blockquote>
+<h3 id="tl-dr-checklist-things-you-simply-must-do-when-upgrading-to-version-1-0" permalink="tldr-checklist-things-you-simply-must-do-when-upgrading-to-version-10">tl;dr checklist: things you simply <em>must</em> do when upgrading to version 1.0</h3>
+<p>The upgrade tool does its best to help with some of these items, but it won&#x2019;t change your app-specific code for you!</p>
+<ul>
+<li><strong>Step 0</strong>: Check your Node version</li>
+<li><strong>Step 1</strong>: Install hooks &amp; update dependencies</li>
+<li><strong>Step 2</strong>: Update configuration</li>
+<li><strong>Step 3</strong>: Modify client-side code for the new blueprint API</li>
+<li><strong>Step 4</strong>: Adopt the new release of Waterline ORM</li>
+</ul>
+<h5 id="step-0-check-your-node-version-" permalink="step-0-check-your-node-version">Step 0: Check your Node version!</h5>
+<p>If your app needs to support Node versions earlier than v4, you will not be able to upgrade to Sails 1.0, as Sails 1.0 no longer supports Node v0.x. The earliest version of Node supported by Sails 1.0 is Node 4.x.</p>
+<h5 id="step-1-install-hooks-update-dependencies" permalink="step-1-install-hooks-&amp;-update-dependencies">Step 1: Install hooks &amp; update dependencies</h5>
+<p>Sails v1 introduces <a href="https://github.com/balderdashy/sails/pull/3504" target="_blank">custom builds</a>.  This means that certain core hooks are now installed as direct dependencies of your app, giving you more control over your dependencies and making <code>npm install sails</code> run <em>considerably</em> faster.  So, the first thing you&apos;ll need to do is install the core hooks you&apos;re using.  (And while you&apos;re at it, be sure to update the other dependencies mentioned in the list below.)</p>
+<ul>
+<li><strong>Install the <code>sails-hook-orm</code> package</strong> into your app with <code>npm install --save sails-hook-orm</code>, unless your app has the ORM hook disabled.</li>
+<li><strong>Install the <code>sails-hook-sockets</code> package</strong> into your app with <code>npm install --save sails-hook-sockets</code>, unless your app has the sockets hook disabled.</li>
+<li><strong>Install the <code>sails-hook-grunt</code> package</strong> into your app with <code>npm install --save sails-hook-grunt</code>, unless your app has the Grunt hook disabled.</li>
+<li><strong>Install the latest version of your database adapter</strong>.  For example, if you&apos;re using <code>sails-mysql</code>, do <code>npm install --save <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="89fae8e0e5faa4e4f0faf8e5c9e5e8fdecfafd">[email&#160;protected]</a></code>.</li>
+<li><strong>Upgrade your <code>sails.io.js</code> websocket client</strong> with <code>sails generate sails.io.js</code>.  See the <a href="to-v-1-0/index.html#?websockets">&quot;Websockets&quot; section below</a> for more details.</li>
+</ul>
+<h5 id="step-2-update-configuration" permalink="step-2-update-configuration">Step 2: Update configuration</h5>
+<p>Sails v1 comes with several improvements in app configuration. For example, automatic install of lodash and async can now be customized to any version, and view engine configuration syntax is now consistent with that of Express v4+. The most significant change to configuration, however, is related to one of the most exciting new features in Sails v1: <a href="../reference/waterline-orm/datastores.html">datastores</a>.  To make sure you correctly upgrade the configuration for your database(s) and other settings, be sure to carefully read through the steps below and apply the necessary changes.</p>
+<ul>
+<li><strong>Update your <code>config/globals.js</code> file</strong> (unless your app has <code>sails.config.globals</code> set to <code>false</code>)<ul>
+<li>Set <code>models</code> and <code>sails</code> to have boolean values (<code>true</code> or <code>false</code>).</li>
+<li>Set <code>async</code> and <code>lodash</code> to either have <code>require(&apos;async&apos;)</code> and <code>require(&apos;lodash&apos;)</code> respectively, or else <code>false</code>. You may need to <code>npm install --save lodash</code> and <code>npm install --save async</code>, as well.</li>
+</ul>
+</li>
+<li><strong>Comment out any database configuration your aren&#x2019;t using</strong> in <code>config/connections.js</code>.  Unlike previous versions, Sails 1.0 will load <em>all</em> database adapters that are referenced in config files, regardless of whether they are actually used by a model.  See the <a href="to-v-1-0/index.html#?changes-to-database-configuration">migration guide section on database configuration</a> for more info.</li>
+<li><strong>The <code>/csrfToken</code> route</strong> is no longer provided to all apps by default when using CSRF.  If you&apos;re utilizing this route in your app, you&apos;ll need to manually add it to <code>config/routes.js</code> as <code>&apos;GET /csrfToken&apos;: { action: &apos;security/grant-csrf-token&apos; }</code>.</li>
+<li><strong>If your app relies on <a href="../concepts/blueprints/blueprint-routes.html#?action-routes">action shadow routes</a></strong> (where every custom controller action is automatically mapped to a route), you&#x2019;ll need to update your <code>config/blueprints.js</code> file and set <code>actions</code> to <code>true</code>.  This setting is now <code>false</code> by default.</li>
+<li><strong>If your app uses CoffeeScript or TypeScript</strong> see the <a href="../tutorials/using-coffee-script.html">CoffeeScript</a> and <a href="../tutorials/using-type-script.html">TypeScript</a> tutorials for update information.</li>
+<li><strong>If your app uses a view engine other than EJS</strong>, you&#x2019;ll need to configure it yourself in the <code>config/views.js</code> file, and you&apos;ll likely need to run <code>npm install --save consolidate</code> for your project.  See the &quot;Views&quot; section below for more details.</li>
+<li><strong>If your <code>api</code> or <code>config</code> folders and subfolders contain any non-source files</strong>, they&#x2019;ll need to be moved.  The exception is for Markdown (.md) and text (.txt) files, which will continue to be ignored.  Sails will attempt to read all other files in those folders as code, allowing for more flexibility in choosing between Javascript dialects (see the notes about CoffeeScript and TypeScript above).</li>
+</ul>
+<h5 id="step-3-modify-client-side-code-for-the-new-blueprint-api" permalink="step-3-modify-clientside-code-for-the-new-blueprint-api">Step 3: Modify client-side code for the new blueprint API</h5>
+<p>As well as having been expanded to include a new endpoint, there also are a couple of minor&#x2014;but breaking&#x2014;changes to the blueprint API that may require you to make changes to your client-side code.</p>
+<ul>
+<li><strong>If your app uses blueprint routes</strong>, be aware that a couple of implicit &quot;shadow&quot; routes have had their HTTP method (aka verb) changed:<ul>
+<li>the RESTful blueprint route address for <a href="../reference/blueprint-api/add-to.html"><strong>add</strong></a> has changed from <code>POST</code> to <code>PUT</code>.</li>
+<li>the RESTful blueprint route address for <a href="../reference/blueprint-api/update.html"><strong>update</strong></a> has changed from <code>PUT</code> to <code>PATCH</code>.</li>
+</ul>
+</li>
+<li><strong>If your app relies on the default socket notifications from blueprint actions</strong>, be aware that there have been some performance-related upgrades that change the structure of these messages somewhat:<ul>
+<li>Sails no longer publishes separate <code>addedTo</code> notifications, one for each new member of a collection. Those individual notifications are now rolled up into a single notification, and the new message contains an array of ids (<code>addedIds</code>) instead of just one.</li>
+<li>Sails no longer publishes separate <code>removedFrom</code> notifications, one for each former member of a collection. Sails now rolls those up into a single notification, and the new message now contains an array of ids (<code>removedIds</code>) instead of just one.</li>
+</ul>
+</li>
+</ul>
+<h5 id="step-4-adopt-the-new-release-of-waterline-orm" permalink="step-4-adopt-the-new-release-of-waterline-orm">Step 4: Adopt the new release of Waterline ORM</h5>
+<p>The new release of Waterline ORM (v0.13) introduces full support for SQL transactions, the ability to include or omit attributes in result sets (aka &quot;projections&quot;), dynamic database connections, and more extensive granular control over query behavior.  It also includes a major stability and performance overhaul, which comes with a few breaking changes to usage.  The bullet points below cover the most common issues you&apos;re likely to run into with the Waterline upgrade.</p>
+<ul>
+<li><strong>If your app relies on getting records back from <code>.create()</code>, <code>.createEach()</code>, <code>.update()</code>, or <code>.destroy()</code> calls</strong>, you&#x2019;ll need to update your model settings to indicate that you want those methods to fetch records (or chain a <code>.fetch()</code> to individual calls).  See the <a href="to-v-1-0/index.html#?changes-to-create-createeach-update-and-destroy-results">migration guide section on <code>create()</code>, <code>.createEach()</code>, <code>.update()</code>, and <code>.destroy()</code> results</a> for more info.</li>
+<li><strong>If your app relies on using the <code>.add()</code>, <code>.remove()</code>, and <code>.save()</code> methods to modify collections</strong>, you will need to update them to use the new <a href="../reference/waterline-orm/models/add-to-collection.html">.addToCollection</a>, <a href="../reference/waterline-orm/models/remove-from-collection.html">.removeFromCollection</a>, and <a href="../reference/waterline-orm/models/replace-collection.html">.replaceCollection</a> model methods.</li>
+<li><strong>Waterline queries will now rely on the database for case sensitivity.</strong> This means that in most adapters your queries will now be case-sensitive, whereas before they were not. This may have unexpected consequences if you are used to having case-insensitive queries. For more information on how to manage this for databases such as MySQL, see the <a href="../concepts/models-and-orm/models.html#?case-sensitivity">case sensitivity docs</a>.</li>
+<li><strong>Waterline no longer supports nested creates or updates</strong>, and this change extends to the related blueprints.  If your app relies on these features, see the <a href="to-v-1-0/index.html#?nested-creates-and-updates">migration guide section on nested creates and updates</a> for more info.</li>
+<li><strong>If your app sets a model attribute to <code>null</code></strong> using <code>.create()</code>, <code>.findOrCreate()</code> or <code>.update()</code>, you&#x2019;ll need to change the type of that attribute to <code>json</code>, or use the base value for the existing attribute type, instead of <code>null</code> (e.g. <code>0</code> for numbers).  See <a href="../concepts/models-and-orm/validations.html#?null-and-empty-string">the validations docs</a> for more info.</li>
+<li><strong>The <code>create</code> blueprint response is now fully populated</strong>, just like responses from <code>find</code>, <code>findOne</code>, <code>update</code> and <code>destroy</code>.  To suppress population of records, add a <code>parseBlueprintOptions</code> to your blueprints config or to a specific route.  See the <a href="../reference/configuration/sails-config-blueprints.html#?using-parseblueprintoptions">blueprints configuration reference</a> for more information.</li>
+<li><strong>If you&apos;re using <code>createEach</code></strong> to insert large numbers of rows into a database, keep in mind that the Sails 1.0-compatible versions of most adapters now optimize the <code>createEach</code> method to use a single query, instead of using one query per row.  Depending on your database, per-request data size limits may apply.  See the <a href="../reference/waterline-orm/models/create-each.html#?notes">notes at the bottom of the <code>.createEach()</code> reference page</a> for more information.</li>
+<li><strong>The <code>size</code> property for attributes</strong> is no longer supported.  Instead, you may indicate column size using <a href="../concepts/models-and-orm/attributes.html#?columntype">the <code>columnType</code> property</a>.</li>
+<li><strong>The <code>defaultsTo</code> property for attributes may no longer be defined as a function.</strong> Instead, you will either need to hard-code a default value, or remove the <code>defaultsTo</code> entirely and update your code to determine the appropriate value for the attribute before creating new records. (This can either be handled before calls to <code>.create()</code>/<code>.createEach()</code> in your actions, or in the model&apos;s <a href="../concepts/models-and-orm/lifecycle-callbacks.html#?lifecycle-callbacks-on-create"><code>beforeCreate</code></a>).</li>
+</ul>
+<h3 id="other-breaking-changes" permalink="other-breaking-changes">Other breaking changes</h3>
+<p>The upgrade guide above provides for the most common upgrade issues that Sails contributors have encountered when upgrading various apps between version 0.12 and version 1.0. Every app is different, though, so we recommend reading through the points below, as well.  Not all of the changes discussed will necessarily apply to your app, but some might.</p>
+<ul>
+<li><strong>Several properties and methods on <code>req</code> now work a little differently:</strong><ul>
+<li><code>req.accepted</code> has been replaced with <a href="../reference/request-req/req-accepts.html"><code>req.accepts()</code></a></li>
+<li><code>req.acceptedLanguages</code> and <code>req.acceptsLanguage()</code> have been replaced with <a href="../reference/request-req/req-accepts-languages.html"><code>req.acceptsLanguages()</code></a></li>
+<li><code>req.acceptedCharsets</code> and <code>req.acceptsCharset()</code> have been replaced with <a href="../reference/request-req/req-accepts-charsets.html"><code>req.acceptsCharsets()</code></a></li>
+</ul>
+</li>
+<li><strong>Several <code>req.options</code> properties related to blueprints are no longer supported.</strong>  Instead, the new <code>parseBlueprintOptions</code> method can be used to give you complete control over blueprint behavior.  See the <a href="../reference/configuration/sails-config-blueprints.html#?using-parseblueprintoptions">blueprints configuration reference</a> for more information.</li>
+<li><strong>The <code>defaultLimit</code> and <code>populate</code> blueprint configuration options are no longer supported.</strong> Instead, the new <code>parseBlueprintOptions</code> method can be used to give you complete control over blueprint behavior.  See the <a href="../reference/configuration/sails-config-blueprints.html#?using-parseblueprintoptions">blueprints configuration reference</a> for more information.</li>
+<li><strong>The <code>.findOne()</code> query method no longer supports <code>sort</code> and <code>limit</code> modifiers, and will throw an error if the given criteria match more than one record</strong>.  If you want to find a single record using anything besides a <code>unique</code> attribute (like the primary key) as criteria, use <code>.find(&lt;criteria&gt;).limit(1)</code> instead (keeping in mind that this will return an array of one item).</li>
+<li><strong><code>autoPk</code>, <code>autoCreatedAt</code> and <code>autoUpdatedAt</code></strong> are no longer supported as top-level model properties.  See the <a href="to-v-1-0/index.html#?changes-to-model-configuration">migration guide section on model config changes</a> for more information.</li>
+<li><strong>Dynamic finders</strong> (such as <code>User.findById()</code>) are no longer added to your models automatically.  You can implement these yourself as <a href="../concepts/models-and-orm/models.html#?custom-model-methods">custom model methods</a>.</li>
+<li><strong>Model Instance Methods</strong> are no longer supported. This allows records returned from find queries to be plain JavaScript objects instead of model record instances.</li>
+<li><strong>Custom <code>.toJSON()</code></strong> instance methods are no longer supported.  Instead, add a <a href="../concepts/models-and-orm/model-settings.html#?customtojson"><code>customToJSON</code> method</a> to the model class (outside of the <code>attributes</code> dictionary).  See the <a href="../concepts/models-and-orm/model-settings.html">model settings documentation</a> for more information.</li>
+<li><strong>The <code>.toObject()</code> instance method</strong> is no longer added to every record.  When implementing <a href="../concepts/models-and-orm/model-settings.html#?customtojson"><code>customToJSON</code></a> for a model, be sure to clone the record using <code>_.omit()</code>, <code>_.pick()</code> or <code>_.clone()</code>.</li>
+<li><strong><code>autoUpdatedAt</code> timestamps can now be manually updated</strong> in calls to <code>.update()</code> (previously, the passed-in attribute value would be ignored).  The previous behavior faciliated the use of <code>.save()</code>, which is no longer supported.  Now, you can update the <code>updatedAt</code> if you need to (but generally you should let Sails do this for you!)</li>
+<li><strong><code>beforeValidate</code> and <code>afterValidate</code> lifecycle callbacks no longer exist</strong>. Use one of the <a href="../concepts/models-and-orm/lifecycle-callbacks.html">many other lifecycle callbacks</a> to tap into the query.</li>
+<li><strong><code>afterDestroy</code> lifecycle callback now receives a single record</strong>. It has been normalized to work the same way as the <code>afterUpdate</code> callback and call the function once for each record that has been destroyed rather than once with all the destroyed records.</li>
+<li><strong>Many resourceful PubSub methods have changed</strong> (see the PubSub section below for the full list).  If your app only uses the automatic RPS functionality provided by blueprints (and doesn&#x2019;t call RPS methods directly), no updates are required.</li>
+<li><strong>The <code>.find()</code> model method no longer automatically coerces constraints that are provided for unrecognized attributes</strong>.  For example, if you execute <code>Purchase.find({ amount: &apos;12&apos; })</code>, e.g. via blueprints (<a href="http://localhost:1337/purchase?amount=12)" target="_blank">http://localhost:1337/purchase?amount=12)</a>, and there is no such &quot;amount&quot; attribute, then even if the database contains a record with the numeric equivalent (<code>12</code>), it will not be matched.  (This is only relevant when using MongoDB and sails-disk.)  If you are running into problems because of this, either define the attribute as a number or (if you&apos;re using blueprints) use an explicit <code>where</code> clause instead (e.g. <code>http://localhost.com:1337/purchase?where={&quot;amount&quot;:12}</code>).</li>
+<li><strong>Custom blueprints and the associated blueprint route syntax have been removed</strong>.  This functionality can be replicated using custom actions, helpers, and routes.  See the &quot;Replacing custom blueprints&quot; section below for more information.</li>
+<li><strong>Blueprint action shadow routes no longer include <code>/:id?</code></strong> at the end -- that is, if you have a <code>UserController.js</code> with a <code>tickle</code> action, you will no longer get a <code>/user/tickle/:id?</code> route (instead, it will be just <code>/user/tickle</code>).  Apps relying on those routes should add them manually to their <code>config/routes.js</code> file.</li>
+<li><strong><code>sails.getBaseUrl</code></strong>, deprecated in v0.12.x, has been removed.  See the <a href="http://0.12.sailsjs.com/documentation/reference/application/sails-get-base-url">v0.12 docs for <code>getBaseUrl</code></a> for more information on why it was removed and how you should replace it.</li>
+<li><strong><code>req.params.all()</code></strong>, deprecated in v0.12.x, has been removed.  Use <code>req.allParams()</code> instead.</li>
+<li><strong><code>sails.config.dontFlattenConfig</code></strong>, deprecated in v0.12.x, has been removed.  See the <a href="to-v-0-11.html#?config-files-in-subfolders">original notes about <code>dontFlattenConfig</code></a> for details.</li>
+<li><strong>The order of precedence for <code>req.param()</code> and <code>req.allParams()</code> has changed.</strong>  It is now consistently path &gt; body &gt; query (that is, url path params override request body params, which override query string params).</li>
+<li><strong><code>req.validate()</code></strong> has been removed.  Use <a href="../concepts/actions-and-controllers.html#?actions-2"><code>actions2</code></a> instead.</li>
+<li><strong>The default <code>res.created()</code> response has been removed.</strong>  If you&#x2019;re calling <code>res.created()</code> directly in your app, and you don&apos;t have an <code>api/responses/created.js</code> file, you&#x2019;ll need to create one.<ul>
+<li>On a related note, the <a href="../reference/blueprint-api/create.html">Blueprint create action</a> will now return a 200 status code upon success, instead of 201.</li>
+</ul>
+</li>
+<li><strong>The default <code>notFound</code> and <code>serverError</code> responses no longer accept a <code>pathToView</code> argument.</strong> They will only attempt to serve a <code>404</code> or <code>500</code> view.  If you need to be able to call these responses with different views, you can customize the responses by adding <code>api/responses/notFound.js</code> or <code>api/responses/serverError.js</code> files to your app.</li>
+<li><strong>The default <code>badRequest</code> or <code>forbidden</code> responses no longer display views</strong>.  If you don&#x2019;t already have the <code>api/responses/badRequest.js</code> and <code>api/responses/forbidden.js</code> files, you&#x2019;ll need add them yourself and write custom code if you want them to display view files.</li>
+<li><strong>The <a href="https://www.npmjs.com/package/connect-flash" target="_blank" target="_blank"><code>connect-flash</code></a> middleware has been removed</strong> (so <code>req.flash()</code> will no longer be available by default).  If you wish to continue using <code>req.flash()</code>, run <code>npm install --save connect-flash</code> in your app folder and <a href="../concepts/middleware.html">add the middleware manually</a>.</li>
+<li><strong>The <code>POST /:model/:id</code> blueprint RESTful route has been removed.</strong>  If your app is relying on this route, you&#x2019;ll need to add it manually to <code>config/routes.js</code> and bind it to a custom action.</li>
+<li><strong>The <code>handleBodyParserError</code> middleware has been removed</strong>; in its place, the <a href="https://www.npmjs.com/package/skipper" target="_blank" target="_blank">Skipper body parser</a> now has its own <code>onBodyParserError</code> method.<ul>
+<li>If you have customized the <a href="../concepts/middleware.html#?adding-or-overriding-http-middleware">middleware order</a>, you&#x2019;ll need to remove <code>handleBodyParserError</code> from the array.</li>
+<li>If you&apos;ve overridden <code>handleBodyParserError</code>, you&#x2019;ll need to instead override <code>bodyParser</code> with your own customized version of Skipper, including your error-handling logic in the <code>onBodyParserError</code> option.</li>
+</ul>
+</li>
+<li><strong>The <code>methodOverride</code> middleware has been removed.</strong> If your app utilizes this middleware:<ul>
+<li><code>npm install --save method-override</code></li>
+<li>Make sure your <code>sails.config.http.middleware.order</code> array (in <code>config/http.js</code>) includes <code>methodOverride</code> somewhere before <code>router</code></li>
+<li>Add <code>methodOverride: require(&apos;method-override&apos;)()</code> to <code>sails.config.http.middleware</code>.</li>
+</ul>
+</li>
+<li><strong>The <code>router</code> middleware is no longer overrideable.</strong>  Instead, the Express 4 router is used for routing both external and internal (aka &#x201C;virtual&#x201D;) requests.  It&#x2019;s still important to have a <code>router</code> entry in <code>sails.config.http.middleware.order</code> to delimit which middleware should be added before and after the router.</li>
+<li><strong>The query modifiers <code>lessThan</code>, <code>lessThanOrEqual</code>, <code>greaterThan</code>, and <code>greaterThanOrEqual</code> have been removed</strong>. Use the shorthand versions instead (<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>).</li>
+<li><strong>The <a href="../reference/blueprint-api/find-one.html"><code>find one</code></a> and <a href="../reference/blueprint-api/find-where.html"><code>find</code></a> blueprint actions</strong> now accept a <code>populate=false</code> rather than <code>populate=</code> to specify that no attributes should be populated.</li>
+<li><strong>The <a href="../reference/blueprint-api/add-to.html"><code>add</code></a> and <a href="../reference/blueprint-api/remove-from.html"><code>remove</code></a> blueprint actions</strong> now require that the primary key of the child record to add or remove be supplied as part of the URL, rather than allowing it to be passed on the query string or in the body.</li>
+<li><strong>The <a href="../reference/blueprint-api/destroy.html"><code>destroy</code></a> blueprint action</strong> now requires that the primary key of the record to destroy be supplied as part of the URL, rather than allowing it to be passed on the query string or in the body.</li>
+<li><strong>The <code>sails.config.session.routesDisabled</code> setting has changed</strong> to <code>sails.config.session.isSessionDisabled()</code>, a function.  See the <a href="../reference/configuration/sails-config-session.html"><code>config/session.js</code> docs</a> for more information on configuring <code>isSessionDisabled()</code>.</li>
+<li><strong>The experimental &#x201C;switchback-style&#x201D; usage for Waterline methods is no longer supported</strong>.  Only function callbacks may be used with Waterline model methods.</li>
+<li><strong>The experimental <code>create</code> auto-migration scheme is no longer supported</strong>.  It is highly recommended that you use a migration tool such as <a href="http://knexjs.org/#Migrations" target="_blank">Knex</a> to handle migrations of your production database.</li>
+<li><strong>The experimental <code>forceLoadAdapter</code> datastore setting is no longer supported</strong>.  Instead, all adapters referenced in <code>config/datastores.js</code> (formerly <code>config/connections.js</code>) are automatically loaded whenever Sails lifts.</li>
+<li><strong>The experimental <code>usage</code> route option has been removed.</strong>  It is recommended that you perform any route parameter validation in your controller code.</li>
+<li><strong>The experimental &#x201C;associated-item&#x201D; blueprint shadow routes have been removed.</strong> These were routes like <code>GET /user/1/pets/2</code>, whose functionality can be replicated by simply using the much-clearer route <code>GET /pets/2</code>.</li>
+<li><strong>The experimental <code>.validate()</code> method in model classes</strong> (e.g. <code>User.validate()</code>) is now fully supported, but its usage has changed.  See the <a href="../reference/waterline-orm/models/validate.html"><code>.validate()</code> docs</a> for more information.</li>
+<li><strong>The ordering of attributes</strong> in the internal representation of model classes has changed (association attributes are now sorted at the bottom).  This has the effect of causing tables created using <code>migrate: &apos;alter&apos;</code> to have their columns in a different order than in previous versions of Waterline, so be aware of this if column ordering is important in your application.  As a reminder, auto-migrations are intended to help you design your schema as you build your app.  They are not guaranteed to be consistent regarding any details of your physical database columns besides setting the column name, type (including character set / encoding if specified) and uniqueness.</li>
+<li><strong>Using <code>_config</code> to link a controller to a model</strong> will no longer work.  This was never a supported feature, but it was used in some projects to change the URLs that were mapped to the blueprint actions for a model.  Please use <a href="../reference/configuration/sails-config-blueprints.html#?properties"><code>restPrefix</code></a> instead.</li>
+</ul>
+<h3 id="changes-to-database-configuration" permalink="changes-to-database-configuration">Changes to database configuration</h3>
+<ul>
+<li>The <code>sails.config.connections</code> setting has been deprecated in favor of <code>sails.config.datastores</code>.  If you lift an app that still has <code>sails.config.connections</code> configured, you&#x2019;ll get a warning which you can avoid by simply changing <code>module.exports.connections</code> in <code>config/connections.js</code> to <code>module.exports.datastores</code>.  For your own sanity, it&#x2019;s recommended that you also change the filename to <code>config/datastores.js</code>.</li>
+<li>The <code>sails.config.models.connection</code> setting has been deprecated in favor of <code>sails.config.models.datastore</code>.  As above, changing the name of the property in <code>config/models.js</code> should be sufficient to turn off any warnings.</li>
+<li>Every app now has a default datastore (appropriately named <code>default</code>) that is configured to use a built-in version of the <a href="https://github.com/balderdashy/sails-disk" target="_blank"><code>sails-disk</code> adapter</a>.  In Sails 1.0, the default value of <code>sails.config.models.datastore</code> is <code>default</code> (rather than <code>localDiskDb</code>). The recommended approach to setting the default datastore for your models is to simply to add the desired configuration under the <code>default</code> key in <code>config/datastores.js</code>, and leave the <code>datastore</code> key in <code>config/models.js</code> undefined, rather than the previous approach of setting <code>datastore</code> to (for example) <code>myPostgresqlDb</code> and then adding a <code>myPostgresqlDb</code> key to <code>config/datastores.js</code>.  This makes it a lot easier to change the datastore used by different environments (for instance, by changing the configuration of the <code>default</code> datastore in <code>config/env/production.js</code>).</li>
+<li><em>All</em> datastores that are configured in an app will be loaded at runtime (rather than only loading datastores that were being used by at least one model).  This has the benefit of allowing the use of a datastore outside the context of an individual model, but it does mean that if you don&#x2019;t want to connect to a certain database when Sails lifts, you should comment out that datastore connection config!</li>
+</ul>
+<h3 id="nested-creates-and-updates" permalink="nested-creates-and-updates">Nested creates and updates</h3>
+<ul>
+<li>The <a href="../reference/waterline-orm/models/create.html"><code>.create()</code></a>, <a href="../reference/waterline-orm/models/update.html"><code>.update()</code></a> and <a href="../reference/waterline-orm/models/find.html"><code>.add()</code></a> model methods no longer support creating a new &#x201C;child&#x201D; record to link immediately to a new or existing parent.  For example, given a <code>User</code> model with a singular association to an <code>Animal</code> model through an attribute called <code>pet</code>, it is not possible to set <code>pet</code> to a dictionary representing values for a brand new <code>Animal</code> (aka a &#x201C;nested create&#x201D;).  Instead, create the new <code>Animal</code> first and use its primary key to set <code>pet</code> when creating the new <code>User</code>.</li>
+<li>Similarly, the <a href="../reference/blueprint-api/create.html">create</a>, <a href="../reference/blueprint-api/update.html">update</a> and <a href="../reference/blueprint-api/add-to.html">add</a> blueprint actions no longer support nested creates.</li>
+<li>The <a href="../reference/waterline-orm/models/update.html"><code>.update()</code></a> model method and its associated <a href="../reference/blueprint-api/update.html">blueprint action</a> no longer support replacing an entire plural association.  If a record is linked to one or more other records via a <a href="../concepts/models-and-orm/associations/one-to-many.html">&#x201C;one-to-many&#x201D;</a> or <a href="../concepts/models-and-orm/associations/many-to-many.html">&#x201C;many-to-many&#x201D;</a> association and you wish to link it to an entirely different set of records, use the <a href="../reference/waterline-orm/models/replace-collection.html"><code>.replaceCollection()</code> model method</a> or the <a href="../reference/blueprint-api/replace.html">replace blueprint action</a>.</li>
+</ul>
+<h3 id="changes-to-model-configuration" permalink="changes-to-model-configuration">Changes to model configuration</h3>
+<h5 id="tl-dr" permalink="tldr">tl;dr</h5>
+<p>Remove any <code>autoPK</code>, <code>autoCreatedAt</code> and <code>autoUpdatedAt</code> properties from your models, and add the following to your <code>config/models.js</code> file:</p>
+<pre><code class="javascript">attributes: {
+    createdAt: { type: &apos;number&apos;, autoCreatedAt: true, },
+    updatedAt: { type: &apos;number&apos;, autoUpdatedAt: true, },
+    id: { type: &apos;number&apos;, autoIncrement: true}, // &lt;-- for SQL databases
+    id: { type: &apos;string&apos;, columnName: &apos;_id&apos;}, // &lt;-- for MongoDB
+  }
+</code></pre><!-- __LANG=%%__ -->
+<h5 id="the-autopk-top-level-property-is-no-longer-supported" permalink="the-autopk-toplevel-property-is-no-longer-supported">The <code>autoPK</code> top-level property is no longer supported</h5>
+<p>This property was formerly used to indicate whether or not Waterline should create an <code>id</code> attribute as the primary key for a model.  Starting with Sails v1.0 / Waterline 0.13, Waterline will no longer create any attributes in the background.  Instead, the <code>id</code> attribute must be defined explicitly.  There is also a new top-level model property called <code>primaryKey</code>, which can be set to the name of the attribute that should be used as the model&apos;s primary key.  This value defaults to <code>id</code> for every model, so in general you won&apos;t have to set it yourself.</p>
+<h5 id="the-autoupdatedat-and-autocreatedat-model-settings-are-now-attribute-level-properties" permalink="the-autoupdatedat-and-autocreatedat-model-settings-are-now-attributelevel-properties">The <code>autoUpdatedAt</code> and <code>autoCreatedAt</code> model settings are now attribute-level properties</h5>
+<p>These properties were formerly used to indicate whether or not Waterline should create <code>createdAt</code> and <code>updatedAt</code> timestamps for a model.  Starting with Sails v1.0 / Waterline 0.13, Waterline will no longer create these attributes in the background.  Instead, the <code>createdAt</code> and <code>updatedAt</code> attributes must be defined explicitly if you want to use them.  By adding <code>autoCreatedAt: true</code> or <code>autoUpdatedAt: true</code> to an attribute definition, you can instruct Waterline to set that attribute to the current timestamp whenever a record is created or updated. Depending on the type of these attributes, the timestamps will be generated in one of two formats:</p>
+<ul>
+<li>For <code>type: &apos;string&apos;</code>, these timestamps are stored in the same way as they were in Sails 0.12: as timezone-agnostic ISO 8601 JSON timestamp strings (e.g. <code>&apos;2017-12-30T12:51:10Z&apos;</code>).  So if any of your front-end code is relying on the timestamps as strings it&apos;s important to set this to <code>string</code>.</li>
+<li>For <code>type: &apos;number&apos;</code>, these timestamps are stored as JS timestamps (the number of milliseconds since Jan 1, 1970 at midnight UTC).</li>
+</ul>
+<p>Furthermore, for any attribute, if you pass <code>new Date()</code> as a constraint within a Waterline criteria&apos;s <code>where</code> clause, or as a new record, or within the values to set in a <code>.update()</code> query, then these same rules are applied based on the type of the attribute. If the attribute is <code>type: &apos;json&apos;</code>, it uses the latter approach.</p>
+<!-- TODO: finish filling in the gaps for this section:
+##### Changes to built-in data types
+
+As of Sails v1.0 / Waterline 0.13, we've made changes to the way that data types and type safety work in the ORM. This allows us to do more as far as type validation/coercion, which makes your app more future-proof and less error-prone[1]()[2]()[3](). As a result, we've narrowed down the `type` options to the following:
+
++ `'string'`
++ `'number'`
++ `'boolean'`
++ `'json'`
++ _`'ref'`_ _(advanced: do not use unless you have personally inspected the source code of your adapter to understand how it handles data of this type - this is a direct channel between the adapter and your app.)_
+
+This means that the following types are **no longer supported** (but can be simulated in most cases by including `columnType` and/or validation rules in your attribute definition):
+
++ `'text'` _(use `type: 'string'` and `columnType: 'TEXT'`)_
++ `'integer'` _(use `type: 'number'`, `columnType: 'INT'` and `isInteger: true`)_
++ `'float'` _(use `type: 'number'` and `columnType: 'FLOAT'`)_
++ `'date'`
++ `'datetime'`
++ `'binary'`
++ `'array'` _(use `type: 'json'`)_
++ `'mediumtext'` _(use `type: 'string'` and `columnType: 'MEDIUMTEXT'`)_
++ `'longtext'` _(use `type: 'string'` and `columnType: 'LONGTEXT'`)_
++ `'objectid'`
++ `'email'` _(use `type: 'string'` and `isEmail: true`)_
+-->
+<h3 id="changes-to-create-createeach-update-and-destroy-results" permalink="changes-to-create(),-createeach(),-update(),-and-destroy()-results">Changes to <code>.create()</code>, <code>.createEach()</code>, <code>.update()</code>, and <code>.destroy()</code> results</h3>
+<p>As of Sails v1.0 / Waterline 0.13, the default result from <code>.create()</code>, <code>.createEach()</code>, <code>.update()</code>, and <code>.destroy()</code> has changed.</p>
+<p>To encourage better performance and easier scalability, <code>.create()</code> no longer sends back the created record. Similarly, <code>.createEach()</code> no longer sends back an array of created records, <code>.update()</code> no longer sends back an array of <em>updated</em> records, and <code>.destroy()</code> no longer sends back <em>destroyed</em> records.  Instead, the second argument to the .exec() callback is now <code>undefined</code> (or the first argument to <code>.then()</code>, if you&apos;re using promises).</p>
+<p>This makes your app more efficient by removing unnecessary <code>find</code> queries, and it makes it possible to use <code>.update()</code> and <code>.destroy()</code> to modify many different records in large datasets, rather than falling back to lower-level native queries.</p>
+<p>You can still instruct the adapter to send back created or modified records for a single query by using the <code>fetch</code> method.  For example:</p>
+<pre><code class="javascript">Article.update({
+  category: &apos;health-and-wellness&apos;,
+  status: &apos;draft&apos;
+})
+.set({
+  status: &apos;live&apos;
+})
+.fetch()
+.exec(function(err, updatedRecords){
+  //...
+});
+</code></pre><!-- __LANG=%%__ -->
+<blockquote>
+<p>If the prospect of changing all of your app&apos;s queries seems daunting, there is a temporary convenience you might want to take advantage of.
+To ease the process of upgrading an existing app, you can tell Sails/Waterline to fetch created/updated/destroyed records for ALL of your app&apos;s <code>.create()</code>/<code>.createEach()</code>/<code>.update()</code>/<code>.destroy()</code> queries.  Just edit your app-wide model settings in <code>config/models.js</code>:</p>
+<pre><code class="javascript">fetchRecordsOnUpdate: true,
+fetchRecordsOnDestroy: true,
+fetchRecordsOnCreate: true,
+fetchRecordsOnCreateEach: true,
+</code></pre><!-- __LANG=%%__ -->
+<p>That&apos;s it!  Still, to improve performance and future-proof your app, you should go through all of your <code>.create()</code>, <code>.createEach()</code>, <code>.update()</code>, and <code>.destroy()</code> calls and add <code>.fetch()</code> when you can.  Support for these model settings will eventually be removed in Sails v2.</p>
+</blockquote>
+<h3 id="changes-to-waterline-criteria-usage" permalink="changes-to-waterline-criteria-usage">Changes to Waterline criteria usage</h3>
+<ul>
+<li>For performance reasons, as of Sails v1.0 / Waterline 0.13, criteria passed into Waterline&apos;s model methods will now be mutated in-place in most situations (whereas in Sails/Waterline v0.12, this was not necessarily the case).</li>
+<li>Aggregation clauses (<code>sum</code>, <code>average</code>, <code>min</code>, <code>max</code>, and <code>groupBy</code>) are no longer supported in criteria.  Instead, see new model methods <a href="../reference/waterline-orm/models/sum.html">.sum()</a> and <a href="../reference/waterline-orm/models/avg.html">.avg()</a>.</li>
+<li>Changes to limit and skip:<ul>
+<li><code>limit: 0</code> <strong>no longer does the same thing as <code>limit: undefined</code></strong>.  Instead of matching &#x221E; results, it now matches 0 results.</li>
+<li>Avoid specifying a limit of &lt; 0.  It is still ignored, and acts like <code>limit: undefined</code>, but it now logs a deprecation warning to the console.</li>
+<li><code>skip: -20</code> <strong>no longer does the same thing as <code>skip: undefined</code></strong>.  Instead of skipping zero results, it now refuses to run with an error.</li>
+<li>Limit must be &lt; Number.MAX_SAFE_INTEGER (...with one exception: for compatibility/convenience, <code>Infinity</code> is tolerated and normalized to <code>Number.MAX_SAFE_INTEGER</code> automatically.)</li>
+<li>Skip must be &lt; Number.MAX_SAFE_INTEGER</li>
+</ul>
+</li>
+</ul>
+<h5 id="change-in-support-for-mixed-where-clauses" permalink="change-in-support-for-mixed-where-clauses">Change in support for mixed <code>where</code> clauses</h5>
+<p>Criteria dictionaries with a mixed <code>where</code> clause are no longer supported. For example, instead of:</p>
+<pre><code class="javascript">{
+  username: &apos;santaclaus&apos;,
+  limit: 4,
+  select: [&apos;beardLength&apos;, &apos;lat&apos;, &apos;long&apos;]
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>you should use:</p>
+<pre><code class="javascript">{
+  where: { username: &apos;santaclaus&apos; },
+  limit: 4,
+  select: [&apos;beardLength&apos;, &apos;lat&apos;, &apos;long&apos;]
+}
+</code></pre><!-- __LANG=%%__ -->
+<blockquote>
+<p>Note that you can still do <code>{ username: &apos;santaclaus&apos; }</code> as shorthand for <code>{ where: { username: &apos;santaclaus&apos; } }</code>, you just can&apos;t mix other top-level criteria clauses (like <code>limit</code>) alongside constraints (e.g. <code>username</code>).</p>
+<p>For places where you&apos;re using Waterline&apos;s chainable deferred object to build criteria, don&apos;t worry about this&#x2014;it&apos;s already taken care of for you.</p>
+</blockquote>
+<h3 id="security" permalink="security">Security</h3>
+<p>New apps created with Sails 1.0 will contain a <strong>config/security.js</strong> file instead of individual <strong>config/cors.js</strong> and <strong>config/csrf.js</strong> files. Apps migrating from earlier versions can keep their existing files, as long as they perform the following upgrades:</p>
+<ul>
+<li>Change <code>module.exports.cors</code> to <code>module.exports.security.cors</code> in <code>config/cors.js</code></li>
+<li>Change CORS config settings names to match the newly documented names in <a href="../reference/configuration/sails-config-security.html#?sailsconfigsecuritycors">Reference &gt; Configuration &gt; sails.config.security</a></li>
+<li>Change <code>module.exports.csrf</code> to <code>module.exports.security.csrf</code> in <code>config/csrf.js</code>.  This value is now simply <code>true</code> or <code>false</code>; no other CSRF options are supported (see below).</li>
+<li><code>sails.config.csrf.routesDisabled</code> is no longer supported. Instead, add <code>csrf: false</code> to any route in <code>config/routes.js</code> that you wish to be unprotected by CSRF, for example:</li>
+</ul>
+<pre><code class="javascript">&apos;POST /some-thing&apos;: { action: &apos;do-a-thing&apos;, csrf: false },
+</code></pre><!-- __LANG=%%__ -->
+<ul>
+<li><code>sails.config.csrf.origin</code> is no longer supported. Instead, you can add any custom CORS settings directly to your CSRF token route configuration, for example:</li>
+</ul>
+<pre><code class="javascript">&apos;GET /csrfToken&apos;: {
+  action: &apos;security/grant-csrf-token&apos;,
+  cors: {
+    allowOrigins: [&apos;http://foobar.com&apos;, &apos;https://owlhoot.com&apos;]
+  }
+}
+</code></pre><!-- __LANG=%%__ -->
+<ul>
+<li><code>sails.config.csrf.grantTokenViaAjax</code> is no longer supported.  This setting was used to turn the CSRF token-granting route on or off.  In Sails 1.0, you add that route manually in your <code>config/routes.js</code> file (see above). If you don&#x2019;t want to grant CSRF tokens via AJAX, just leave that route out of <code>config/routes.js</code>.</li>
+</ul>
+<h3 id="views" permalink="views">Views</h3>
+<p>For maximum flexibility, Consolidate is no longer bundled with Sails.  If you are using a view engine besides EJS, you&apos;ll probably want to install Consolidate as a direct dependency of your app.  You can then configure the view engine in <code>config/views.js</code>, like so:</p>
+<pre><code class="javascript">extension: &apos;swig&apos;,
+getRenderFn: function() {
+  // Import `consolidate`.
+  var cons = require(&apos;consolidate&apos;);
+  // Return the rendering function for Swig.
+  return cons.swig;
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>Adding custom configuration to your view engine is a lot easier in Sails 1.0:</p>
+<pre><code class="javascript">extension: &apos;swig&apos;,
+getRenderFn: function() {
+  // Import `consolidate`.
+  var cons = require(&apos;consolidate&apos;);
+  // Import `swig`.
+  var swig = require(&apos;swig&apos;);
+  // Configure `swig`.
+  swig.setDefaults({tagControls: [&apos;{?&apos;, &apos;?}&apos;]});
+  // Set the module that Consolidate uses for Swig.
+  cons.requires.swig = swig;
+  // Return the rendering function for Swig.
+  return cons.swig;
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>Note that the <a href="../concepts/views/layouts.html">built-in support for layouts</a> still works for the default EJS views, but layout support for other view engines (e.g. Handlebars or Ractive) is not bundled with Sails 1.0.</p>
+<h3 id="resourceful-pubsub" permalink="resourceful-pubsub">Resourceful PubSub</h3>
+<ul>
+<li>Removed deprecated <code>backwardsCompatibilityFor0.9SocketClients</code> setting.</li>
+<li>Removed deprecated <code>.subscribers()</code> method.</li>
+<li>Removed deprecated &quot;firehose&quot; functionality.</li>
+<li>Removed support for 0.9.x socket client API.</li>
+<li>The following resourceful pubsub methods have also been removed:<ul>
+<li><code>.publishAdd()</code></li>
+<li><code>.publishCreate()</code></li>
+<li><code>.publishDestroy()</code></li>
+<li><code>.publishRemove()</code></li>
+<li><code>.publishUpdate()</code></li>
+<li><code>.watch()</code></li>
+<li><code>.unwatch()</code></li>
+<li><code>.message()</code></li>
+</ul>
+</li>
+</ul>
+<p>In place of the removed methods, you should use the new <code>.publish()</code> method, or the low-level <a href="../reference/web-sockets/sails-sockets.html">sails.sockets</a> methods.  Keep in mind that unlike <code>.message()</code>, <code>.publish()</code> does <em>not</em> wrap your data in an envelope containing the record ID, so&#x2014;if it&apos;s important&#x2014;you&apos;ll need to include the ID yourself as part of the data.  For example, in Sails v0.12.x, <code>User.message(123, {owl: &apos;hoot&apos;})</code> would have resulted in the following notification being broadcasted to clients:</p>
+<pre><code class="nohighlight">{
+  verb: &apos;messaged&apos;,
+  id: 123,
+  data: {
+    owl: &apos;hoot&apos;
+  }
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>By contrast, in Sails v1.0, <code>User.publish(123, {owl: &apos;hoot&apos;})</code> will simply broadcast:</p>
+<pre><code class="nohighlight">{
+  owl: &apos;hoot&apos;
+}
+</code></pre><!-- __LANG=%%__ -->
+<h3 id="replacing-custom-blueprints" permalink="replacing-custom-blueprints">Replacing custom blueprints</h3>
+<p>Out of the box, it is no longer possible to add a file to <code>api/blueprints/</code> that will automatically be used as a blueprint action for all models.  However, this behavior can easily be replicated by installing <a href="https://www.npmjs.com/package/sails-hook-custom-blueprints" target="_blank"><code>sails-hook-custom-blueprints</code></a>.</p>
+<!--
+Another way is to add a route like `'POST /:model': 'SharedController.create'` to the bottom of your `config/routes.js` file, and then add the custom `create` blueprint to a `api/controllers/SharedController.js` file (or a `api/controllers/shared/create.js` standalone action).
+
+Yet another option would be to add a `api/helpers/create.js` helper which takes a model name and dictionary of values as inputs (see [Concepts > Helpers](https://sailsjs.com/documentation/concepts/helpers)), and call that helper from the related action for each model (e.g. `UserController.create`).
+-->
+<h3 id="express-4" permalink="express-4">Express 4</h3>
+<p>Sails 1.0 comes with an update to the internal Express server from version 3 to version 4 (thanks to some great work by <a href="https://github.com/josebaseba" target="_blank">@josebaseba</a>).  This change is mainly about maintainability for the Sails framework and should be transparent to your app.  However, there are a couple of differences worth noting:</p>
+<ul>
+<li>The <code>404</code>, <code>500</code> and <code>startRequestTimer</code> middleware are now built-in to every Sails app, and have been removed from the <code>sails.config.http.middleware.order</code> array.  If your app has an overridden <code>404</code> or <code>500</code> handler, you should instead override <code>api/responses/notFound.js</code> and <code>api/responses/serverError.js</code> respectively.</li>
+<li>Session middleware that was designed specifically for Express 3 (e.g. very old versions of <code>connect-redis</code> or <code>connect-mongo</code>) will no longer work, so you&#x2019;ll need to upgrade to more recent versions.</li>
+<li>The <code>sails.config.http.customMiddleware</code> feature is deprecated in Sails 1.0.  It will still work for now, but may be removed in a later release.  Instead of using <code>customMiddleware</code> to modify the Express app directly, use regular (<code>req</code>, <code>res</code>, <code>next</code>) middleware instead.  For instance, you can replace something like:</li>
+</ul>
+<pre><code class="nohighlight">customMiddleware: function(app) {
+  var passport = require(&apos;passport&apos;);
+  app.use(passport.initialize());
+  app.use(passport.session());
+}
+</code></pre><!-- __LANG=%%__ -->
+<p>with something like:</p>
+<pre><code class="nohighlight">var passport = require(&apos;passport&apos;);
+middleware: {
+  passportInit: passport.initialize(),
+  passportSession: passport.session()
+},
+</code></pre><!-- __LANG=%%__ -->
+<p>being sure to insert <code>passportInit</code> and <code>passportSession</code> into your <code>middleware.order</code> array in <code>config/http.js</code>.</p>
+<h3 id="response-methods" permalink="response-methods">Response methods</h3>
+<ul>
+<li><code>.jsonx()</code> is deprecated. If you have files in <code>api/responses</code> that you haven&apos;t customized at all, you can just delete them and let the Sails default responses work their magic.  If you have files in <code>api/responses</code> that you&#x2019;d like to keep, replace any occurences of <code>res.jsonx()</code> in those files with <code>res.json()</code>.</li>
+<li><code>res.negotiate()</code> is deprecated. Use <code>res.serverError()</code>, <code>res.badRequest()</code>, or a <a href="../concepts/extending-sails/custom-responses.html">custom response</a> instead.</li>
+</ul>
+<h3 id="i18n" permalink="i18n">i18n</h3>
+<p>Sails 1.0 switches from using the <a href="https://npmjs.org/package/i18n" target="_blank">i18n</a> to the lighter-weight <a href="https://npmjs.org/package/i18n-2" target="_blank">i18n-2</a> module.  The overwhelming majority of users should see no difference in their apps.  However, if you&#x2019;re using the <code>sails.config.i18n.updateFiles</code> option, be aware that this is no longer supported; instead, locale files will <em>always</em> be updated in development mode, and <em>never</em> in production mode.  If this is a problem or you&#x2019;re missing some other feature from the i18n module, you can install <a href="https://npmjs.org/package/sails-hook-i18n" target="_blank">sails-hook-i18n</a> to revert to pre-Sails-1.0 functionality.</p>
+<blockquote>
+<p>If your 0.12 application is running into issues during upgrade due to its use of i18n features, see <a href="https://github.com/balderdashy/sails/issues/4343" target="_blank">#4343</a> for more troubleshooting tips.</p>
+</blockquote>
+<h3 id="websockets" permalink="websockets">WebSockets</h3>
+<p>All Sails 1.0 projects that use websockets must install the latest <code>sails-hook-sockets</code> dependency (<code>npm install --save sails-hook-sockets</code>).  This version of <code>sails-hook-sockets</code> differs from previous ones in a couple of ways:</p>
+<ul>
+<li>The default <code>transports</code> setting is simply <code>[&apos;websocket&apos;]</code>.  In the majority of production deployments, restricting your app to the <code>websocket</code> transport (rather than using <code>[&apos;polling&apos;, &apos;websocket&apos;]</code>) avoids problems with sessions (see the pre-1.0 <a href="https://github.com/balderdashy/sails-docs/blob/1038b38cb34fd945086480ee45325a1ac95a0950/concepts/Deployment/Scaling.md#notes" target="_blank">scaling guide notes</a> for details).  If you&#x2019;re using the <code>sails.io.js</code> websocket client, the easiest way to make your app compatible with the new websocket settings is to install the new <code>sails.io.js</code> version with <code>sails generate sails.io.js</code>.  The latest version of that package also defaults to the &#x201C;websocket-only&#x201D; transport strategy.  If you&#x2019;ve customized the <code>transports</code> setting in your front-end code and <code>config/sockets.js</code> file, then you&apos;ll just need to continue to ensure that the values in both places match.</li>
+<li>The latest <code>sails-hook-sockets</code> hook uses a newer version of Socket.io.  See the <a href="https://github.com/socketio/socket.io/blob/master/History.md#150--2016-10-06" target="_blank">Socket.io changelog</a> for a full update, but keep in mind that socket IDs no longer have <code>/#</code> prepended to them by default.</li>
+</ul>
+<h3 id="grunt" permalink="grunt">Grunt</h3>
+<p>The Grunt task-management functionality that was formerly part of the Sails core has now been moved into the separate <code>sails-hook-grunt</code> module.  Existing apps simply need to <code>npm install --save sails-hook-grunt</code> to continue using Grunt.  However, with a modification to your app&#x2019;s <code>Gruntfile.js</code>, you can take advantage of the fact that <code>sails-hook-grunt</code> includes all of the <code>grunt-contrib</code> modules that previously had to be installed at the project level.  The new <code>Gruntfile.js</code> contains:</p>
+<pre><code class="nohighlight">module.exports = function(grunt) {
+
+  var loadGruntTasks = require(&apos;sails-hook-grunt/accessible/load-grunt-tasks&apos;);
+
+  // Load Grunt task configurations (from `tasks/config/`) and Grunt
+  // task registrations (from `tasks/register/`).
+  loadGruntTasks(__dirname, grunt);
+
+};
+</code></pre><!-- __LANG=%%__ -->
+<p>Assuming that you haven&#x2019;t customized the Gruntfile in your app, you can replace <code>Gruntfile.js</code> with that code and then safely run:</p>
+<pre><code class="nohighlight">npm uninstall --save grunt-contrib-clean
+npm uninstall --save grunt-contrib-coffee
+npm uninstall --save grunt-contrib-concat
+npm uninstall --save grunt-contrib-copy
+npm uninstall --save grunt-contrib-cssmin
+npm uninstall --save grunt-contrib-jst
+npm uninstall --save grunt-contrib-less
+npm uninstall --save grunt-contrib-uglify
+npm uninstall --save grunt-contrib-watch
+npm uninstall --save grunt-sails-linker
+npm uninstall --save grunt-sync
+npm uninstall --save grunt-cli
+</code></pre><!-- __LANG=%%__ -->
+<p>to remove those dependencies from your project.</p>
+<h3 id="troubleshooting" permalink="troubleshooting">Troubleshooting</h3>
+<h5 id="still-displaying-v0-12-at-launch-" permalink="still-displaying-v012-at-launch">Still displaying v0.12 at launch?</h5>
+<p>Make sure you have <code>sails</code> installed locally in your project, and that you&apos;re using the v1 version of the command-line tool.</p>
+<p>To install the v1.0 globally, run <code>npm install <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="8dfeece4e1fecd">[email&#160;protected]</a>^1.0.0 -g</code>. To install it for a particular Sails app, cd into that app&apos;s directory, then run <code>npm install <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="aad9cbc3c6d9ea">[email&#160;protected]</a>^1.0.0 --save</code>.  (After installing locally, be sure to also install the necessary hooks -- see above.)</p>
+<p><docmeta name="displayName" value="To v.1.0"></docmeta></p>
+<docmeta name="version" value="1.0.0">
+</docmeta>
+    
+  </div>
+  <div class="contribution-message invisible fade-in" data-hide-until-rendered>
+    
+    <h3>Need help upgrading?</h3>
+    <p>If your company has the budget, consider purchasing <a href="../../flagship.html">Flagship support</a>.  It's a great way to support the ongoing development of the open source tools you use every day.  And it gives you an extra lifeline to the Sails core team.</p>
+    
+
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <!-- (underneath the docs content, so that the doc page h1s come before any other headers, for SEO.) -->
+
+  <!-- Header nav -->
+  <div class="docs-main-header" is="docs-header">
+  <!-- Header -->
+  <div id="header">
+
+
+  <!--Navigation list-->
+  <div class="nav-container">
+    <div class="branding">
+      <a href="../../index.html">
+        <img class="logo" src="../../images/logo_sails.png" alt="Sails logo" />
+        
+      </a>
+      
+
+      <div class="version" is="topbar-version-info" data-current-site-version="1.0"></div>
+      
+    </div>
+
+    <div id="nav-menu-overlay">
+      <div class="veil"></div>
+    </div>
+
+    <ul is="nav-menu" class="nav right-nav ">
+
+      
+
+      <li class="mobile-only">
+        <a class="sails-site "
+          href="../../index.html">Home</a>
+      </li>
+
+      <li>
+        <a class="sails-site "
+          href="../../get-started.html">Get started</a>
+      </li>
+      <li>
+        <a class="sails-site "
+          href="../../support.html">Support</a>
+      </li>
+      <li class="mobile-only">
+        <a class="sails-site current"
+          href="../reference.html">Documentation</a>
+      </li>
+      <li class="docs-nav no-mobile">
+        <a is="temporary" class="docs-menu-header docs-menu-wrapper  current" href="../reference.html">Documentation <i class="dropdown-arrow-icon sails-icon icon-angle-down"></i></a>
+        <a is="documentation-dropdown-wrapper" class="docs-menu-wrapper" data-is-current="true"></a>
+      </li>
+      
+
+      
+    </ul>
+  </div>
+
+  <!--Mobile menu button-->
+  <div class="menu" is="mobile-menu-button">
+   <span class="menu-icon"><i class="sails-icon icon-ellipsis-vertical"></i></span>
+  </div>
+
+  <div id="unsupported-browser-banner"><p><img src="../../images/icon_warning.png"/>For a better experience on sailsjs.com, <a target="_blank" href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">update your browser</a>.</p></div>
+</div>
+
+  <div class="nav-container">
+    <h2>Documentation</h2>
+    <div class="docs-header-nav" is="docs-navigation-container">
+      <div class="nav-items">
+        <a data-section="reference" href="../reference.html">Reference</a>
+        <a data-section="concepts" href="../concepts.html">Concepts</a>
+        <a data-section="anatomy" href="../anatomy.html">App structure</a>
+        <span class="divider">|</span>
+        <a data-section="upgrading" href="../upgrading.html">Upgrading</a>
+        <a data-section="contributing" href="../contributing.html">Contribution guide</a>
+        <span class="divider">|</span>
+        <a data-section="tutorials" href="../tutorials.html">Tutorials</a>
+        <a href="../../support.html">More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Side nav -->
+  <div is="side-nav" class="side-nav invisible fade-in" data-hide-until-rendered>
+    <div class="side-nav-inner" is="side-nav-contents">
+      <h4>Upgrading</h4>
+      <ul class="main-sections">
+        
+
+          <li is="menu-item"
+            data-path="upgrading/To1.0.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-1-0.html">
+    To v.1.0
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.12.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-12.html">
+    To v0.12
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.11.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-11.html">
+    To v0.11
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+
+          <li is="menu-item"
+            data-path="upgrading/To0.10.ejs"
+            class="    ">
+            
+<span>
+  
+
+  
+  <i class="current-arrow sails-icon icon-angle-right"></i>
+  
+
+  <a href="to-v-0-10.html">
+    To v.0.10
+  </a>
+</span>
+
+
+
+
+          </li>
+          
+      </ul>
+      
+      <div class="ad">
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async type="text/javascript" src="http://cdn.carbonads.com/carbon.js?serve=CKYIL2Q7&amp;placement=sailsjsorg" id="_carbonads_js"></script>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Footer -->
+  <div id="footer" class="invisible" data-hide-until-rendered>
+  <div class="navigation-footer ">
+    <div class="row">
+      <img class="sails-logo small-screen" src="../../images/logo_sails.png">
+      <div class="column left-column top">
+        <h4>Built with Love</h4>
+        <p>The Sails framework is built by a <a href="../../about.html">web &amp; mobile shop in Austin, TX</a>, with the help of our contributors. We created Sails in 2012 to assist us on Node.js projects. Naturally we open-sourced it. We hope it makes your life a little bit easier!</p>
+      </div>
+      <div class="column right-column top">
+        <div class="nav-list left-nav-list">
+          <h5>Sails<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../whats-that.html">What is Sails?</a>
+            </li>
+            <li>
+              <a href="../../support.html">Community</a>
+            </li>
+            <li>
+              <a target="_blank" href="http://blog.sailsjs.com/">News</a>
+            </li>
+            <li>
+              <a href="../../studio.html">For business</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list middle-nav-list">
+          <h5>About<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../about.html">Our company</a>
+            </li>
+            <li>
+              <a href="../../security.html">Security</a>
+            </li>
+            <li>
+              <a href="../../legal.html">Legal</a>
+            </li>
+            <li>
+              <a href="../../logos.html">Logos/artwork</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-list right-nav-list">
+          <h5>Help<span class="divider">:</span></h5>
+          <ul>
+            <li>
+              <a href="../../get-started.html">Get started</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../reference.html">Documentation</a>
+            </li>
+            <li class="small-screen">
+              <a href="../reference.html">Docs</a>
+            </li>
+            <li class="wide-screen">
+              <a href="../contributing.html">Contribute</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://courses.platzi.com/courses/sails-js/">Take a class</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column left-column">
+        <img class="sails-logo wide-screen" src="../../images/logo_sails.png">
+        <p class="license-info"><a href="../../about.html">&copy; 2012-2019 The Sails Company.&nbsp;</a>
+          <br/>
+          The Sails framework is free and open-source under the MIT License.
+        </p>
+      </div>
+      <div class="column right-column bottom">
+        <div class="social-icons">
+          <a target="_blank" href="https://twitter.com/sailsjs">
+            <i class="sails-icon icon-social-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sailsjs">
+            <i class="sails-icon icon-social-facebook"></i>
+          </a>
+          <a target="_blank" href="https://github.com/balderdashy/sails">
+            <i class="sails-icon icon-social-github"></i>
+          </a>
+          <a target="_blank" href="https://www.pinterest.com/sailsjs/">
+            <i class="sails-icon icon-social-pinterest"></i>
+          </a>
+          <a target="_blank" href="https://stackoverflow.com/search?q=sails">
+            <i class="sails-icon icon-social-stackoverflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+        require that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+        Server-side View Locals
+        ========================
+
+        Sometimes, it's convenient to get access to your server-side view locals from
+        client-side JavaScript.  This can improve page load times, remove the need for
+        extra AJAX requests, and make your client-side code easier to understand and
+        to maintain.  Sails provides a simple mechanism for accessing dynamic view
+        locals: the "exposeLocalsToBrowser()" view partial.
+
+        For more information on using this built-in feature, see:
+        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+
+    -->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="../../dist/production.min.9b920f19.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+    // Initialize an angular module.
+    angular.module('page', ['sails']);
+    // Initialize the ctrl.
+    angular.module('page').controller('afterRender', ['sailsWebsiteActions', function (sailsWebsiteActions){
+      // Wait for one tick of the digest loop before calling on our afterRender handlers,
+      // to avoid angular trying to reference elements that don't exist and causing a
+      // "Cannot read property 'childNodes' of undefined" error.
+      // For more information, see:
+      // https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      setTimeout(function afterATick() {
+        // Now call upon the proper handler for the current page's events.
+        sailsWebsiteActions({
+          page: 'documentation'
+        });
+      });
+
+    }]);
+    </script>
+  </body>
+
+<!-- Mirrored from sailsjs.com/documentation/upgrading/to-v-1-0 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 13:17:21 GMT -->
+</html>
